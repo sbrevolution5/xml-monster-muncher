@@ -1,3 +1,5 @@
+I ran into a problem using the game master 5 app for 5th edition dnd, importing monsters from a third party source like Kobold press was tedious and difficult.  The aim of this app is to make sure that you can insert the data into a form and get back the XML for the app.  
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
