@@ -33,59 +33,131 @@
     <!--building basic structure in html/bootstrap first-->
     
     <form>
-      <div className="form-group">
+      <div class="form-group">
         <label for="nameInput">Name</label>
-        <input type="text" id="nameInput" placeholder="creature name" className="form-control"></input>
+        <input type="text" id="nameInput" placeholder="creature name" class="form-control"></input>
       </div>
-      <div className="form-group">
+      <div class="form-group">
         <label for="typeInput">Type</label>
-        <input type="text" id="typeInput" placeholder="Humanoid, monstrosity, etc" className="form-control"></input>
+        <input type="text" id="typeInput" placeholder="Humanoid, monstrosity, etc" class="form-control"></input>
       </div>
-      <div className="form-group">
+      <div class="form-group">
         <label for="sizeInput">Size</label>
-        <input type="text" id="sizeInput" placeholder="Small, Medium, Large, Huge" className="form-control"></input>
+        <input type="text" id="sizeInput" placeholder="Small, Medium, Large, Huge" class="form-control"></input>
       </div>
-      <div className="form-group">
+      <div class="form-group">
         <label for="alignmentInput">Alignment</label>
-        <input type="text" id="alignmentInput" placeholder="Lawful good, neutral evil, ect." className="form-control"></input>
+        <input type="text" id="alignmentInput" placeholder="Lawful good, neutral evil, ect." class="form-control"></input>
       </div>
-      <div className="form-group">
+      <div class="form-group">
         <label for="hpInput">hp</label>
-        <input type="text" id="hpInput" placeholder="optional: can be done automatically from stats" className="form-control"></input>
+        <input type="text" id="hpInput" placeholder="optional: can be done automatically from stats" class="form-control"></input>
       </div>
-      <div className="form-group">
+      <div class="form-group">
         <label for="armorInput">AC</label>
-        <input type="text" id="armorInput" placeholder="12, light armor" className="form-control"></input>
+        <input type="text" id="armorInput" placeholder="12, light armor" class="form-control"></input>
       </div>
-      <div className="form-group">
+      <div class="form-group">
         <label for="speedInput">Size</label>
-        <input type="text" id="speedInput" placeholder=" walk 30 ft., fly 50 ft. " className="form-control"></input>
+        <input type="text" id="speedInput" placeholder=" walk 30 ft., fly 50 ft. " class="form-control"></input>
       </div>
-      stats selected 1-30
-        strength
-        dexterity
-        constitution
-        intelligence
-        wisdom
-        charisma
+      <div class="form-group">
+        <h3>Stats</h3>
+        <select>
+          <h4>Strength</h4>
+          <h5>For loop</h5>
+
+        </select>
+        <select>
+          <h4>Dexterity</h4>
+          <h5>For loop</h5>
+
+        </select>
+        <select>
+          <h4>Constitution</h4>
+          <h5>For loop</h5>
+
+        </select>
+        <select>
+          <h4>intelligence</h4>
+          <h5>For loop</h5>
+
+        </select>
+        <select>
+          <h4>Wisdom</h4>
+          <h5>For loop</h5>
+
+        </select>
+        <select>
+          <h4>Charisma</h4>
+          <h5>For loop</h5>
+
+        </select>
+      </div>
+      <div>
+        <label>
+          Saving Throws
+        </label>
+        <p>under construction</p>
+      </div>
+      <div>
+        <label>
+          Skills
+        </label>
+        <p>under construction</p>
+      </div>
       saves all optional, checkbox and modifier for each.
       skills all optional, checkbox and modifier for each.
       passive Perception calculated by 10+perception(Wis)
-      languages
+      <div class="form-group">
+        <label for="nameInput">Languages</label>
+        <input type="text" id="nameInput" placeholder="Common, Elvish, Abyssal." class="form-control"></input>
+      </div>
       challenge rating
-      resists
-      immune
-      vulnerabilities
-      conditionImmune
-      senses
+      <div>
+        <label>
+          Resists
+        </label>
+        <p>under construction</p>
+      </div>
+      <div>
+        <label>
+          Immunities
+        </label>
+        <p>under construction</p>
+      </div>
+      <div>
+        <label>
+          Vulnerabilities
+        </label>
+        <p>under construction</p>
+      </div>
+      <div>
+        <label>
+          Condition Immunities
+        </label>
+        <p>under construction</p>
+      </div>
+      <div>
+        <label for="senseInput">
+          Senses
+        </label>
+        <input type="text" id="senseInput" placeholder="Darkvision 60 ft." class="form-control"></input>
+      </div>
       traits
       actions
-      description
+      <div>
+        <label>
+          Skills
+        </label>
+        <input type="textbox" id="description" placeholder="Lore and interesting descriptors go here" class="b4-text"/>
+      </div>
       environment
 
     </form>
   </body>
 </html>
+<!--output-->
 <monster>
       <name>Aarakocra</name>
     <size>M</size>
