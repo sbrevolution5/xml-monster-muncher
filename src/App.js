@@ -1,4 +1,5 @@
 import logo from './logo.svg';
+import Form from './containers/form'
 import './App.css';
 
 function App() {

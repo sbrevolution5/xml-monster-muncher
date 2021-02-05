@@ -1,7 +1,6 @@
 const { render } = require("@testing-library/react")
 const { Component } = require("react")
 
-import React { Component } from 'react';
 
 class Form extends Component{
     constructor(props){
@@ -19,6 +18,111 @@ class Form extends Component{
             },
             health: '',
             ac: '',
+            languages: '',
+            size: '',
+            alignment: '',
+            speed: '',
+            challengeRating: '',
+            savingThrows:{
+                str: {
+                    checked: false,
+                    mod: '',
+                },
+                dex: {
+                    checked: false,
+                    mod: '',
+                },
+                con: {
+                    checked: false,
+                    mod: '',
+                },
+                int: {
+                    checked: false,
+                    mod: '',
+                },
+                wis: {
+                    checked: false,
+                    mod: '',
+                },
+                cha: {
+                    checked: false,
+                    mod: '',
+                }
+            },
+            skills:{
+                Athletics: {
+                    checked: false,
+                    mod: '',
+                },
+                Acrobatics: {
+                    checked: false,
+                    mod: '',
+                },
+                SleightOfHand: {
+                    checked: false,
+                    mod: '',
+                },
+                Stealth: {
+                    checked: false,
+                    mod: '',
+                },
+                Arcana: {
+                    checked: false,
+                    mod: '',
+                },
+                History: {
+                    checked: false,
+                    mod: '',
+                },
+                Investigation: {
+                    checked: false,
+                    mod: '',
+                },
+                Nature: {
+                    checked: false,
+                    mod: '',
+                },
+                Religion: {
+                    checked: false,
+                    mod: '',
+                },
+                AnimalHandling: {
+                    checked: false,
+                    mod: '',
+                },
+                Insight: {
+                    checked: false,
+                    mod: '',
+                },
+                Medicine: {
+                    checked: false,
+                    mod: '',
+                },
+                Perception: {
+                    checked: false,
+                    mod: '',
+                },
+                Survival: {
+                    checked: false,
+                    mod: '',
+                },
+                Deception: {
+                    checked: false,
+                    mod: '',
+                },
+                Intimidation: {
+                    checked: false,
+                    mod: '',
+                },
+                Performance: {
+                    checked: false,
+                    mod: '',
+                },
+                Persuasion: {
+                    checked: false,
+                    mod: '',
+                },
+            },
             vulnerabilities: {
                 Slashing: false,
                 Piercing: false,
@@ -84,7 +188,139 @@ class Form extends Component{
             },
             traits: {},
             actions: {},
+            description: {},
+
             
         }
     }
+    render(){
+        return(
+            <form>
+                <div class="form-group">
+                    <label for="nameInput">Name</label>
+                    <input type="text" id="nameInput" placeholder="creature name" class="form-control"></input>
+                </div>
+                <div class="form-group">
+                    <label for="typeInput">Type</label>
+                    <input type="text" id="typeInput" placeholder="Humanoid, monstrosity, etc" class="form-control"></input>
+                </div>
+                <div class="form-group">
+                    <label for="sizeInput">Size</label>
+                    <input type="text" id="sizeInput" placeholder="Small, Medium, Large, Huge" class="form-control"></input>
+                </div>
+                <div class="form-group">
+                    <label for="alignmentInput">Alignment</label>
+                    <input type="text" id="alignmentInput" placeholder="Lawful good, neutral evil, ect." class="form-control"></input>
+                </div>
+                <div class="form-group">
+                    <label for="hpInput">hp</label>
+                    <input type="text" id="hpInput" placeholder="optional: can be done automatically from stats" class="form-control"></input>
+                </div>
+                <div class="form-group">
+                    <label for="armorInput">AC</label>
+                    <input type="text" id="armorInput" placeholder="12, light armor" class="form-control"></input>
+                </div>
+                <div class="form-group">
+                    <label for="speedInput">Speed</label>
+                    <input type="text" id="speedInput" placeholder=" walk 30 ft., fly 50 ft. " class="form-control"></input>
+                </div>
+                <div class="form-group">
+                    <h3>Stats</h3>
+                    <select>
+                    <h4>Strength</h4>
+                    <h5>For loop</h5>
+
+                    </select>
+                    <select>
+                    <h4>Dexterity</h4>
+                    <h5>For loop</h5>
+
+                    </select>
+                    <select>
+                    <h4>Constitution</h4>
+                    <h5>For loop</h5>
+
+                    </select>
+                    <select>
+                    <h4>intelligence</h4>
+                    <h5>For loop</h5>
+
+                    </select>
+                    <select>
+                    <h4>Wisdom</h4>
+                    <h5>For loop</h5>
+
+                    </select>
+                    <select>
+                    <h4>Charisma</h4>
+                    <h5>For loop</h5>
+
+                    </select>
+                </div>
+                <div>
+                    <label>
+                    Saving Throws
+                    </label>
+                    <p>under construction</p>
+                </div>
+                <div>
+                    <label>
+                    Skills
+                    </label>
+                    <p>under construction</p>
+                </div>
+                saves all optional, checkbox and modifier for each.
+                skills all optional, checkbox and modifier for each.
+                passive Perception calculated by 10+perception(Wis)
+                <div class="form-group">
+                    <label for="nameInput">Languages</label>
+                    <input type="text" id="nameInput" placeholder="Common, Elvish, Abyssal." class="form-control"></input>
+                </div>
+                challenge rating
+                <div>
+                    <label>
+                    Resists
+                    </label>
+                    <p>under construction</p>
+                </div>
+                <div>
+                    <label>
+                    Immunities
+                    </label>
+                    <p>under construction</p>
+                </div>
+                <div>
+                    <label>
+                    Vulnerabilities
+                    </label>
+                    <p>under construction</p>
+                </div>
+                <div>
+                    <label>
+                    Condition Immunities
+                    </label>
+                    <p>under construction</p>
+                </div>
+                <div>
+                    <label for="senseInput">
+                    Senses
+                    </label>
+                    <input type="text" id="senseInput" placeholder="Darkvision 60 ft." class="form-control"></input>
+                </div>
+                traits
+                <p>allow adding of aditional traits,</p>
+                actions
+                <p>allow adding of additional actions.</p>
+                <div>
+                    <label for="descriptionInput">
+                    description
+                    </label>
+                    <input type="textbox" id="descriptionInput" placeholder="Lore and interesting descriptors go here" class="b4-text"/>
+                </div>
+                environment
+
+            </form>
+        )
+    }
 }
+export default Form;
