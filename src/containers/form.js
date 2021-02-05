@@ -1,6 +1,6 @@
+import Stats from '../components/stats'
 const { render } = require("@testing-library/react")
 const { Component } = require("react")
-
 
 class Form extends Component{
     constructor(props){
@@ -194,7 +194,6 @@ class Form extends Component{
         }
     }
     render(){
-        const scores = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30]
         return(
             <form>
                 <div className="form-group">
@@ -225,51 +224,7 @@ class Form extends Component{
                     <label for="speedInput">Speed</label>
                     <input type="text" id="speedInput" placeholder=" walk 30 ft., fly 50 ft. " className="form-control"></input>
                 </div>
-                <div className="form-group">
-                    <h3>Stats</h3>
-                        <label for="strSelector">Strength</label>
-                        <select id="strSelector" defaultValue="10">
-                            {scores.map((value, index) => {
-                                return <option key={index} value={value}>{value}</option>
-                            })}
-
-                        </select>
-                        <label for="dexSelector">Dexterity</label>
-                        <select id="dexSelector" defaultValue="10">
-                            {scores.map((value, index) => {
-                                return <option key={index} value={value}>{value}</option>
-                            })}
-
-                        </select>
-                        <label for="conSelector">Constitution</label>
-                        <select id="conSelector" defaultValue="10">
-                            {scores.map((value, index) => {
-                                return <option key={index} value={value}>{value}</option>
-                            })}
-
-                        </select>
-                        <label for="intSelector">Intelligence</label>
-                        <select id="intSelector" defaultValue="10">
-                            {scores.map((value, index) => {
-                                return <option key={index} value={value}>{value}</option>
-                            })}
-
-                        </select>
-                        <label for="wisSelector">Wisdom</label>
-                        <select id="wisSelector" defaultValue="10">
-                            {scores.map((value, index) => {
-                                return <option key={index} value={value}>{value}</option>
-                            })}
-
-                        </select>
-                        <label for="chaSelector">Charisma</label>
-                        <select id="chaSelector" defaultValue="10">
-                            {scores.map((value, index) => {
-                                return <option key={index} value={value}>{value}</option>
-                            })}
-
-                        </select>
-                </div>
+                <Stats></Stats>
                 <div>
                     <label>
                     Saving Throws
