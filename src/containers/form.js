@@ -194,68 +194,81 @@ class Form extends Component{
         }
     }
     render(){
+        const scores = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30]
         return(
             <form>
-                <div class="form-group">
+                <div className="form-group">
                     <label for="nameInput">Name</label>
-                    <input type="text" id="nameInput" placeholder="creature name" class="form-control"></input>
+                    <input type="text" id="nameInput" placeholder="creature name" className="form-control"></input>
                 </div>
-                <div class="form-group">
+                <div className="form-group">
                     <label for="typeInput">Type</label>
-                    <input type="text" id="typeInput" placeholder="Humanoid, monstrosity, etc" class="form-control"></input>
+                    <input type="text" id="typeInput" placeholder="Humanoid, monstrosity, etc" className="form-control"></input>
                 </div>
-                <div class="form-group">
+                <div className="form-group">
                     <label for="sizeInput">Size</label>
-                    <input type="text" id="sizeInput" placeholder="Small, Medium, Large, Huge" class="form-control"></input>
+                    <input type="text" id="sizeInput" placeholder="Small, Medium, Large, Huge" className="form-control"></input>
                 </div>
-                <div class="form-group">
+                <div className="form-group">
                     <label for="alignmentInput">Alignment</label>
-                    <input type="text" id="alignmentInput" placeholder="Lawful good, neutral evil, ect." class="form-control"></input>
+                    <input type="text" id="alignmentInput" placeholder="Lawful good, neutral evil, ect." className="form-control"></input>
                 </div>
-                <div class="form-group">
+                <div className="form-group">
                     <label for="hpInput">hp</label>
-                    <input type="text" id="hpInput" placeholder="optional: can be done automatically from stats" class="form-control"></input>
+                    <input type="text" id="hpInput" placeholder="optional: can be done automatically from stats" className="form-control"></input>
                 </div>
-                <div class="form-group">
+                <div className="form-group">
                     <label for="armorInput">AC</label>
-                    <input type="text" id="armorInput" placeholder="12, light armor" class="form-control"></input>
+                    <input type="text" id="armorInput" placeholder="12, light armor" className="form-control"></input>
                 </div>
-                <div class="form-group">
+                <div className="form-group">
                     <label for="speedInput">Speed</label>
-                    <input type="text" id="speedInput" placeholder=" walk 30 ft., fly 50 ft. " class="form-control"></input>
+                    <input type="text" id="speedInput" placeholder=" walk 30 ft., fly 50 ft. " className="form-control"></input>
                 </div>
-                <div class="form-group">
+                <div className="form-group">
                     <h3>Stats</h3>
-                    <select>
-                    <h4>Strength</h4>
-                    <h5>For loop</h5>
+                        <label for="strSelector">Strength</label>
+                        <select id="strSelector" defaultValue="10">
+                            {scores.map((value, index) => {
+                                return <option key={index} value={value}>{value}</option>
+                            })}
 
-                    </select>
-                    <select>
-                    <h4>Dexterity</h4>
-                    <h5>For loop</h5>
+                        </select>
+                        <label for="dexSelector">Dexterity</label>
+                        <select id="dexSelector" defaultValue="10">
+                            {scores.map((value, index) => {
+                                return <option key={index} value={value}>{value}</option>
+                            })}
 
-                    </select>
-                    <select>
-                    <h4>Constitution</h4>
-                    <h5>For loop</h5>
+                        </select>
+                        <label for="conSelector">Constitution</label>
+                        <select id="conSelector" defaultValue="10">
+                            {scores.map((value, index) => {
+                                return <option key={index} value={value}>{value}</option>
+                            })}
 
-                    </select>
-                    <select>
-                    <h4>intelligence</h4>
-                    <h5>For loop</h5>
+                        </select>
+                        <label for="intSelector">Intelligence</label>
+                        <select id="intSelector" defaultValue="10">
+                            {scores.map((value, index) => {
+                                return <option key={index} value={value}>{value}</option>
+                            })}
 
-                    </select>
-                    <select>
-                    <h4>Wisdom</h4>
-                    <h5>For loop</h5>
+                        </select>
+                        <label for="wisSelector">Wisdom</label>
+                        <select id="wisSelector" defaultValue="10">
+                            {scores.map((value, index) => {
+                                return <option key={index} value={value}>{value}</option>
+                            })}
 
-                    </select>
-                    <select>
-                    <h4>Charisma</h4>
-                    <h5>For loop</h5>
+                        </select>
+                        <label for="chaSelector">Charisma</label>
+                        <select id="chaSelector" defaultValue="10">
+                            {scores.map((value, index) => {
+                                return <option key={index} value={value}>{value}</option>
+                            })}
 
-                    </select>
+                        </select>
                 </div>
                 <div>
                     <label>
@@ -272,9 +285,9 @@ class Form extends Component{
                 saves all optional, checkbox and modifier for each.
                 skills all optional, checkbox and modifier for each.
                 passive Perception calculated by 10+perception(Wis)
-                <div class="form-group">
+                <div className="form-group">
                     <label for="nameInput">Languages</label>
-                    <input type="text" id="nameInput" placeholder="Common, Elvish, Abyssal." class="form-control"></input>
+                    <input type="text" id="nameInput" placeholder="Common, Elvish, Abyssal." className="form-control"></input>
                 </div>
                 challenge rating
                 <div>
@@ -305,7 +318,7 @@ class Form extends Component{
                     <label for="senseInput">
                     Senses
                     </label>
-                    <input type="text" id="senseInput" placeholder="Darkvision 60 ft." class="form-control"></input>
+                    <input type="text" id="senseInput" placeholder="Darkvision 60 ft." className="form-control"></input>
                 </div>
                 traits
                 <p>allow adding of aditional traits,</p>
@@ -315,7 +328,7 @@ class Form extends Component{
                     <label for="descriptionInput">
                     description
                     </label>
-                    <input type="textbox" id="descriptionInput" placeholder="Lore and interesting descriptors go here" class="b4-text"/>
+                    <input type="textbox" id="descriptionInput" placeholder="Lore and interesting descriptors go here" className="b4-text"/>
                 </div>
                 environment
 
