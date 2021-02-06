@@ -1,5 +1,6 @@
 import Conditions from '../components/Conditions';
 import DamageTypes from '../components/DamageTypes';
+import Skills from '../components/Skills';
 import Stats from '../components/stats'
 const { render } = require("@testing-library/react")
 const { Component } = require("react")
@@ -197,7 +198,7 @@ class Form extends Component{
     }
     render(){
         return(
-            <form>
+            <form className="col-xs-6">
                 <div className="form-group">
                     <label for="nameInput">Name</label>
                     <input type="text" id="nameInput" placeholder="creature name" className="form-control"></input>
@@ -237,7 +238,7 @@ class Form extends Component{
                     <label>
                     Skills
                     </label>
-                    <p>under construction</p>
+                    <Skills></Skills>
                 </div>
                 saves all optional, checkbox and modifier for each.
                 skills all optional, checkbox and modifier for each.
