@@ -1,4 +1,5 @@
 import Conditions from '../components/Conditions';
+import DamageTypes from '../components/DamageTypes';
 import Stats from '../components/stats'
 const { render } = require("@testing-library/react")
 const { Component } = require("react")
@@ -250,19 +251,19 @@ class Form extends Component{
                     <label>
                     Resists
                     </label>
-                    <p>under construction</p>
+                    <DamageTypes></DamageTypes>
                 </div>
                 <div>
                     <label>
                     Immunities
                     </label>
-                    <p>under construction</p>
+                    <DamageTypes></DamageTypes>
                 </div>
                 <div>
                     <label>
                     Vulnerabilities
                     </label>
-                    <p>under construction</p>
+                    <DamageTypes></DamageTypes>
                 </div>
                 <div>
                     <label>
