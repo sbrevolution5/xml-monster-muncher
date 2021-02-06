@@ -1,3 +1,4 @@
+import Conditions from '../components/Conditions';
 import Stats from '../components/stats'
 const { render } = require("@testing-library/react")
 const { Component } = require("react")
@@ -267,7 +268,7 @@ class Form extends Component{
                     <label>
                     Condition Immunities
                     </label>
-                    <p>under construction</p>
+                    <Conditions></Conditions>
                 </div>
                 <div>
                     <label for="senseInput">
