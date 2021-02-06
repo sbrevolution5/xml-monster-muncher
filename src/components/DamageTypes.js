@@ -3,6 +3,10 @@
 import React, { Component } from 'react'
 
 class DamageTypes extends Component{
-    const typeList = [Slashing, Piercing, Bludgeoning, Poison, Acid, Fire, Cold, Radiant, Necrotic, Lightning, Thunder, Force, Psychic];
-    
+    render(){
+        const typeList = [Slashing, Piercing, Bludgeoning, Poison, Acid, Fire, Cold, Radiant, Necrotic, Lightning, Thunder, Force, Psychic];
+    return(
+        <div></div>
+    )}
+
 }
