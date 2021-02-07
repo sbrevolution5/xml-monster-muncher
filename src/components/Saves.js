@@ -7,12 +7,12 @@ class Saves extends Component{
     render(){
         const saveThrows=["Strength", "Dexterity", "Constitution", "Intelligence", "Wisdom", "Charisma"]
         return(
-            <div>
+            <div className="form-group row">
                 {saveThrows.map((value,index)=>{
                     return(
                         <div className="form-check">
                           <label className="form-check-label" for={value + "Box"}>
-                            <input type="checkbox" className="form-check-input" name="" id={value + "Box"} value="checkedValue" />
+                            <input type="checkbox" className="form-check-input col-xs-2" name="" id={value + "Box"} value="checkedValue" />
                             {value}
                           </label>
                           <div className="form-group">

@@ -199,7 +199,7 @@ class Form extends Component{
     }
     render(){
         return(
-            <form className="form-group">
+            <form >
                 <div className="form-group row">
                     <div className="col-xs-4">
                         <label for="nameInput">Name</label>
