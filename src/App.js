@@ -9,6 +9,9 @@ function App() {
         <h1>XML Monster Muncher</h1>
       </header>
         <Form></Form>
+      <footer>
+        <p><i class="fa fa-copyright" aria-hidden="true"></i> Seth A. Burleson 2021</p>
+      </footer>
     </div>
   );
 }
