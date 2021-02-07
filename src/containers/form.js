@@ -199,18 +199,20 @@ class Form extends Component{
     }
     render(){
         return(
-            <form className="col-xs-6">
-                <div className="form-group">
-                    <label for="nameInput">Name</label>
-                    <input type="text" id="nameInput" placeholder="creature name" className="form-control"></input>
-                </div>
-                <div className="form-group">
-                    <label for="typeInput">Type</label>
-                    <input type="text" id="typeInput" placeholder="Humanoid, monstrosity, etc" className="form-control"></input>
-                </div>
-                <div className="form-group">
-                    <label for="sizeInput">Size</label>
-                    <input type="text" id="sizeInput" placeholder="Small, Medium, Large, Huge" className="form-control"></input>
+            <form className="form-group">
+                <div className="form-group row">
+                    <div className="col-xs-4">
+                        <label for="nameInput">Name</label>
+                        <input type="text" id="nameInput" placeholder="creature name" className="form-control"></input>
+                    </div>
+                    <div className="col-xs-4">
+                        <label for="typeInput">Type</label>
+                        <input type="text" id="typeInput" placeholder="Humanoid, monstrosity, etc" className="form-control"></input>
+                    </div>
+                    <div className="col-xs-4">
+                        <label for="sizeInput">Size</label>
+                        <input type="text" id="sizeInput" placeholder="Small, Medium, Large, Huge" className="form-control"></input>
+                    </div>
                 </div>
                 <div className="form-group">
                     <label for="alignmentInput">Alignment</label>
