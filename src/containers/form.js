@@ -1,5 +1,6 @@
 import Conditions from '../components/Conditions';
 import DamageTypes from '../components/DamageTypes';
+import Saves from '../components/Saves';
 import Skills from '../components/Skills';
 import Stats from '../components/stats'
 const { render } = require("@testing-library/react")
@@ -232,7 +233,7 @@ class Form extends Component{
                     <label>
                     Saving Throws
                     </label>
-                    <p>under construction</p>
+                    <Saves></Saves>
                 </div>
                 <div>
                     <label>

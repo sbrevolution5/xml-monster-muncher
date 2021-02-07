@@ -10,13 +10,13 @@ class DamageTypes extends Component{
         <div>
             {typeList.map((value, index)=>{
                 return(
-                    <div class="form-check">
-                      <label class="form-check-label" for={value+"Box"}>
+                    <div className="form-check">
+                      <label className="form-check-label" for={value+"Box"}>
                         {value}
                       </label>
-                        <input type="checkbox" class="" name="" id={value+"Resistance"+"Box"} value="checkedValue" />
-                        <input type="checkbox" class="" name="" id={value+"Vulnerability"+"Box"} value="checkedValue" />
-                        <input type="checkbox" class="" name="" id={value+"Immunity"+"Box"} value="checkedValue" />
+                        <input type="checkbox" className="" name="" id={value+"Resistance"+"Box"} value="checkedValue" />
+                        <input type="checkbox" className="" name="" id={value+"Vulnerability"+"Box"} value="checkedValue" />
+                        <input type="checkbox" className="" name="" id={value+"Immunity"+"Box"} value="checkedValue" />
                     </div>
                 )
             })}
