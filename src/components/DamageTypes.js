@@ -12,9 +12,11 @@ class DamageTypes extends Component{
                 return(
                     <div class="form-check">
                       <label class="form-check-label" for={value+"Box"}>
-                        <input type="checkbox" class="form-check-input" name="" id={value+"Box"} value="checkedValue" />
                         {value}
                       </label>
+                        <input type="checkbox" class="" name="" id={value+"Resistance"+"Box"} value="checkedValue" />
+                        <input type="checkbox" class="" name="" id={value+"Vulnerability"+"Box"} value="checkedValue" />
+                        <input type="checkbox" class="" name="" id={value+"Immunity"+"Box"} value="checkedValue" />
                     </div>
                 )
             })}

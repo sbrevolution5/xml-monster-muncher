@@ -250,19 +250,7 @@ class Form extends Component{
                 challenge rating
                 <div>
                     <label>
-                    Resists
-                    </label>
-                    <DamageTypes></DamageTypes>
-                </div>
-                <div>
-                    <label>
-                    Immunities
-                    </label>
-                    <DamageTypes></DamageTypes>
-                </div>
-                <div>
-                    <label>
-                    Vulnerabilities
+                        Damage Resistance, Immunity, Vulnerability
                     </label>
                     <DamageTypes></DamageTypes>
                 </div>
