@@ -6,7 +6,6 @@ class Conditions extends Component{
         const conditionList = ["Blinded", "Charmed", "Deafened", "Exhaustion", "Frightened", "Grappled", "Incapacitated", "Invisible", "Paralyzed", "Petrified", "Poisoned", "Prone", "Restrained", "Stunned", "Unconscious",]
         return(
         <div>
-            <h4>Condition Immunities</h4>
             {conditionList.map((value, index)=>{
                 return(
                     <div class="form-check">
