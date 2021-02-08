@@ -1,6 +1,8 @@
 *{
   background-color: #282c34;
   color: white;
+  padding: auto;
+  margin: auto;
 }
 .App {
   text-align: center;
