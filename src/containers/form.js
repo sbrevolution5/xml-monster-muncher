@@ -22,7 +22,7 @@ class Form extends Component{
                 wis: 10,
                 cha: 10
             },
-            health: '',
+            hp: '',
             ac: '',
             languages: '',
             size: '',
@@ -198,52 +198,59 @@ class Form extends Component{
 
             
         }
+        this.handleChange = this.handleChange.bind(this)
     }
+    //overwrites value in state for each element.
+    handleChange(event){
+        const target = event.target
+        const value = target.type === 'checkbox' ? target.checked : target.value;
+        const name = target.name;
+        this.setState({[name]: value});
+    }
+
     render(){
         return(
             <form>
                 <div className="form-group row">
                     <div className="col-sm-4">
                         <label for="nameInput">Name</label>
-                        <input type="text" id="nameInput" placeholder="creature name" className="form-control bg-dark"></input>
+                        <input type="text" id="nameInput" placeholder="creature name" name="name" value={this.state.name} onChange={this.handleChange} className="form-control bg-dark"></input>
                     </div>
                     <div className="col-sm-4">
                         <label for="typeInput">Type</label>
-                        <input type="text" id="typeInput" placeholder="Humanoid, monstrosity, etc" className="form-control bg-dark"></input>
+                        <input type="text" id="typeInput" placeholder="Humanoid, monstrosity, etc" name="type" value={this.state.type} onChange={this.handleChange} className="form-control bg-dark"></input>
                     </div>
                     <div className="col-sm-4">
                         <label for="sizeInput">Size</label>
-                        <input type="text" id="sizeInput" placeholder="Small, Medium, Large, Huge" className="form-control bg-dark"></input>
+                        <input type="text" id="sizeInput" placeholder="Small, Medium, Large, Huge" name="size" value={this.state.size} onChange={this.handleChange} className="form-control bg-dark"></input>
                     </div>
                 </div>
                 <div className="form-group row">
                     <div className="col-sm-4">
                         <label for="alignmentInput">Alignment</label>
-                        <input type="text" id="alignmentInput" placeholder="Lawful good, neutral evil, ect." className="form-control bg-dark"></input>
+                        <input type="text" id="alignmentInput" placeholder="Lawful good, neutral evil, ect." name="alignment" value={this.state.alignment} onChange={this.handleChange} className="form-control bg-dark"></input>
                     </div>
                     <div className="col-sm-4">
                         <label for="hpInput">hp</label>
-                        <input type="text" id="hpInput" placeholder="optional: can be done automatically from stats" className="form-control bg-dark"></input>
+                        <input type="text" id="hpInput" placeholder="optional: can be done automatically from stats" name="hp" value={this.state.hp} onChange={this.handleChange}className="form-control bg-dark"></input>
                     </div>
                     <div className="col-sm-4">
                         <label for="armorInput">AC</label>
-                        <input type="text" id="armorInput" placeholder="12, light armor" className="form-control bg-dark"></input>
+                        <input type="text" id="armorInput" placeholder="12, light armor" name="ac" value={this.state.ac} onChange={this.handleChange} className="form-control bg-dark"></input>
                     </div>
                 </div>
                 <div className="form-group row">
                     <div className="col-sm-4">
                         <label for="speedInput">Speed</label>
-                        <input type="text" id="speedInput" placeholder=" walk 30 ft., fly 50 ft. " className="form-control bg-dark"></input>
+                        <input type="text" id="speedInput" placeholder=" walk 30 ft., fly 50 ft. " name="speed" value={this.state.speed} onChange={this.handleChange} className="form-control bg-dark"></input>
                     </div>
                     <div className="col-sm-4">
                         <label for="nameInput">Languages</label>
-                        <input type="text" id="nameInput" placeholder="Common, Elvish, Abyssal." className="form-control bg-dark"></input>
+                        <input type="text" id="nameInput" placeholder="Common, Elvish, Abyssal."name="languages" value={this.state.languages} onChange={this.handleChange} className="form-control bg-dark"></input>
                     </div>
                     <div className="col-sm-4">
-                        <label for="senseInput">
-                        Senses
-                        </label>
-                        <input type="text" id="senseInput" placeholder="Darkvision 60 ft." className="form-control bg-dark"></input>
+                        <label for="senseInput"> Senses </label>
+                        <input type="text" id="senseInput" placeholder="Darkvision 60 ft." name="Senses" value={this.state.Senses} onChange={this.handleChange} className="form-control bg-dark"></input>
                     </div>
                 </div>
                 <hr></hr>
@@ -260,8 +267,6 @@ class Form extends Component{
                     </label>
                     <Skills></Skills>
                 </div>
-                saves all optional, checkbox and modifier for each.
-                skills all optional, checkbox and modifier for each.
                 passive Perception calculated by 10+perception(Wis)
                 challenge rating
                 <div>
@@ -290,7 +295,6 @@ class Form extends Component{
                     <input type="textbox" id="descriptionInput" placeholder="Lore and interesting descriptors go here" className="b4-text"/>
                 </div>
                 environment
-
             </form>
         )
     }
