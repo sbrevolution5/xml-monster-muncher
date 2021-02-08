@@ -201,30 +201,32 @@ class Form extends Component{
         return(
             <form >
                 <div className="form-group row">
-                    <div className="col-xs-4">
+                    <div className="col-sm-4">
                         <label for="nameInput">Name</label>
                         <input type="text" id="nameInput" placeholder="creature name" className="form-control bg-dark"></input>
                     </div>
-                    <div className="col-xs-4">
+                    <div className="col-sm-4">
                         <label for="typeInput">Type</label>
                         <input type="text" id="typeInput" placeholder="Humanoid, monstrosity, etc" className="form-control bg-dark"></input>
                     </div>
-                    <div className="col-xs-4">
+                    <div className="col-sm-4">
                         <label for="sizeInput">Size</label>
                         <input type="text" id="sizeInput" placeholder="Small, Medium, Large, Huge" className="form-control bg-dark"></input>
                     </div>
                 </div>
-                <div className="form-group">
-                    <label for="alignmentInput">Alignment</label>
-                    <input type="text" id="alignmentInput" placeholder="Lawful good, neutral evil, ect." className="form-control bg-dark"></input>
-                </div>
-                <div className="form-group">
-                    <label for="hpInput">hp</label>
-                    <input type="text" id="hpInput" placeholder="optional: can be done automatically from stats" className="form-control bg-dark"></input>
-                </div>
-                <div className="form-group">
-                    <label for="armorInput">AC</label>
-                    <input type="text" id="armorInput" placeholder="12, light armor" className="form-control bg-dark"></input>
+                <div className="form-group row">
+                    <div className="col-sm-4">
+                        <label for="alignmentInput">Alignment</label>
+                        <input type="text" id="alignmentInput" placeholder="Lawful good, neutral evil, ect." className="form-control bg-dark"></input>
+                    </div>
+                    <div className="col-sm-4">
+                        <label for="hpInput">hp</label>
+                        <input type="text" id="hpInput" placeholder="optional: can be done automatically from stats" className="form-control bg-dark"></input>
+                    </div>
+                    <div className="col-sm-4">
+                        <label for="armorInput">AC</label>
+                        <input type="text" id="armorInput" placeholder="12, light armor" className="form-control bg-dark"></input>
+                    </div>
                 </div>
                 <div className="form-group">
                     <label for="speedInput">Speed</label>
