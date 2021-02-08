@@ -7,12 +7,12 @@ class Conditions extends Component{
         return(
         <div>
             {conditionList.map((value, index)=>{
+                //buttons need to be toggleable!
                 return(
-                    <div class="form-check">
-                        <label class="form-check-label" for={value + "Box"}>
-                            <input type="checkbox" class="form-check-input" name="" id={value+ "Box"} value="checkedValue" />
+                    <div class="form-group-btn">
+                            <button type="button" class="btn btn-secondary" name="" id={value+ "Btn"}>
                             {value}
-                        </label>
+                            </button>
                     </div>
             )}
             )}
