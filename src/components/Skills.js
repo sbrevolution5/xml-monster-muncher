@@ -6,15 +6,17 @@ class Skills extends Component{
         return(
             <div>
                 {skillList.map((value,index)=>{
+                    //does this need a checkbox?
                     return(
-                        <div className="form-inline">
-                        <div className="form-check row col-sm-12">
-                          <label className="form-check-label" for={value + "Box"}>
-                            <input type="checkbox" className="form-check-input col-sm-6" name="" id={value + "Box"} value="checkedValue" />
-                            {value}
-                          </label>
-                            <input type="text" className="form-control col-xs-1 bg-dark" name="" id={value+"Mod"} aria-describedby="helpId" placeholder="+0"/>
-                        </div>
+                        <div className="form-check-inline form-group">
+                            <div className="form-check row col-sm-12">
+                                <input type="checkbox" className="form-check-input col-sm-6" name="" id={value + "Box"} value="checkedValue" />
+                            <div className="input-group-prepend">
+                            <span className="input-group-text" for={value + "Box"}>
+                                {value}</span>
+                                <input type="text" className="form-control col-xs-1 bg-dark" name="" id={value+"Mod"} aria-describedby="helpId" placeholder="+0"/>
+                            </div>
+                            </div>
                         </div>
                     )
                 })}
