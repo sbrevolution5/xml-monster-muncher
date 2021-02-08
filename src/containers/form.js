@@ -2,7 +2,9 @@ import Conditions from '../components/Conditions';
 import DamageTypes from '../components/DamageTypes';
 import Saves from '../components/Saves';
 import Skills from '../components/Skills';
-import Stats from '../components/stats'
+import Stats from '../components/stats';
+import Traits from './Traits';
+import Actions from './Actions';
 const { render } = require("@testing-library/react")
 const { Component } = require("react")
 
@@ -274,9 +276,12 @@ class Form extends Component{
                     </label>
                     <Conditions></Conditions>
                 </div>
-                traits
+                <h3>Traits</h3>
+                <Traits></Traits>
                 <p>allow adding of aditional traits,</p>
-                actions
+                
+                <h3>Actions</h3>
+                <Actions></Actions>
                 <p>allow adding of additional actions.</p>
                 <div>
                     <label for="descriptionInput">
