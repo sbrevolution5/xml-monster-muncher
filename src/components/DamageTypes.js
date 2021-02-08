@@ -16,7 +16,7 @@ class DamageTypes extends Component {
                             </label>
                             <div class="btn-group btn-group-toggle" data-toggle="buttons">
                                 <label class="btn btn-secondary active">
-                                    <input type="radio" name="options" id="option1" autocomplete="off" checked=""/> 
+                                    <input type="radio" name="options" id="option1" autocomplete="off" defaultChecked/> 
                                 </label>
                                 <label class="btn btn-secondary">
                                     <input type="radio" name="options" id="option2" autocomplete="off" /> R

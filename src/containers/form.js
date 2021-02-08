@@ -194,7 +194,8 @@ class Form extends Component{
             },
             traits: [],
             actions: [],
-            description: {},
+            description: "",
+            environment: ""
 
             
         }
@@ -294,7 +295,7 @@ class Form extends Component{
                     <label for="descriptionInput">
                     description
                     </label>
-                    <input type="textbox" id="descriptionInput" placeholder="Lore and interesting descriptors go here" className="b4-text"/>
+                    <input type="textbox" id="descriptionInput" placeholder="Lore and interesting descriptors go here" className="b4-text-xl" name="description" onChange={this.handleChange}/>
                 </div>
                 environment
             </form>
