@@ -5,11 +5,11 @@ class Conditions extends Component{
     render(){
         const conditionList = ["Blinded", "Charmed", "Deafened", "Exhaustion", "Frightened", "Grappled", "Incapacitated", "Invisible", "Paralyzed", "Petrified", "Poisoned", "Prone", "Restrained", "Stunned", "Unconscious",]
         return(
-        <div>
+        <div className="row">
             {conditionList.map((value, index)=>{
                 //buttons need to be toggleable!
                 return(
-                    <div class="form-group-btn">
+                    <div className  ="form-group-btn">
                             <button type="button" class="btn btn-secondary" name="" id={value+ "Btn"}>
                             {value}
                             </button>
