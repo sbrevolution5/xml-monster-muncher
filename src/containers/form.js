@@ -199,12 +199,14 @@ class Form extends Component{
             
         }
         this.handleChange = this.handleChange.bind(this)
+        this.render = this.render.bind(this)
     }
     //overwrites value in state for each element.
     handleChange(event){
         const target = event.target
         const value = target.type === 'checkbox' ? target.checked : target.value;
         const name = target.name;
+        console.log(target, " was changed to ", value )
         this.setState({[name]: value});
     }
 
@@ -214,7 +216,7 @@ class Form extends Component{
                 <div className="form-group row">
                     <div className="col-sm-4">
                         <label for="nameInput">Name</label>
-                        <input type="text" id="nameInput" placeholder="creature name" name="name" value={this.state.name} onChange={this.handleChange} className="form-control bg-dark"></input>
+                        <input type="text" id="nameInput" placeholder="creature name" name="name" value={this.state.name} onChange={this.handleChange} className="form-control bg-dark" />
                     </div>
                     <div className="col-sm-4">
                         <label for="typeInput">Type</label>
