@@ -1,4 +1,4 @@
-# XML Converter for DND 5e
+# XML Monster Muncher
 I ran into a problem using the game master 5 app for 5th edition dnd, importing monsters from a third party source like Kobold press was tedious and difficult.  The aim of this app is to make sure that you can insert the data into a form and get back the XML for the app.  
 This is also my first ever Open source project, which I intend to use as a portfolio  example.
 
