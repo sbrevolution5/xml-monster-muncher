@@ -17,7 +17,7 @@ class Saves extends Component{
                           </label>
                           <div className="form-group">
                             <label for={value+"Mod"}></label>
-                            <input type="text" className="form-control" name="" id={value+"Mod"} aria-describedby="helpId" placeholder="+0"/>
+                            <input type="text" className="form-control bg-dark" name="" id={value+"Mod"} aria-describedby="helpId" placeholder="+0"/>
                             <small id="helpId" className="form-text text-muted">Mod value, ex. +4</small>
                           </div>
                         </div>

@@ -203,42 +203,42 @@ class Form extends Component{
                 <div className="form-group row">
                     <div className="col-xs-4">
                         <label for="nameInput">Name</label>
-                        <input type="text" id="nameInput" placeholder="creature name" className="form-control"></input>
+                        <input type="text" id="nameInput" placeholder="creature name" className="form-control bg-dark"></input>
                     </div>
                     <div className="col-xs-4">
                         <label for="typeInput">Type</label>
-                        <input type="text" id="typeInput" placeholder="Humanoid, monstrosity, etc" className="form-control"></input>
+                        <input type="text" id="typeInput" placeholder="Humanoid, monstrosity, etc" className="form-control bg-dark"></input>
                     </div>
                     <div className="col-xs-4">
                         <label for="sizeInput">Size</label>
-                        <input type="text" id="sizeInput" placeholder="Small, Medium, Large, Huge" className="form-control"></input>
+                        <input type="text" id="sizeInput" placeholder="Small, Medium, Large, Huge" className="form-control bg-dark"></input>
                     </div>
                 </div>
                 <div className="form-group">
                     <label for="alignmentInput">Alignment</label>
-                    <input type="text" id="alignmentInput" placeholder="Lawful good, neutral evil, ect." className="form-control"></input>
+                    <input type="text" id="alignmentInput" placeholder="Lawful good, neutral evil, ect." className="form-control bg-dark"></input>
                 </div>
                 <div className="form-group">
                     <label for="hpInput">hp</label>
-                    <input type="text" id="hpInput" placeholder="optional: can be done automatically from stats" className="form-control"></input>
+                    <input type="text" id="hpInput" placeholder="optional: can be done automatically from stats" className="form-control bg-dark"></input>
                 </div>
                 <div className="form-group">
                     <label for="armorInput">AC</label>
-                    <input type="text" id="armorInput" placeholder="12, light armor" className="form-control"></input>
+                    <input type="text" id="armorInput" placeholder="12, light armor" className="form-control bg-dark"></input>
                 </div>
                 <div className="form-group">
                     <label for="speedInput">Speed</label>
-                    <input type="text" id="speedInput" placeholder=" walk 30 ft., fly 50 ft. " className="form-control"></input>
+                    <input type="text" id="speedInput" placeholder=" walk 30 ft., fly 50 ft. " className="form-control bg-dark"></input>
                 </div>
                 <div className="form-group">
                     <label for="nameInput">Languages</label>
-                    <input type="text" id="nameInput" placeholder="Common, Elvish, Abyssal." className="form-control"></input>
+                    <input type="text" id="nameInput" placeholder="Common, Elvish, Abyssal." className="form-control bg-dark"></input>
                 </div>
                 <div>
                     <label for="senseInput">
                     Senses
                     </label>
-                    <input type="text" id="senseInput" placeholder="Darkvision 60 ft." className="form-control"></input>
+                    <input type="text" id="senseInput" placeholder="Darkvision 60 ft." className="form-control bg-dark"></input>
                 </div>
                 <hr></hr>
                 <Stats></Stats>

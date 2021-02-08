@@ -13,7 +13,7 @@ class Skills extends Component{
                             <input type="checkbox" className="form-check-input col-sm-6" name="" id={value + "Box"} value="checkedValue" />
                             {value}
                           </label>
-                            <input type="text" className="form-control col-xs-1" name="" id={value+"Mod"} aria-describedby="helpId" placeholder="+0"/>
+                            <input type="text" className="form-control col-xs-1 bg-dark" name="" id={value+"Mod"} aria-describedby="helpId" placeholder="+0"/>
                         </div>
                         </div>
                     )
