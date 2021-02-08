@@ -190,8 +190,8 @@ class Form extends Component{
                 Unconscious: false,
 
             },
-            traits: {},
-            actions: {},
+            traits: [],
+            actions: [],
             description: {},
 
             
