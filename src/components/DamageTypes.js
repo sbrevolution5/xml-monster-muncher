@@ -7,12 +7,12 @@ class DamageTypes extends Component{
     render(){
         const typeList = ["Slashing", "Piercing", "Bludgeoning", "Poison", "Acid", "Fire", "Cold", "Radiant", "Necrotic", "Lightning", "Thunder", "Force", "Psychic"];
     return(
-        <div>
+        <div className= "form-group row">
             {typeList.map((value, index)=>{
                 return(
                     <div className="form-check">
                       <label className="form-check-label" for={value+"Box"}>
-                        {value}
+                        {value} 
                       </label>
                         <input type="checkbox" className="" name="" id={value+"Resistance"+"Box"} value="checkedValue" />
                         <input type="checkbox" className="" name="" id={value+"Vulnerability"+"Box"} value="checkedValue" />

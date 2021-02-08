@@ -7,16 +7,14 @@ class Skills extends Component{
             <div>
                 {skillList.map((value,index)=>{
                     return(
-                        <div className="form-check">
+                        <div className="form-inline">
+                        <div className="form-check row col-sm-12">
                           <label className="form-check-label" for={value + "Box"}>
-                            <input type="checkbox" className="form-check-input" name="" id={value + "Box"} value="checkedValue" />
+                            <input type="checkbox" className="form-check-input col-sm-6" name="" id={value + "Box"} value="checkedValue" />
                             {value}
                           </label>
-                          <div className="form-group">
-                            <label for={value+"Mod"}></label>
-                            <input type="text" className="form-control" name="" id={value+"Mod"} aria-describedby="helpId" placeholder="+0"/>
-                            <small id="helpId" className="form-text text-muted">Mod value, ex. +4</small>
-                          </div>
+                            <input type="text" className="form-control col-xs-1" name="" id={value+"Mod"} aria-describedby="helpId" placeholder="+0"/>
+                        </div>
                         </div>
                     )
                 })}

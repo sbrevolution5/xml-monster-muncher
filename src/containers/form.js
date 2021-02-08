@@ -230,6 +230,17 @@ class Form extends Component{
                     <label for="speedInput">Speed</label>
                     <input type="text" id="speedInput" placeholder=" walk 30 ft., fly 50 ft. " className="form-control"></input>
                 </div>
+                <div className="form-group">
+                    <label for="nameInput">Languages</label>
+                    <input type="text" id="nameInput" placeholder="Common, Elvish, Abyssal." className="form-control"></input>
+                </div>
+                <div>
+                    <label for="senseInput">
+                    Senses
+                    </label>
+                    <input type="text" id="senseInput" placeholder="Darkvision 60 ft." className="form-control"></input>
+                </div>
+                <hr></hr>
                 <Stats></Stats>
                 <div>
                     <label>
@@ -246,10 +257,6 @@ class Form extends Component{
                 saves all optional, checkbox and modifier for each.
                 skills all optional, checkbox and modifier for each.
                 passive Perception calculated by 10+perception(Wis)
-                <div className="form-group">
-                    <label for="nameInput">Languages</label>
-                    <input type="text" id="nameInput" placeholder="Common, Elvish, Abyssal." className="form-control"></input>
-                </div>
                 challenge rating
                 <div>
                     <label>
@@ -262,12 +269,6 @@ class Form extends Component{
                     Condition Immunities
                     </label>
                     <Conditions></Conditions>
-                </div>
-                <div>
-                    <label for="senseInput">
-                    Senses
-                    </label>
-                    <input type="text" id="senseInput" placeholder="Darkvision 60 ft." className="form-control"></input>
                 </div>
                 traits
                 <p>allow adding of aditional traits,</p>
