@@ -3,25 +3,38 @@
 //currently only one box per type
 import React, { Component } from 'react'
 
-class DamageTypes extends Component{
-    render(){
+class DamageTypes extends Component {
+    render() {
         const typeList = ["Slashing", "Piercing", "Bludgeoning", "Poison", "Acid", "Fire", "Cold", "Radiant", "Necrotic", "Lightning", "Thunder", "Force", "Psychic"];
-    return(
-        <div className= "form-group row">
-            {typeList.map((value, index)=>{
-                return(
-                    <div className="form-check">
-                      <label className="form-check-label" for={value+"Box"}>
-                        {value} 
-                      </label>
-                        <input type="checkbox" className="" name="" id={value+"Resistance"+"Box"} value="checkedValue" />
-                        <input type="checkbox" className="" name="" id={value+"Vulnerability"+"Box"} value="checkedValue" />
-                        <input type="checkbox" className="" name="" id={value+"Immunity"+"Box"} value="checkedValue" />
-                    </div>
-                )
-            })}
-        </div>
-    )}
+        return (
+            <div className="form-group row">
+                {typeList.map((value, index) => {
+                    return (
+                        <div className="form-check">
+                            <label className="form-check-label" for={value + "Box"}>
+                                {value}
+                            </label>
+                            <div class="btn-group btn-group-toggle" data-toggle="buttons">
+                                <label class="btn btn-secondary active">
+                                    <input type="radio" name="options" id="option1" autocomplete="off" checked=""/> 
+                                </label>
+                                <label class="btn btn-secondary">
+                                    <input type="radio" name="options" id="option2" autocomplete="off" /> R
+                                </label>
+                                <label class="btn btn-secondary">
+                                    <input type="radio" name="options" id="option3" autocomplete="off" /> I
+                                </label>
+                                <label class="btn btn-secondary">
+                                    <input type="radio" name="options" id="option4" autocomplete="off" /> V
+                                </label>
+                            </div>
+
+                        </div>
+                    )
+                })}
+            </div>
+        )
+    }
 
 }
 export default DamageTypes
