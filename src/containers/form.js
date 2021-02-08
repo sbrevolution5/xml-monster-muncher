@@ -297,7 +297,10 @@ class Form extends Component{
                     </label>
                     <input type="textbox" id="descriptionInput" placeholder="Lore and interesting descriptors go here" className="b4-text-xl" name="description" onChange={this.handleChange}/>
                 </div>
-                environment
+                    <div className="">
+                        <label for="environmentInput"> Environment </label>
+                        <input type="text" id="senseInput" placeholder="Mountain, hills, etc." name="environment" value={this.state.environment} onChange={this.handleChange} className="form-control bg-dark"></input>
+                    </div>
             </form>
         )
     }
