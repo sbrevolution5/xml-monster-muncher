@@ -256,7 +256,7 @@ class Form extends Component{
                     </div>
                 </div>
                 <hr></hr>
-                <Stats></Stats>
+                <Stats onChange={this.handleChange} stats={this.state.stats} ></Stats>
                 <div>
                     <label>
                     Saving Throws
