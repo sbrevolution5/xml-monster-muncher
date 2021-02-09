@@ -8,7 +8,7 @@ class Skills extends Component{
                 {skillList.map((value,index)=>{
                     //does this need a checkbox? lets remove for now
                     return(
-                        <div className="form-check-inline form-group">
+                        <div className="form-check-inline form-group" key={index}>
                             {/* <div className="form-check row col-sm-12">
                                 <input type="checkbox" className="form-check-input col-sm-6" name="" id={value + "Box"} value="checkedValue" /> */}
                             <div className="input-group-prepend">

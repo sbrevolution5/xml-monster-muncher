@@ -10,7 +10,7 @@ class DamageTypes extends Component {
             <div className="form-group row">
                 {typeList.map((value, index) => {
                     return (
-                        <div className="form-check">
+                        <div className="form-check" key={index}>
                             <label className="form-check-label" htmlFor={value + "Box"}>
                                 {value}
                             </label>

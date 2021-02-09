@@ -9,7 +9,7 @@ class Conditions extends Component{
             {conditionList.map((value, index)=>{
                 //buttons need to be toggleable!
                 return(
-                    <div className  ="form-group-btn">
+                    <div className  ="form-group-btn" key={index}>
                             <button type="button" className="btn btn-toggle btn-secondary" data-toggle={value+"button"} aria-pressed="false" name="" id={value+ "Btn"}>
                             {value}
                             </button>
