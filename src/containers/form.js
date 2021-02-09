@@ -8,18 +8,20 @@ import Actions from './Actions';
 const { render } = require("@testing-library/react")
 const { Component } = require("react")
 
-class Form extends Component{
-    constructor(props){
+class Form extends Component {
+    constructor(props) {
         super(props);
-        this.state={
+        this.state = {
             name: '',
             type: '',
-            strStat: 10,
-            dexStat: 10,
-            conStat: 10,
-            intStat: 10,
-            wisStat: 10,
-            chaStat: 10,
+            stats: {
+                str: 10,
+                dex: 10,
+                con: 10,
+                int: 10,
+                wis: 10,
+                cha: 10,
+            },
             hp: '',
             ac: '',
             languages: '',
@@ -27,7 +29,7 @@ class Form extends Component{
             alignment: '',
             speed: '',
             challengeRating: '',
-            savingThrows:{
+            savingThrows: {
                 str: {
                     checked: false,
                     mod: '',
@@ -53,7 +55,7 @@ class Form extends Component{
                     mod: '',
                 }
             },
-            skills:{
+            skills: {
                 Athletics: {
                     checked: false,
                     mod: '',
@@ -172,7 +174,7 @@ class Form extends Component{
                 Force: false,
                 Psychic: false,
             },
-            conditionImmunities:{
+            conditionImmunities: {
                 Blinded: false,
                 Charmed: false,
                 Deafened: false,
@@ -195,26 +197,26 @@ class Form extends Component{
             description: "",
             environment: ""
 
-            
+
         }
         this.handleChange = this.handleChange.bind(this);
         this.render = this.render.bind(this);
-        this.getDataFromStats= this.getDataFromStats.bind(this);
+        this.getDataFromStats = this.getDataFromStats.bind(this);
     }
-    getDataFromStats(data){
+    getDataFromStats(data) {
         console.log(data);
         this.state.stats = data
     }
     //overwrites value in state for each element.
-    handleChange(event){
+    handleChange(event) {
         const target = event.target
         const value = target.type === 'checkbox' ? target.checked : target.value;
         const name = target.name;
-        this.setState({[name]: value});
+        this.setState({ [name]: value });
     }
 
-    render(){
-        return(
+    render() {
+        return (
             <form>
                 <div className="form-group row">
                     <div className="col-sm-4">
@@ -237,7 +239,7 @@ class Form extends Component{
                     </div>
                     <div className="col-sm-4">
                         <label htmlFor="hpInput">hp</label>
-                        <input type="text" id="hpInput" placeholder="optional: can be done automatically from stats" name="hp" value={this.state.hp} onChange={this.handleChange}className="form-control bg-dark"></input>
+                        <input type="text" id="hpInput" placeholder="optional: can be done automatically from stats" name="hp" value={this.state.hp} onChange={this.handleChange} className="form-control bg-dark"></input>
                     </div>
                     <div className="col-sm-4">
                         <label htmlFor="armorInput">AC</label>
@@ -251,7 +253,7 @@ class Form extends Component{
                     </div>
                     <div className="col-sm-4">
                         <label htmlFor="nameInput">Languages</label>
-                        <input type="text" id="nameInput" placeholder="Common, Elvish, Abyssal."name="languages" value={this.state.languages} onChange={this.handleChange} className="form-control bg-dark"></input>
+                        <input type="text" id="nameInput" placeholder="Common, Elvish, Abyssal." name="languages" value={this.state.languages} onChange={this.handleChange} className="form-control bg-dark"></input>
                     </div>
                     <div className="col-sm-4">
                         <label htmlFor="senseInput"> Senses </label>
@@ -266,13 +268,13 @@ class Form extends Component{
                 <Stats onChange={this.handleChange} state={this.state} value={this.state.stats} sendData={this.getDataFromStats}></Stats>
                 <div>
                     <label>
-                    Saving Throws
+                        Saving Throws
                     </label>
                     <Saves onChange={this.handleChange} state={this.state}></Saves>
                 </div>
                 <div>
                     <label>
-                    Skills
+                        Skills
                     </label>
                     <Skills onChange={this.handleChange} state={this.state}></Skills>
                 </div>
@@ -286,7 +288,7 @@ class Form extends Component{
                 </div>
                 <div>
                     <label>
-                    Condition Immunities
+                        Condition Immunities
                     </label>
                     <Conditions onChange={this.handleChange} state={this.state}></Conditions>
                 </div>
@@ -296,14 +298,15 @@ class Form extends Component{
                 <Actions onChange={this.handleChange} state={this.state}></Actions>
                 <div>
                     <div className="form-group">
-                      <label htmlFor="description"></label>
-                      <textarea className="form-control" name="description" id="description" rows="3" placeholder="relevant description here" onChange={this.handleChange} value={this.state.description}></textarea>
+                        <label htmlFor="description"></label>
+                        <textarea className="form-control" name="description" id="description" rows="3" placeholder="relevant description here" ></textarea>
+                        {/* commented out because it broke rendering in textarea onChange={this.handleChange} value={this.state.description}*/}
                     </div>
                 </div>
-                    <div className="">
-                        <label htmlFor="environmentInput"> Environment </label>
-                        <input type="text" id="senseInput" placeholder="Mountain, hills, etc." name="environment" value={this.state.environment} onChange={this.handleChange} className="form-control bg-dark"></input>
-                    </div>
+                <div className="">
+                    <label htmlFor="environmentInput"> Environment </label>
+                    <input type="text" id="senseInput" placeholder="Mountain, hills, etc." name="environment" value={this.state.environment} onChange={this.handleChange} className="form-control bg-dark"></input>
+                </div>
             </form>
         )
     }
