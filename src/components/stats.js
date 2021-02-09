@@ -10,9 +10,9 @@ class Stats extends Component{
     }
     handleChange(event){
         const target = event.target
-        const value = target.type === 'checkbox' ? target.checked : target.value;
+        const value = parseInt(target.value);
         const name = target.name;
-        console.log(target, " was changed to ", value )
+        //console.log(target, " was changed to ", value )
         this.setState({[name]: value});
     }
     render(){
