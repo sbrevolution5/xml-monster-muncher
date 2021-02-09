@@ -260,13 +260,13 @@ class Form extends Component{
                     <label>
                     Saving Throws
                     </label>
-                    <Saves></Saves>
+                    <Saves onChange={this.handleChange} state={this.state}></Saves>
                 </div>
                 <div>
                     <label>
                     Skills
                     </label>
-                    <Skills></Skills>
+                    <Skills onChange={this.handleChange} state={this.state}></Skills>
                 </div>
                 passive Perception calculated by 10+perception(Wis)
                 challenge rating
@@ -274,18 +274,18 @@ class Form extends Component{
                     <label>
                         <i className="fa fa-fist-raised" aria-hidden="true"></i>= normal, R= Resistance, I= immunity, V=Vulnerability
                     </label>
-                    <DamageTypes></DamageTypes>
+                    <DamageTypes onChange={this.handleChange} state={this.state}></DamageTypes>
                 </div>
                 <div>
                     <label>
                     Condition Immunities
                     </label>
-                    <Conditions></Conditions>
+                    <Conditions onChange={this.handleChange} state={this.state}></Conditions>
                 </div>
                 <h3>Traits</h3>
-                <Traits></Traits>
+                <Traits onChange={this.handleChange} state={this.state}></Traits>
                 <h3>Actions</h3>
-                <Actions></Actions>
+                <Actions onChange={this.handleChange} state={this.state}></Actions>
                 <div>
                     <div className="form-group">
                       <label htmlFor="description"></label>
