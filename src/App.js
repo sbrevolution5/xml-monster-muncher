@@ -10,6 +10,7 @@ function App() {
       </header>
         <Form></Form>
       <footer>
+        <a href="https://github.com/sbrevolution5/xml-monster-muncher">Contribute on Github <i class="fa fa-github" aria-hidden="true"></i></a>
         <p><i class="fa fa-copyright" aria-hidden="true"></i> Seth A. Burleson 2021</p>
       </footer>
     </div>
