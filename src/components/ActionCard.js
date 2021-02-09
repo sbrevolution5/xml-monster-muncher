@@ -9,6 +9,7 @@ export default class ActionCard extends Component {
             <div className="card-body">
                 <h4 className="card-title">This needs inputs</h4>
                 <p className="card-text">Action Description Needs a remove button!</p>
+                <button type="button" class="btn btn-danger">Remove Action</button>
             </div>
         </div>
         </div>

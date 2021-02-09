@@ -10,6 +10,7 @@ class TraitCard extends Component {
                 <div className="card-body">
                     <h4 className="card-title">Default Trait Card</h4>
                     <p className="card-text">Needs a remove button!</p>
+                    <button type="button" class="btn btn-danger">Remove Trait</button>
                 </div>
             </div>
             </div>
