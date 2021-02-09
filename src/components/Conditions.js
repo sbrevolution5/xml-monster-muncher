@@ -10,7 +10,7 @@ class Conditions extends Component{
                 //buttons need to be toggleable!
                 return(
                     <div className  ="form-group-btn">
-                            <button type="button" class="btn btn-toggle btn-secondary" data-toggle={value+"button"} aria-pressed="false" name="" id={value+ "Btn"}>
+                            <button type="button" className="btn btn-toggle btn-secondary" data-toggle={value+"button"} aria-pressed="false" name="" id={value+ "Btn"}>
                             {value}
                             </button>
                     </div>

@@ -8,10 +8,10 @@ class TraitCard extends Component {
                 <div className="card text-white bg-dark mb-3 d-inline-block" >
                     <div className="card-header">Trait Card</div>
                     <div className="card-body">
-                        <div class="form-group">
+                        <div className="form-group">
                             <label htmlFor="traitTitle"></label>
-                            <input type="text" class="form-control bg-dark" name="title" id="traitTitle" aria-describedby="helpId" placeholder="" />
-                            <small id="helpId" class="form-text text-muted">Name of trait</small>
+                            <input type="text" className="form-control bg-dark" name="title" id="traitTitle" aria-describedby="helpId" placeholder="" />
+                            <small id="helpId" className="form-text text-muted">Name of trait</small>
                         </div>
                         <div className="form-group">
                             <label htmlFor="traitDescription"></label>

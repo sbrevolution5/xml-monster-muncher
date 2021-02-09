@@ -7,7 +7,7 @@ export default class Traits extends Component{
     render() {
         return (
         <div>
-            <button type="button" class="btn btn-success">Add Trait</button>
+            <button type="button" className="btn btn-success">Add Trait</button>
 
             <TraitCard></TraitCard>
         </div>

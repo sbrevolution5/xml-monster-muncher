@@ -14,18 +14,18 @@ class DamageTypes extends Component {
                             <label className="form-check-label" htmlFor={value + "Box"}>
                                 {value}
                             </label>
-                            <div class="btn-group btn-group-toggle" data-toggle="buttons">
-                                <label class="btn btn-secondary active">
-                                    <input type="radio" name="options" id="option1" autocomplete="off" defaultChecked/> <i class="fa fa-fist-raised" aria-hidden="true"></i>
+                            <div className="btn-group btn-group-toggle" data-toggle="buttons">
+                                <label className="btn btn-secondary active">
+                                    <input type="radio" name="options" id="option1" autoComplete="off" defaultChecked/> <i className="fa fa-fist-raised" aria-hidden="true"></i>
                                 </label>
-                                <label class="btn btn-secondary btn-warning">
-                                    <input type="radio" name="options" id="option2" autocomplete="off" /> R
+                                <label className="btn btn-secondary btn-warning">
+                                    <input type="radio" name="options" id="option2" autoComplete="off" /> R
                                 </label>
-                                <label class="btn btn-secondary btn-danger">
-                                    <input type="radio" name="options" id="option3" autocomplete="off" /> I
+                                <label className="btn btn-secondary btn-danger">
+                                    <input type="radio" name="options" id="option3" autoComplete="off" /> I
                                 </label>
-                                <label class="btn btn-secondary btn-info">
-                                    <input type="radio" name="options" id="option4" autocomplete="off" /> V
+                                <label className="btn btn-secondary btn-info">
+                                    <input type="radio" name="options" id="option4" autoComplete="off" /> V
                                 </label>
                             </div>
 
