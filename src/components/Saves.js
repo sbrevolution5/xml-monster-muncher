@@ -11,7 +11,7 @@ class Saves extends Component{
                 {saveThrows.map((value,index)=>{
                   //no check boxes, empty box means no change from base stats
                     return(
-                        <div className="form-check">
+                        <div className="form-check" key={index}>
                           <label className="form-check-label" htmlFor={value + "Box"}>
                             {value}
                           </label>
