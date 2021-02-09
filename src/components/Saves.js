@@ -1,9 +1,9 @@
 import  React, { Component } from 'react';
 
 class Saves extends Component{
-    handleBoxChecked = (e)=>{
+    // handleBoxChecked = (e)=>{
 
-    }
+    // }
     render(){
         const saveThrows=["Strength", "Dexterity", "Constitution", "Intelligence", "Wisdom", "Charisma"]
         return(
