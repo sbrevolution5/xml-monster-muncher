@@ -274,7 +274,7 @@ class Form extends Component{
                 challenge rating
                 <div>
                     <label>
-                        Damage Resistance, Immunity, Vulnerability
+                        <i class="fa fa-fist-raised" aria-hidden="true"></i>= normal, R= Resistance, I= immunity, V=Vulnerability
                     </label>
                     <DamageTypes></DamageTypes>
                 </div>

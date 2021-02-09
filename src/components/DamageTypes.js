@@ -16,15 +16,15 @@ class DamageTypes extends Component {
                             </label>
                             <div class="btn-group btn-group-toggle" data-toggle="buttons">
                                 <label class="btn btn-secondary active">
-                                    <input type="radio" name="options" id="option1" autocomplete="off" defaultChecked/> 
+                                    <input type="radio" name="options" id="option1" autocomplete="off" defaultChecked/> <i class="fa fa-fist-raised" aria-hidden="true"></i>
                                 </label>
-                                <label class="btn btn-secondary">
+                                <label class="btn btn-secondary btn-warning">
                                     <input type="radio" name="options" id="option2" autocomplete="off" /> R
                                 </label>
-                                <label class="btn btn-secondary">
+                                <label class="btn btn-secondary btn-danger">
                                     <input type="radio" name="options" id="option3" autocomplete="off" /> I
                                 </label>
-                                <label class="btn btn-secondary">
+                                <label class="btn btn-secondary btn-info">
                                     <input type="radio" name="options" id="option4" autocomplete="off" /> V
                                 </label>
                             </div>
