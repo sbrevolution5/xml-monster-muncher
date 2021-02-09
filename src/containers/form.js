@@ -255,8 +255,8 @@ class Form extends Component{
                     </div>
                 </div>
                 <hr></hr>
-                {/* This.handlechange will be executed from within stats each method within needs to use it.  It will be passed the state to update the displayed value.*/}
-                <Stats onChange={this.handleChange} state={this.state} ></Stats>
+                {/* This.handlechange will be executed from within stats each method within needs to use it.  It will be passed the state to update the displayed value.  alternatively, what if Stats had a value prop, which equals state.stats*/}
+                <Stats onChange={this.handleChange} state={this.state} value={this.state.stats}></Stats>
                 <div>
                     <label>
                     Saving Throws
@@ -285,16 +285,13 @@ class Form extends Component{
                 </div>
                 <h3>Traits</h3>
                 <Traits></Traits>
-                <p>allow adding of aditional traits,</p>
-                
                 <h3>Actions</h3>
                 <Actions></Actions>
-                <p>allow adding of additional actions.</p>
                 <div>
-                    <label for="descriptionInput">
-                    description
-                    </label>
-                    <input type="textbox" id="descriptionInput" placeholder="Lore and interesting descriptors go here" className="b4-text-xl" name="description" onChange={this.handleChange}/>
+                    <div class="form-group">
+                      <label for="description"></label>
+                      <textarea class="form-control" name="description" id="description" rows="3" placeholder="relevant description here" onChange={this.handleChange} value={this.state.description}></textarea>
+                    </div>
                 </div>
                     <div className="">
                         <label for="environmentInput"> Environment </label>
