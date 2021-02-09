@@ -5,14 +5,21 @@ class TraitCard extends Component {
         return (
             <div>
                 {/* remove buton for each card  */}
-            <div className="card text-white bg-dark mb-3 d-inline-block" >
-                <div className="card-header">Header</div>
-                <div className="card-body">
-                    <h4 className="card-title">Default Trait Card</h4>
-                    <p className="card-text">Needs a remove button!</p>
-                    <button type="button" class="btn btn-danger">Remove Trait</button>
+                <div className="card text-white bg-dark mb-3 d-inline-block" >
+                    <div className="card-header">Trait Card</div>
+                    <div className="card-body">
+                        <div class="form-group">
+                            <label for="traitTitle"></label>
+                            <input type="text" class="form-control bg-dark" name="title" id="traitTitle" aria-describedby="helpId" placeholder="" />
+                            <small id="helpId" class="form-text text-muted">Name of trait</small>
+                        </div>
+                        <div className="form-group">
+                            <label for="traitDescription"></label>
+                            <textarea className="form-control bg-dark" name="description" id="traitDescription" placeholder="describe trait here" rows="3"></textarea>
+                        </div>
+                        <button type="button" className="btn btn-danger">Remove Trait</button>
+                    </div>
                 </div>
-            </div>
             </div>
         )
     }
