@@ -197,8 +197,12 @@ class Form extends Component{
 
             
         }
-        this.handleChange = this.handleChange.bind(this)
-        this.render = this.render.bind(this)
+        this.handleChange = this.handleChange.bind(this);
+        this.render = this.render.bind(this);
+        this.getDataFromStats= this.getDataFromStats.bind(this);
+    }
+    getDataFromStats(data){
+        this.state.stats = data
     }
     //overwrites value in state for each element.
     handleChange(event){
@@ -254,8 +258,11 @@ class Form extends Component{
                     </div>
                 </div>
                 <hr></hr>
-                {/* This.handlechange will be executed from within stats each method within needs to use it.  It will be passed the state to update the displayed value.  alternatively, what if Stats had a value prop, which equals state.stats*/}
-                <Stats onChange={this.handleChange} state={this.state} value={this.state.stats}></Stats>
+                {/* This.handlechange will be executed from within stats each method within needs to use it.  It will be passed the state to update the displayed value.  alternatively, what if Stats had a value prop, which equals state.stats
+                
+                
+                */}
+                <Stats onChange={this.handleChange} state={this.state} value={this.state.stats} sendData={this.getDataFromStats}></Stats>
                 <div>
                     <label>
                     Saving Throws

@@ -3,13 +3,17 @@ const {Component } = require('react')
 const Stats =({onChange, state})=>{
 
     const scores = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30];
-    //currently unused
+    //currently unused because there is no state
     const handleChange=(event)=>{
         const target = event.target
         const value = target.type === 'checkbox' ? target.checked : target.value;
         const name = target.name;
         this.setState({[name]: value});
-    }   
+    }
+    //should be able to send the object to parent needs to trigger when state is changed, so that the parent recieves value
+    const callBackMethod=(value)=>{
+        this.props.sendData(value);
+      }   
     // attempting to stop repeating self
     const scoresArrayMap =()=>{return(
         scores.map((value, index) => {
