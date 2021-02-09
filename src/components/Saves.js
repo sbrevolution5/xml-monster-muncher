@@ -9,10 +9,10 @@ class Saves extends Component{
         return(
             <div className="form-group row">
                 {saveThrows.map((value,index)=>{
+                  //no check boxes, empty box means no change from base stats
                     return(
                         <div className="form-check">
                           <label className="form-check-label" for={value + "Box"}>
-                            <input type="checkbox" className="form-check-input col-xs-2" name="" id={value + "Box"} value="checkedValue" />
                             {value}
                           </label>
                           <div className="form-group">
