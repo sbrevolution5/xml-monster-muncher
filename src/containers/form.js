@@ -14,14 +14,12 @@ class Form extends Component{
         this.state={
             name: '',
             type: '',
-            stats: {
-                str: 10,
-                dex: 10,
-                con: 10,
-                int: 10,
-                wis: 10,
-                cha: 10
-            },
+            strStat: 10,
+            dexStat: 10,
+            conStat: 10,
+            intStat: 10,
+            wisStat: 10,
+            chaStat: 10,
             hp: '',
             ac: '',
             languages: '',
@@ -257,7 +255,8 @@ class Form extends Component{
                     </div>
                 </div>
                 <hr></hr>
-                <Stats onChange={this.handleChange} stats={this.state.stats} ></Stats>
+                {/* This.handlechange will be executed from within stats each method within needs to use it.  It will be passed the state to update the displayed value.*/}
+                <Stats onChange={this.handleChange} state={this.state} ></Stats>
                 <div>
                     <label>
                     Saving Throws
