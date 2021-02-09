@@ -205,7 +205,6 @@ class Form extends Component{
         const target = event.target
         const value = target.type === 'checkbox' ? target.checked : target.value;
         const name = target.name;
-        console.log(target, " was changed to ", value )
         this.setState({[name]: value});
     }
 
@@ -214,43 +213,43 @@ class Form extends Component{
             <form>
                 <div className="form-group row">
                     <div className="col-sm-4">
-                        <label for="nameInput">Name</label>
+                        <label htmlFor="nameInput">Name</label>
                         <input type="text" id="nameInput" placeholder="creature name" name="name" value={this.state.name} onChange={this.handleChange} className="form-control bg-dark" />
                     </div>
                     <div className="col-sm-4">
-                        <label for="typeInput">Type</label>
+                        <label htmlFor="typeInput">Type</label>
                         <input type="text" id="typeInput" placeholder="Humanoid, monstrosity, etc" name="type" value={this.state.type} onChange={this.handleChange} className="form-control bg-dark"></input>
                     </div>
                     <div className="col-sm-4">
-                        <label for="sizeInput">Size</label>
+                        <label htmlFor="sizeInput">Size</label>
                         <input type="text" id="sizeInput" placeholder="Small, Medium, Large, Huge" name="size" value={this.state.size} onChange={this.handleChange} className="form-control bg-dark"></input>
                     </div>
                 </div>
                 <div className="form-group row">
                     <div className="col-sm-4">
-                        <label for="alignmentInput">Alignment</label>
+                        <label htmlFor="alignmentInput">Alignment</label>
                         <input type="text" id="alignmentInput" placeholder="Lawful good, neutral evil, ect." name="alignment" value={this.state.alignment} onChange={this.handleChange} className="form-control bg-dark"></input>
                     </div>
                     <div className="col-sm-4">
-                        <label for="hpInput">hp</label>
+                        <label htmlFor="hpInput">hp</label>
                         <input type="text" id="hpInput" placeholder="optional: can be done automatically from stats" name="hp" value={this.state.hp} onChange={this.handleChange}className="form-control bg-dark"></input>
                     </div>
                     <div className="col-sm-4">
-                        <label for="armorInput">AC</label>
+                        <label htmlFor="armorInput">AC</label>
                         <input type="text" id="armorInput" placeholder="12, light armor" name="ac" value={this.state.ac} onChange={this.handleChange} className="form-control bg-dark"></input>
                     </div>
                 </div>
                 <div className="form-group row">
                     <div className="col-sm-4">
-                        <label for="speedInput">Speed</label>
+                        <label htmlFor="speedInput">Speed</label>
                         <input type="text" id="speedInput" placeholder=" walk 30 ft., fly 50 ft. " name="speed" value={this.state.speed} onChange={this.handleChange} className="form-control bg-dark"></input>
                     </div>
                     <div className="col-sm-4">
-                        <label for="nameInput">Languages</label>
+                        <label htmlFor="nameInput">Languages</label>
                         <input type="text" id="nameInput" placeholder="Common, Elvish, Abyssal."name="languages" value={this.state.languages} onChange={this.handleChange} className="form-control bg-dark"></input>
                     </div>
                     <div className="col-sm-4">
-                        <label for="senseInput"> Senses </label>
+                        <label htmlFor="senseInput"> Senses </label>
                         <input type="text" id="senseInput" placeholder="Darkvision 60 ft." name="Senses" value={this.state.Senses} onChange={this.handleChange} className="form-control bg-dark"></input>
                     </div>
                 </div>
@@ -273,7 +272,7 @@ class Form extends Component{
                 challenge rating
                 <div>
                     <label>
-                        <i class="fa fa-fist-raised" aria-hidden="true"></i>= normal, R= Resistance, I= immunity, V=Vulnerability
+                        <i className="fa fa-fist-raised" aria-hidden="true"></i>= normal, R= Resistance, I= immunity, V=Vulnerability
                     </label>
                     <DamageTypes></DamageTypes>
                 </div>
@@ -288,13 +287,13 @@ class Form extends Component{
                 <h3>Actions</h3>
                 <Actions></Actions>
                 <div>
-                    <div class="form-group">
-                      <label for="description"></label>
-                      <textarea class="form-control" name="description" id="description" rows="3" placeholder="relevant description here" onChange={this.handleChange} value={this.state.description}></textarea>
+                    <div className="form-group">
+                      <label htmlFor="description"></label>
+                      <textarea className="form-control" name="description" id="description" rows="3" placeholder="relevant description here" onChange={this.handleChange} value={this.state.description}></textarea>
                     </div>
                 </div>
                     <div className="">
-                        <label for="environmentInput"> Environment </label>
+                        <label htmlFor="environmentInput"> Environment </label>
                         <input type="text" id="senseInput" placeholder="Mountain, hills, etc." name="environment" value={this.state.environment} onChange={this.handleChange} className="form-control bg-dark"></input>
                     </div>
             </form>

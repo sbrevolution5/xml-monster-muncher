@@ -12,11 +12,11 @@ class Saves extends Component{
                   //no check boxes, empty box means no change from base stats
                     return(
                         <div className="form-check">
-                          <label className="form-check-label" for={value + "Box"}>
+                          <label className="form-check-label" htmlFor={value + "Box"}>
                             {value}
                           </label>
                           <div className="form-group">
-                            <label for={value+"Mod"}></label>
+                            <label htmlFor={value+"Mod"}></label>
                             <input type="text" className="form-control bg-dark" name="" id={value+"Mod"} aria-describedby="helpId" placeholder="+0"/>
                             <small id="helpId" className="form-text text-muted">Mod value, ex. +4</small>
                           </div>

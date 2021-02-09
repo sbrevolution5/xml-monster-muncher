@@ -8,12 +8,12 @@ export default class ActionCard extends Component {
             <div className="card-header">Action Card</div>
             <div className="card-body">
                 <div class="form-group">
-                  <label for="actionTitle"></label>
+                  <label htmlFor="actionTitle"></label>
                   <input type="text" class="form-control bg-dark" name="title" id="actionTitle" aria-describedby="helpId" placeholder=""/>
                   <small id="helpId" class="form-text text-muted">Name of action</small>
                 </div>
                 <div className="form-group">
-                  <label for="actionDescription"></label>
+                  <label htmlFor="actionDescription"></label>
                   <textarea className="form-control bg-dark" name="description" id="actionDescription" placeholder="describe aciton here" rows="3"></textarea>
                 </div>
                 <button type="button" className="btn btn-danger">Remove Action</button>

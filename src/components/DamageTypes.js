@@ -11,7 +11,7 @@ class DamageTypes extends Component {
                 {typeList.map((value, index) => {
                     return (
                         <div className="form-check">
-                            <label className="form-check-label" for={value + "Box"}>
+                            <label className="form-check-label" htmlFor={value + "Box"}>
                                 {value}
                             </label>
                             <div class="btn-group btn-group-toggle" data-toggle="buttons">
