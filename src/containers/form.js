@@ -202,6 +202,7 @@ class Form extends Component{
         this.getDataFromStats= this.getDataFromStats.bind(this);
     }
     getDataFromStats(data){
+        console.log(data);
         this.state.stats = data
     }
     //overwrites value in state for each element.
@@ -260,7 +261,7 @@ class Form extends Component{
                 <hr></hr>
                 {/* This.handlechange will be executed from within stats each method within needs to use it.  It will be passed the state to update the displayed value.  alternatively, what if Stats had a value prop, which equals state.stats
                 
-                
+                sendData should be child object
                 */}
                 <Stats onChange={this.handleChange} state={this.state} value={this.state.stats} sendData={this.getDataFromStats}></Stats>
                 <div>
