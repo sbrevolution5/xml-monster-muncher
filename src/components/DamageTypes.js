@@ -3,38 +3,36 @@
 //currently only one box per type
 import React, { Component } from 'react'
 
-class DamageTypes extends Component {
-    render() {
-        const typeList = ["Slashing", "Piercing", "Bludgeoning", "Poison", "Acid", "Fire", "Cold", "Radiant", "Necrotic", "Lightning", "Thunder", "Force", "Psychic"];
-        return (
-            <div className="form-group row">
-                {typeList.map((value, index) => {
-                    return (
-                        <div className="form-check" key={index}>
-                            <label className="form-check-label" htmlFor={value + "Box"}>
-                                {value}
+const DamageTypes = () => {
+    
+    const typeList = ["Slashing", "Piercing", "Bludgeoning", "Poison", "Acid", "Fire", "Cold", "Radiant", "Necrotic", "Lightning", "Thunder", "Force", "Psychic"];
+    return (
+        <div className="form-group row">
+            {typeList.map((value, index) => {
+                return (
+                    <div className="form-check" key={index}>
+                        <label className="form-check-label" htmlFor={value + "Box"}>
+                            {value}
+                        </label>
+                        <div className="btn-group btn-group-toggle" data-toggle="buttons">
+                            <label className="btn btn-secondary active">
+                                <input type="radio" name="options" id="option1" autoComplete="off" defaultChecked /> <i className="fa fa-fist-raised" aria-hidden="true"></i>
                             </label>
-                            <div className="btn-group btn-group-toggle" data-toggle="buttons">
-                                <label className="btn btn-secondary active">
-                                    <input type="radio" name="options" id="option1" autoComplete="off" defaultChecked/> <i className="fa fa-fist-raised" aria-hidden="true"></i>
+                            <label className="btn btn-secondary btn-warning">
+                                <input type="radio" name="options" id="option2" autoComplete="off" /> R
                                 </label>
-                                <label className="btn btn-secondary btn-warning">
-                                    <input type="radio" name="options" id="option2" autoComplete="off" /> R
+                            <label className="btn btn-secondary btn-danger">
+                                <input type="radio" name="options" id="option3" autoComplete="off" /> I
                                 </label>
-                                <label className="btn btn-secondary btn-danger">
-                                    <input type="radio" name="options" id="option3" autoComplete="off" /> I
+                            <label className="btn btn-secondary btn-info">
+                                <input type="radio" name="options" id="option4" autoComplete="off" /> V
                                 </label>
-                                <label className="btn btn-secondary btn-info">
-                                    <input type="radio" name="options" id="option4" autoComplete="off" /> V
-                                </label>
-                            </div>
-
                         </div>
-                    )
-                })}
-            </div>
-        )
-    }
 
+                    </div>
+                )
+            })}
+        </div>
+    )
 }
 export default DamageTypes
