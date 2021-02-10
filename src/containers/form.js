@@ -135,6 +135,7 @@ class Form extends Component {
         this.getDataFromSkills = this.getDataFromSkills.bind(this);
         this.getDataFromDamageTypes = this.getDataFromDamageTypes.bind(this)
         this.getDataFromChallengeRating = this.getDataFromChallengeRating.bind(this)
+        this.getDataFromActions = this.getDataFromActions.bind(this)
     }
     //gets data sent from stats via prop, assigns to state.stats
     getDataFromStats(data) {
@@ -151,6 +152,9 @@ class Form extends Component {
     }
     getDataFromChallengeRating(data){
         this.setState({challengeRating: data});
+    }
+    getDataFromActions(data){
+        this.setState({actions: data});
     }
     //overwrites value in state for each element.
     handleChange(event) {
