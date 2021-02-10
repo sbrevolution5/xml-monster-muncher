@@ -1,12 +1,15 @@
-import {Component} from 'react';
+import {Component, useState, useEffect} from 'react';
 import ActionCard from '../components/ActionCard'
-export default class Actions extends Component{
-    render(){
-        return(
-            <div>
-                <button type="button" className="btn btn-success">Add Action</button>
-                <ActionCard></ActionCard>
-            </div>
-        )
+const Actions=()=> {
+    const [actions, setActions] = useState([])
+    const addNewAction = ()=>{
+
     }
+    return(
+        <div>
+            <button type="button" className="btn btn-success" onClick={addNewAction}>Add Action</button>
+            <ActionCard></ActionCard>
+        </div>
+    )
 }
+export default Actions;
