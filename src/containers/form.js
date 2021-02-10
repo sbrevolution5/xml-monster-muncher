@@ -59,78 +59,24 @@ class Form extends Component {
                 }
             },
             skills: {
-                Athletics: {
-                    checked: false,
-                    mod: '',
-                },
-                Acrobatics: {
-                    checked: false,
-                    mod: '',
-                },
-                SleightOfHand: {
-                    checked: false,
-                    mod: '',
-                },
-                Stealth: {
-                    checked: false,
-                    mod: '',
-                },
-                Arcana: {
-                    checked: false,
-                    mod: '',
-                },
-                History: {
-                    checked: false,
-                    mod: '',
-                },
-                Investigation: {
-                    checked: false,
-                    mod: '',
-                },
-                Nature: {
-                    checked: false,
-                    mod: '',
-                },
-                Religion: {
-                    checked: false,
-                    mod: '',
-                },
-                AnimalHandling: {
-                    checked: false,
-                    mod: '',
-                },
-                Insight: {
-                    checked: false,
-                    mod: '',
-                },
-                Medicine: {
-                    checked: false,
-                    mod: '',
-                },
-                Perception: {
-                    checked: false,
-                    mod: '',
-                },
-                Survival: {
-                    checked: false,
-                    mod: '',
-                },
-                Deception: {
-                    checked: false,
-                    mod: '',
-                },
-                Intimidation: {
-                    checked: false,
-                    mod: '',
-                },
-                Performance: {
-                    checked: false,
-                    mod: '',
-                },
-                Persuasion: {
-                    checked: false,
-                    mod: '',
-                },
+                Athletics: '',
+                Acrobatics: '',
+                SleightOfHand: '',
+                Stealth: '',
+                Arcana: '',
+                History: '',
+                Investigation: '',
+                Nature: '',
+                Religion: '',
+                AnimalHandling: '',
+                Insight: '',
+                Medicine: '',
+                Perception: '',
+                Survival: '',
+                Deception: '',
+                Intimidation: '',
+                Performance: '',
+                Persuasion: '',
             },
             vulnerabilities: {
                 Slashing: false,
