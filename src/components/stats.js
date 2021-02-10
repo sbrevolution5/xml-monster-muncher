@@ -5,7 +5,7 @@ const Stats =({onChange, state, sendData})=>{
     //should be able to send the object to parent needs to trigger when state is changed, so that the parent recieves value
     const callBackMethod=(value)=>{
         sendData(value);
-      }   
+    }   
 
     const [str, setStr] = useState(10);
     const [dex, setDex] = useState(10);

@@ -295,7 +295,7 @@ class Form extends Component {
                     <label>
                         Skills
                     </label>
-                    <Skills onChange={this.handleChange} state={this.state}></Skills>
+                    <Skills onChange={this.handleChange} state={this.state} sendData={this.getDataFromSkills}></Skills>
                 </div>
                 passive Perception calculated by 10+perception(Wis)
                 challenge rating
