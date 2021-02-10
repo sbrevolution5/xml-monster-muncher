@@ -215,7 +215,7 @@ class Form extends Component {
                     <label>
                         Saving Throws
                     </label>
-                    <Saves onChange={this.handleChange} state={this.state}></Saves>
+                    <Saves onChange={this.handleChange} state={this.state} sendData={this.getDataFromSaves}></Saves>
                 </div>
                 <div>
                     <label>
