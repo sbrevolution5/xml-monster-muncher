@@ -5,6 +5,7 @@ import Skills from '../components/Skills';
 import Stats from '../components/stats';
 import Traits from './Traits';
 import Actions from './Actions';
+import ChallengeRating from '../components/ChallengeRating';
 const { render } = require("@testing-library/react")
 const { Component } = require("react")
 
@@ -274,6 +275,7 @@ class Form extends Component {
                         <input type="text" id="senseInput" placeholder="Darkvision 60 ft." name="Senses" value={this.state.Senses} onChange={this.handleChange} className="form-control bg-dark"></input>
                     </div>
                 </div>
+                <ChallengeRating></ChallengeRating>
                 <hr></hr>
                 {/* This.handlechange will be executed from within stats each method within needs to use it.  It will be passed the state to update the displayed value.  alternatively, what if Stats had a value prop, which equals state.stats
                 
