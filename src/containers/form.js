@@ -156,6 +156,9 @@ class Form extends Component {
     getDataFromActions(data){
         this.setState({actions: data});
     }
+    getDataFromTraits(data){
+        this.setState({traits: data});
+    }
     //overwrites value in state for each element.
     handleChange(event) {
         const target = event.target
@@ -242,16 +245,16 @@ class Form extends Component {
                     <Conditions onChange={this.handleChange} state={this.state}></Conditions>
                 </div>
                 <h3>Traits</h3>
-                <Traits onChange={this.handleChange} state={this.state}></Traits>
+                <Traits onChange={this.handleChange} state={this.state} sendData={this.getDataFromTraits}></Traits>
                 <h3>Actions</h3>
-                <Actions onChange={this.handleChange} state={this.state}></Actions>
-                <div>
+                <Actions onChange={this.handleChange} state={this.state} sendData={this.getDataFromActions}></Actions>
+                {/* <div>
                     <div className="form-group">
                         <label htmlFor="description"></label>
                         <textarea className="form-control" name="description" id="description" rows="3" placeholder="relevant description here" ></textarea>
-                        {/* commented out because it broke rendering in textarea onChange={this.handleChange} value={this.state.description}*/}
+                        {onChange={this.handleChange} value={this.state.description}}
                     </div>
-                </div>
+                </div> */}
                 <div className="">
                     <label htmlFor="environmentInput"> Environment </label>
                     <input type="text" id="senseInput" placeholder="Mountain, hills, etc." name="environment" value={this.state.environment} onChange={this.handleChange} className="form-control bg-dark"></input>
