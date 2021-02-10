@@ -29,6 +29,8 @@ class Form extends Component {
             alignment: '',
             speed: '',
             challengeRating: '',
+            // we may not need the checked value for saving throws, as if it is blank, it won't be added
+           // the same probably goes for skills, an empty string will signify it not working
             savingThrows: {
                 str: {
                     checked: false,
@@ -202,10 +204,22 @@ class Form extends Component {
         this.handleChange = this.handleChange.bind(this);
         this.render = this.render.bind(this);
         this.getDataFromStats = this.getDataFromStats.bind(this);
+        this.getDataFromSaves = this.getDataFromSaves.bind(this);
+        this.getDataFromSkills = this.getDataFromSkills.bind(this);
+        this.getDataFromDamageTypes = this.getDataFromDamageTypes.bind(this)
     }
+    //gets data sent from stats via prop, assigns to state.stats
     getDataFromStats(data) {
-        console.log(data);
-        this.state.stats = data
+        this.setState({stats: data})
+    }
+    getDataFromSaves(data) {
+        this.setState({savingThrows: data})
+    }
+    getDataFromSkills(data) {
+        this.setState({skills: data})
+    }
+    getDataFromDamageTypes(data) {
+        //this one will need some data processing
     }
     //overwrites value in state for each element.
     handleChange(event) {
