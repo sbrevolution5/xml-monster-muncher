@@ -148,18 +148,21 @@ class Form extends Component {
         this.setState({skills: data})
     }
     getDataFromDamageTypes(data) {
-        //this one will need some data processing
+        //retrieves the array of objects from Damage types component, then sets each part of state to the correct object. 
+        this.setState({resistances: data[0], immunities: data[1], vulnerabilities: data[2]})
     }
     getDataFromChallengeRating(data){
         this.setState({challengeRating: data});
     }
     getDataFromActions(data){
+        //TODO
         this.setState({actions: data});
     }
     getDataFromTraits(data){
+        //TODO
         this.setState({traits: data});
     }
-    //overwrites value in state for each element.
+    //processes elements directly on this component/container
     handleChange(event) {
         const target = event.target
         const value = target.type === 'checkbox' ? target.checked : target.value;
