@@ -134,6 +134,7 @@ class Form extends Component {
         this.getDataFromSaves = this.getDataFromSaves.bind(this);
         this.getDataFromSkills = this.getDataFromSkills.bind(this);
         this.getDataFromDamageTypes = this.getDataFromDamageTypes.bind(this)
+        this.getDataFromChallengeRating = this.getDataFromChallengeRating.bind(this)
     }
     //gets data sent from stats via prop, assigns to state.stats
     getDataFromStats(data) {
