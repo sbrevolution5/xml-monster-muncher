@@ -30,33 +30,13 @@ class Form extends Component {
             alignment: '',
             speed: '',
             challengeRating: '',
-            // we may not need the checked value for saving throws, as if it is blank, it won't be added
-           // the same probably goes for skills, an empty string will signify it not working
             savingThrows: {
-                str: {
-                    checked: false,
-                    mod: '',
-                },
-                dex: {
-                    checked: false,
-                    mod: '',
-                },
-                con: {
-                    checked: false,
-                    mod: '',
-                },
-                int: {
-                    checked: false,
-                    mod: '',
-                },
-                wis: {
-                    checked: false,
-                    mod: '',
-                },
-                cha: {
-                    checked: false,
-                    mod: '',
-                }
+                str: '',
+                dex: '',
+                con: '',
+                int: '',
+                wis: '',
+                cha: '',
             },
             skills: {
                 Athletics: '',
