@@ -222,6 +222,9 @@ class Form extends Component {
     getDataFromDamageTypes(data) {
         //this one will need some data processing
     }
+    getDataFromChallengeRating(data){
+        this.setState({challengeRating: data});
+    }
     //overwrites value in state for each element.
     handleChange(event) {
         const target = event.target
@@ -275,13 +278,13 @@ class Form extends Component {
                         <input type="text" id="senseInput" placeholder="Darkvision 60 ft." name="Senses" value={this.state.Senses} onChange={this.handleChange} className="form-control bg-dark"></input>
                     </div>
                 </div>
-                <ChallengeRating></ChallengeRating>
+                <ChallengeRating state={this.state} value={this.state.stats} sendData={this.getDataFromChallengeRating}></ChallengeRating>
                 <hr></hr>
                 {/* This.handlechange will be executed from within stats each method within needs to use it.  It will be passed the state to update the displayed value.  alternatively, what if Stats had a value prop, which equals state.stats
                 
                 sendData should be child object
                 */}
-                <Stats onChange={this.handleChange} state={this.state} value={this.state.stats} sendData={this.getDataFromStats}></Stats>
+                <Stats state={this.state} value={this.state.stats} sendData={this.getDataFromStats}></Stats>
                 <div>
                     <label>
                         Saving Throws
