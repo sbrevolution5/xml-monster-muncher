@@ -1,7 +1,26 @@
-import React, {Component} from 'react';
+import React, {Component, useState} from 'react';
 const Skills =()=>{
 
-    const skillList = ["Acrobatics", "AnimalHandling", "Arcana", "Athletics", "Deception", "Endurance", "History", "Insight", "Intimidation", "Investigation", "Medicine", "Nature", "Perception", "Performance", "Persuasion", "Religion", "SleightOfHand", "Stealth", "Survival"]
+    const [acrobatics, setAcrobatics] = useState("");
+    const [animalHandling, setAnimalHandling] = useState("");
+    const [arcana, setArcana] = useState("");
+    const [athletics, setAthletics] = useState("");
+    const [deception, setDeception] = useState("");
+    const [history, setHistory] = useState("");
+    const [insight, setInsight] = useState("");
+    const [intimidation, setIntimidation] = useState("");
+    const [investigation, setInvestigation] = useState("");
+    const [medicine, setMedicine] = useState("");
+    const [nature, setNature] = useState("");
+    const [perception, setPerception] = useState("");
+    const [performance, setPerformance] = useState("");
+    const [persuasion, setPersuasion] = useState("");
+    const [religion, setReligion] = useState("");
+    const [slightOfHand, setslightOfHand] = useState("");
+    const [stealth, setStealth] = useState("");
+    const [survival, setSurvival] = useState("");
+    
+    const skillList = ["Acrobatics", "AnimalHandling", "Arcana", "Athletics", "Deception", "History", "Insight", "Intimidation", "Investigation", "Medicine", "Nature", "Perception", "Performance", "Persuasion", "Religion", "SleightOfHand", "Stealth", "Survival"]
     return(
         <div>
             {skillList.map((value,index)=>{
@@ -22,5 +41,5 @@ const Skills =()=>{
         </div>
     )
 
-    }
+}
 export default Skills
