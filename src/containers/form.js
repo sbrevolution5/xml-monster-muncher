@@ -295,15 +295,14 @@ class Form extends Component {
                     <label>
                         Skills
                     </label>
-                    <Skills onChange={this.handleChange} state={this.state} sendData={this.getDataFromSkills}></Skills>
+                    <Skills sendData={this.getDataFromSkills}></Skills>
                 </div>
                 passive Perception calculated by 10+perception(Wis)
-                challenge rating
                 <div>
                     <label>
                         <i className="fa fa-fist-raised" aria-hidden="true"></i>= normal, R= Resistance, I= immunity, V=Vulnerability
                     </label>
-                    <DamageTypes onChange={this.handleChange} state={this.state}></DamageTypes>
+                    <DamageTypes state={this.state}></DamageTypes>
                 </div>
                 <div>
                     <label>
