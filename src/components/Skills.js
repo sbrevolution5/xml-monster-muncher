@@ -16,11 +16,12 @@ const Skills =()=>{
     const [performance, setPerformance] = useState("");
     const [persuasion, setPersuasion] = useState("");
     const [religion, setReligion] = useState("");
-    const [slightOfHand, setslightOfHand] = useState("");
+    const [slightOfHand, setSlightOfHand] = useState("");
     const [stealth, setStealth] = useState("");
     const [survival, setSurvival] = useState("");
-    
-    const skillList = ["Acrobatics", "AnimalHandling", "Arcana", "Athletics", "Deception", "History", "Insight", "Intimidation", "Investigation", "Medicine", "Nature", "Perception", "Performance", "Persuasion", "Religion", "SleightOfHand", "Stealth", "Survival"]
+
+    const skillList = ["Acrobatics", "AnimalHandling", "Arcana", "Athletics", "Deception", "History", "Insight", "Intimidation", "Investigation", "Medicine", "Nature", "Perception", "Performance", "Persuasion", "Religion", "SlightOfHand", "Stealth", "Survival"]
+    const skillSet = [setAcrobatics, setAnimalHandling, setArcana, setAthletics, setDeception, setHistory, setInsight, setIntimidation, setInvestigation, setMedicine, setNature, setPerception, setPerformance, setPersuasion, setReligion, setSlightOfHand, setStealth, setSurvival]
     return(
         <div>
             {skillList.map((value,index)=>{
@@ -32,7 +33,7 @@ const Skills =()=>{
                         <div className="input-group-prepend">
                         <span className="input-group-text" htmlFor={value + "Box"}>
                             {value}</span>
-                            <input type="text" className="form-control col-xs-1 bg-dark" name="" id={value+"Mod"} aria-describedby="helpId" placeholder="+0 (default)"/>
+                            <input type="text" className="form-control col-xs-1 bg-dark" name="" id={value+"Mod"} aria-describedby="helpId" placeholder="+0 (default)" onChange={skillSet[index]}/>
                         </div>
                         </div>
                     // </div>
