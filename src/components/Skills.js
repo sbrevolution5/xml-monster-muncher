@@ -16,7 +16,7 @@ const Skills =({sendData})=>{
     const [performance, setPerformance] = useState("");
     const [persuasion, setPersuasion] = useState("");
     const [religion, setReligion] = useState("");
-    const [slightOfHand, setSlightOfHand] = useState("");
+    const [sleightOfHand, setSlightOfHand] = useState("");
     const [stealth, setStealth] = useState("");
     const [survival, setSurvival] = useState("");
 
@@ -25,7 +25,7 @@ const Skills =({sendData})=>{
     const callBackMethod=(value)=>{
         sendData(value);
     }   
-    useEffect(()=>{callBackMethod({Acrobatics: acrobatics, AnimalHandling: animalHandling, Arcana: arcana, Athletics: athletics, Deception: deception, History: history, Insight: insight, Intimidation: intimidation, Investigation: investigation, Medicine: medicine, Nature: nature, Perception: perception, Performance: performance, Persuasion: persuasion, Religion: religion, SlightOfHand: slightOfHand, Stealth: stealth, Survival: survival})},[acrobatics, animalHandling, arcana, athletics, deception, history, insight, intimidation, investigation, medicine, nature, perception, performance, persuasion, religion, slightOfHand, stealth, survival])
+    useEffect(()=>{callBackMethod({Acrobatics: acrobatics, AnimalHandling: animalHandling, Arcana: arcana, Athletics: athletics, Deception: deception, History: history, Insight: insight, Intimidation: intimidation, Investigation: investigation, Medicine: medicine, Nature: nature, Perception: perception, Performance: performance, Persuasion: persuasion, Religion: religion, SlightOfHand: sleightOfHand, Stealth: stealth, Survival: survival})},[acrobatics, animalHandling, arcana, athletics, deception, history, insight, intimidation, investigation, medicine, nature, perception, performance, persuasion, religion, sleightOfHand, stealth, survival])
     return(
         <div>
             {skillList.map((value,index)=>{
