@@ -30,7 +30,7 @@ class Form extends Component {
             alignment: '',
             speed: '',
             challengeRating: '',
-            Senses: '',
+            senses: '',
             savingThrows: {
                 str: '',
                 dex: '',
@@ -218,7 +218,7 @@ class Form extends Component {
                     </div>
                     <div className="col-sm-4">
                         <label htmlFor="senseInput"> Senses </label>
-                        <input type="text" id="senseInput" placeholder="Darkvision 60 ft." name="Senses" value={this.state.Senses} onChange={this.handleChange} className="form-control bg-dark text-light"></input>
+                        <input type="text" id="senseInput" placeholder="Darkvision 60 ft." name="senses" value={this.state.senses} onChange={this.handleChange} className="form-control bg-dark text-light"></input>
                     </div>
                 </div>
                 <ChallengeRating state={this.state} value={this.state.stats} sendData={this.getDataFromChallengeRating}></ChallengeRating>
