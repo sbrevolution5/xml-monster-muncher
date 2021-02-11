@@ -3,17 +3,20 @@
 const toXML = (stateObject) => {
     const updateSkill = (skillName)=>{
         if(stateObject.skills[skillName]){
+            console.log(skillName);
+            console.log(stateObject.skills[skillName])
             xmlDocumentString+= skillName + " " + stateObject.skills[skillName] //plus possible comma?
         }
     }
-    const skillList = ["Acrobatics", "AnimalHandling", "Arcana", "Athletics", "Deception", "History", "Insight", "Intimidation", "Investigation", "Medicine", "Nature", "Perception", "Performance", "Persuasion", "Religion", "SlightOfHand", "Stealth", "Survival"]
+    const skillList = Object.keys(stateObject.skills)
+    console.log(skillList)
     let xmlDocumentString = "";
     xmlDocumentString += "<monster>\n"
     if (stateObject.name) {
         xmlDocumentString += "<name>" + stateObject.name + "</name>\n"
-    } else {
+    } /*else {
         console.error("no name given");
-    }
+    }*/
     if (stateObject.size) {
         xmlDocumentString += "<size>" + stateObject.size + "</size>\n"
     }
@@ -78,10 +81,13 @@ const toXML = (stateObject) => {
         xmlDocumentString += "</saves>\n"
     }
     //same with skills
-    if(Object.keys(stateObject.savingThrows).some(function(k) {return stateObject.savingThrows[k]}))
+    if(Object.keys(stateObject.skills).some(function(k) {return stateObject.skills[k]}))
     {
         xmlDocumentString += "<skills>" 
-        skillList.map((value, index)=>{updateSkill(value)})
+        skillList.map((value, index)=>{
+            console.log("updateSkill created for ", value)
+            return updateSkill(value)
+        })
         xmlDocumentString += "</skills>\n"
     }
     //also res,immune, and vuln
@@ -99,7 +105,7 @@ const toXML = (stateObject) => {
         xmlDocumentString += "<cr>" + stateObject.cr + "</cr>\n"
     }
     //traits actions and legendary?
-    //finish xml
+    //finish xml by closing monster tag
     xmlDocumentString += "</monster>"
     console.log(xmlDocumentString)
     return xmlDocumentString;
@@ -109,8 +115,8 @@ const toXML = (stateObject) => {
 const Output = ({ state }) => {
     const outputString = toXML(state);
     return (
-            <div class="jumbotron bg-dark text-light">
-                <h1 class="display-3">Output:</h1>
+            <div className="jumbotron bg-dark text-light">
+                <h1 className="display-3">Output:</h1>
                 <p style={{whiteSpace: "pre-wrap"}}>{outputString}</p>
             </div>
                 
