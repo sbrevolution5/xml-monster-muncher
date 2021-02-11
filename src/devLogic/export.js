@@ -164,7 +164,7 @@ const sampleState = {
 }
 
 
-function toXML(stateObject){
+const toXML=(stateObject)=>{
     let xmlDocumentString= "";
     xmlDocumentString+="<monster>\n"
     if(stateObject.name){
@@ -235,6 +235,8 @@ function toXML(stateObject){
     //finish xml
     xmlDocumentString+="</monster>"
     console.log(xmlDocumentString)
+    return xmlDocumentString;
     //do stuff with it now!
 }
-toXML(sampleState);
+export default toXML;
+//toXML(sampleState);

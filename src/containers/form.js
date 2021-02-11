@@ -6,6 +6,7 @@ import Stats from '../components/stats';
 import Traits from './Traits';
 import Actions from './Actions';
 import ChallengeRating from '../components/ChallengeRating';
+import Output from './output';
 const { render } = require("@testing-library/react")
 const { Component } = require("react")
 
@@ -269,6 +270,7 @@ class Form extends Component {
                     <label htmlFor="environmentInput"> Environment </label>
                     <input type="text" id="senseInput" placeholder="Mountain, hills, etc." name="environment" value={this.state.environment} onChange={this.handleChange} className="form-control bg-dark text-light"></input>
                 </div>
+                <Output state={this.state}></Output>
             </form>
         )
     }
