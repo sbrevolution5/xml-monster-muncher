@@ -78,6 +78,7 @@ class Form extends Component {
                 Thunder: "none",
                 Force: "none",
                 Psychic: "none",
+                Nonmagical: "none",
             },
             conditionImmunities: {
                 Blinded: false,

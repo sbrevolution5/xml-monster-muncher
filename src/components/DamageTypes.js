@@ -5,7 +5,7 @@
 //sending back array of 3 objects,
 import React, { useState, useEffect } from 'react'
 
-const DamageTypes = ({sendData}) => {
+const DamageTypes = ({ sendData }) => {
     const [slashing, setSlashing] = useState("none")
     const [piercing, setPiercing] = useState("none")
     const [bludgeoning, setBludgeoning] = useState("none")
@@ -19,14 +19,14 @@ const DamageTypes = ({sendData}) => {
     const [thunder, setThunder] = useState("none")
     const [force, setForce] = useState("none")
     const [psychic, setPsychic] = useState("none")
-    const [nonmagical, setNonmagical] = useState("none")  
+    const [nonmagical, setNonmagical] = useState("none")
     const typeList = ["Slashing", "Piercing", "Bludgeoning", "Poison", "Acid", "Fire", "Cold", "Radiant", "Necrotic", "Lightning", "Thunder", "Force", "Psychic", "Nonmagical"];
     const setDamage = [setSlashing, setPiercing, setBludgeoning, setPoison, setAcid, setFire, setCold, setRadiant, setNecrotic, setLightning, setThunder, setForce, setPsychic, setNonmagical];
-    const callBackMethod=(value)=>{
+    const callBackMethod = (value) => {
         sendData(value);
     }
     useEffect(() => {
-        callBackMethod({{
+        callBackMethod({
             Slashing: slashing,
             Piercing: piercing,
             Bludgeoning: bludgeoning,
@@ -41,30 +41,33 @@ const DamageTypes = ({sendData}) => {
             Force: force,
             Psychic: psychic,
             Nonmagical: nonmagical,
-        }})
-    }, [input])
+        })
+    }, [slashing, piercing, bludgeoning, poison, acid, fire, cold, radiant, necrotic, lightning, thunder, force, psychic, nonmagical])
     return (
         <div className="form-group row">
             {typeList.map((value, index) => {
                 return (
-                    <div className="form-check" key={index} onChange={(e)=>{setDamage[index](e.target.id)}}>
+                    <div className="form-check form-check-inline" key={index} id={value+"Radio"} onChange={(e) => { setDamage[index](e.target.value) }}>
                         <label className="form-check-label" htmlFor={value + "Box"}>
                             {value}
                         </label>
-                        <div className="btn-group btn-group-toggle" data-toggle="buttons">
-                            <label className="btn btn-secondary active">
-                                <input type="radio" name="options" id="none" autoComplete="off" defaultChecked /> <i className="fa fa-fist-raised" aria-hidden="true"></i>
-                            </label>
-                            <label className="btn btn-secondary btn-warning">
-                                <input type="radio" name="options" id="resistant" autoComplete="off" /> R
-                                </label>
-                            <label className="btn btn-secondary btn-danger">
-                                <input type="radio" name="options" id="immune" autoComplete="off" /> I
-                                </label>
-                            <label className="btn btn-secondary btn-info">
-                                <input type="radio" name="options" id="vulnerable" autoComplete="off" /> V
-                                </label>
+                        <div className="form-check form-check-inline">
+                            <input className="form-check-input" type="radio" name={"inlineRadioOptions"+value} id={value + "inlineRadio1"} value="none" defaultChecked></input>
+                            <label className="form-check-label" htmlFor="inlineRadio1"><i className="fa fa-fist-raised" aria-hidden="true"></i></label>
                         </div>
+                        <div className="form-check form-check-inline">
+                            <input className="form-check-input" type="radio" name={"inlineRadioOptions"+value} id={value + "inlineRadio2"} value="resistant"></input>
+                            <label className="form-check-label" htmlFor="inlineRadio2">R</label>
+                        </div>
+                        <div className="form-check form-check-inline">
+                            <input className="form-check-input" type="radio" name={"inlineRadioOptions"+value} id={value + "inlineRadio3"} value="immune"></input>
+                            <label className="form-check-label" htmlFor="inlineRadio3">I</label>
+                        </div>
+                        <div className="form-check form-check-inline">
+                            <input className="form-check-input" type="radio" name={"inlineRadioOptions"+value} id={value + "inlineRadio4"} value="vulnerable"></input>
+                            <label className="form-check-label" htmlFor="inlineRadio4">V</label>
+                        </div>
+
 
                     </div>
                 )
