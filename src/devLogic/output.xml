@@ -1,0 +1,19 @@
+<monster>
+<name>Ancient Brass Dragon</name>
+<size>G</size>
+<type>dragon</type>
+<alignment>chaotic good</alignment>
+<ac>20 (natural armor)</ac>
+<hp>297 (17d20+119)</hp>
+<speed>40 ft., burrow 40 ft., fly 80 ft.</speed>
+<str>27</str>
+<dex>10</dex>
+<con>25</con>
+<int>16</int>
+<wis>15</wis>
+<cha>19</cha>
+<skills>[object Object]</skills>
+<senses>blindsight 60 ft., darkvision 120 ft.</senses>
+<languages>Common, Draconic</languages>
+<cr>20</cr>
+</monster>
