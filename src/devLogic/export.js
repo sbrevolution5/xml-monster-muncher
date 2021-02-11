@@ -61,5 +61,15 @@ function toXML(stateObject){
     if(stateObject.passive){
         xmlDocumentString+= "<passive>"+stateObject.passive+"</passive>\n"
     }
+    if(stateObject.languages){
+        xmlDocumentString+= "<languages>"+stateObject.languages+"</languages>\n"
+    }
+    if(stateObject.cr){
+        xmlDocumentString+= "<cr>"+stateObject.cr+"</cr>\n"
+    }
+    //traits actions and legendary?
+    //finish xml
+    xmlDocumentString+="</monster>"
     console.log(xmlDocumentString)
+    //do stuff with it now!
 }

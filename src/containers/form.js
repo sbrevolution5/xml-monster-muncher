@@ -29,7 +29,7 @@ class Form extends Component {
             size: '',
             alignment: '',
             speed: '',
-            challengeRating: '',
+            cr: '',
             senses: '',
             passive: '',
             savingThrows: {
@@ -156,7 +156,7 @@ class Form extends Component {
         this.setState({resistances: data[0], immunities: data[1], vulnerabilities: data[2]})
     }
     getDataFromChallengeRating(data){
-        this.setState({challengeRating: data});
+        this.setState({cr: data});
     }
     getDataFromActions(data){
         //TODO
