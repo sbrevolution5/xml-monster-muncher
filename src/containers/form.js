@@ -176,43 +176,43 @@ class Form extends Component {
                 <div className="form-group row">
                     <div className="col-sm-4">
                         <label htmlFor="nameInput">Name</label>
-                        <input type="text" id="nameInput" placeholder="creature name" name="name" value={this.state.name} onChange={this.handleChange} className="form-control bg-dark" />
+                        <input type="text" id="nameInput" placeholder="creature name" name="name" value={this.state.name} onChange={this.handleChange} className="form-control bg-dark  text-light" />
                     </div>
                     <div className="col-sm-4">
                         <label htmlFor="typeInput">Type</label>
-                        <input type="text" id="typeInput" placeholder="Humanoid, monstrosity, etc" name="type" value={this.state.type} onChange={this.handleChange} className="form-control bg-dark"></input>
+                        <input type="text" id="typeInput" placeholder="Humanoid, monstrosity, etc" name="type" value={this.state.type} onChange={this.handleChange} className="form-control bg-dark text-light"></input>
                     </div>
                     <div className="col-sm-4">
                         <label htmlFor="sizeInput">Size</label>
-                        <input type="text" id="sizeInput" placeholder="Small, Medium, Large, Huge" name="size" value={this.state.size} onChange={this.handleChange} className="form-control bg-dark"></input>
+                        <input type="text" id="sizeInput" placeholder="Small, Medium, Large, Huge" name="size" value={this.state.size} onChange={this.handleChange} className="form-control bg-dark text-light"></input>
                     </div>
                 </div>
                 <div className="form-group row">
                     <div className="col-sm-4">
                         <label htmlFor="alignmentInput">Alignment</label>
-                        <input type="text" id="alignmentInput" placeholder="Lawful good, neutral evil, ect." name="alignment" value={this.state.alignment} onChange={this.handleChange} className="form-control bg-dark"></input>
+                        <input type="text" id="alignmentInput" placeholder="Lawful good, neutral evil, ect." name="alignment" value={this.state.alignment} onChange={this.handleChange} className="form-control bg-dark text-light"></input>
                     </div>
                     <div className="col-sm-4">
                         <label htmlFor="hpInput">hp</label>
-                        <input type="text" id="hpInput" placeholder="optional: can be done automatically from stats" name="hp" value={this.state.hp} onChange={this.handleChange} className="form-control bg-dark"></input>
+                        <input type="text" id="hpInput" placeholder="optional: can be done automatically from stats" name="hp" value={this.state.hp} onChange={this.handleChange} className="form-control bg-dark text-light"></input>
                     </div>
                     <div className="col-sm-4">
                         <label htmlFor="armorInput">AC</label>
-                        <input type="text" id="armorInput" placeholder="12, light armor" name="ac" value={this.state.ac} onChange={this.handleChange} className="form-control bg-dark"></input>
+                        <input type="text" id="armorInput" placeholder="12, light armor" name="ac" value={this.state.ac} onChange={this.handleChange} className="form-control bg-dark text-light"></input>
                     </div>
                 </div>
                 <div className="form-group row">
                     <div className="col-sm-4">
                         <label htmlFor="speedInput">Speed</label>
-                        <input type="text" id="speedInput" placeholder=" walk 30 ft., fly 50 ft. " name="speed" value={this.state.speed} onChange={this.handleChange} className="form-control bg-dark"></input>
+                        <input type="text" id="speedInput" placeholder=" walk 30 ft., fly 50 ft. " name="speed" value={this.state.speed} onChange={this.handleChange} className="form-control bg-dark text-light"></input>
                     </div>
                     <div className="col-sm-4">
                         <label htmlFor="nameInput">Languages</label>
-                        <input type="text" id="nameInput" placeholder="Common, Elvish, Abyssal." name="languages" value={this.state.languages} onChange={this.handleChange} className="form-control bg-dark"></input>
+                        <input type="text" id="nameInput" placeholder="Common, Elvish, Abyssal." name="languages" value={this.state.languages} onChange={this.handleChange} className="form-control bg-dark text-light"></input>
                     </div>
                     <div className="col-sm-4">
                         <label htmlFor="senseInput"> Senses </label>
-                        <input type="text" id="senseInput" placeholder="Darkvision 60 ft." name="Senses" value={this.state.Senses} onChange={this.handleChange} className="form-control bg-dark"></input>
+                        <input type="text" id="senseInput" placeholder="Darkvision 60 ft." name="Senses" value={this.state.Senses} onChange={this.handleChange} className="form-control bg-dark text-light"></input>
                     </div>
                 </div>
                 <ChallengeRating state={this.state} value={this.state.stats} sendData={this.getDataFromChallengeRating}></ChallengeRating>
@@ -260,7 +260,7 @@ class Form extends Component {
                 </div> */}
                 <div className="">
                     <label htmlFor="environmentInput"> Environment </label>
-                    <input type="text" id="senseInput" placeholder="Mountain, hills, etc." name="environment" value={this.state.environment} onChange={this.handleChange} className="form-control bg-dark"></input>
+                    <input type="text" id="senseInput" placeholder="Mountain, hills, etc." name="environment" value={this.state.environment} onChange={this.handleChange} className="form-control bg-dark text-light"></input>
                 </div>
             </form>
         )

@@ -38,7 +38,7 @@ const Skills =({sendData})=>{
                                 <span className="input-group-text" htmlFor={value + "Box"}>
                                     {value}
                                 </span>
-                                <input type="text" className="form-control col-xs-1 bg-dark" name="" id={value+"Mod"} aria-describedby="helpId" placeholder="+0 (default)" onChange={e=>skillSet[index](e.target.value)}/>
+                                <input type="text" className="form-control col-xs-1 bg-dark text-light" name="" id={value+"Mod"} aria-describedby="helpId" placeholder="+0 (default)" onChange={e=>skillSet[index](e.target.value)}/>
                             </div>
                         </div>
                     // </div>

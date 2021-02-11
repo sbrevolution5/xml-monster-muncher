@@ -9,7 +9,7 @@ const ChallengeRating = ({sendData})=>{
     return(
         <div className="form-group">
           <label htmlFor="crForm">Challenge Rating</label>
-          <select className="form-control bg-dark" name="" id="crForm" onChange={e=>{setCr(e.target.value)}}>
+          <select className="form-control bg-dark text-light" name="" id="crForm" onChange={e=>{setCr(e.target.value)}}>
             {crs.map((value, index)=>{
                 return <option key={index} value={value}>{value}</option>;
             })}

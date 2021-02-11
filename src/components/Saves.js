@@ -24,7 +24,7 @@ const Saves = ({sendData}) => {
             </label>
             <div className="form-group">
               <label htmlFor={value + "Mod"}></label>
-              <input type="text" className="form-control bg-dark" name="" id={value + "Mod"} aria-describedby="helpId" placeholder="+0" onChange={e=>setSave[index](e.target.value)}/>
+              <input type="text" className="form-control bg-dark text-light" name="" id={value + "Mod"} aria-describedby="helpId" placeholder="+0" onChange={e=>setSave[index](e.target.value)}/>
               <small id="helpId" className="form-text text-muted">Mod value, ex. +4</small>
             </div>
           </div>
