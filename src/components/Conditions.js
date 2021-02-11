@@ -1,8 +1,11 @@
 import { Component } from "react";
 
 // should be collapsable, with a number to show how many conditions are checked while it is collapsed. 
-const Conditions = () => {
+const Conditions = ({sendData}) => {
+
     const conditionList = ["Blinded", "Charmed", "Deafened", "Exhaustion", "Frightened", "Grappled", "Incapacitated", "Invisible", "Paralyzed", "Petrified", "Poisoned", "Prone", "Restrained", "Stunned", "Unconscious",]
+
+
     return (
         <div className="row">
             {conditionList.map((value, index) => {

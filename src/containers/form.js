@@ -162,6 +162,9 @@ class Form extends Component {
         //TODO
         this.setState({traits: data});
     }
+    getDataFromConditions(data){
+        this.setState({conditionImmunities: data})
+    }
     //processes elements directly on this component/container
     handleChange(event) {
         const target = event.target
@@ -245,7 +248,7 @@ class Form extends Component {
                     <label>
                         Condition Immunities
                     </label>
-                    <Conditions onChange={this.handleChange} state={this.state}></Conditions>
+                    <Conditions sendData={this.getDataFromConditions}></Conditions>
                 </div>
                 <h3>Traits</h3>
                 <Traits onChange={this.handleChange} state={this.state} sendData={this.getDataFromTraits}></Traits>
