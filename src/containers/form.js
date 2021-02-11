@@ -136,6 +136,7 @@ class Form extends Component {
         this.getDataFromDamageTypes = this.getDataFromDamageTypes.bind(this)
         this.getDataFromChallengeRating = this.getDataFromChallengeRating.bind(this)
         this.getDataFromActions = this.getDataFromActions.bind(this)
+        this.getDataFromConditions = this.getDataFromConditions.bind(this)
     }
     //gets data sent from stats via prop, assigns to state.stats
     getDataFromStats(data) {
@@ -248,7 +249,7 @@ class Form extends Component {
                     <label>
                         Condition Immunities
                     </label>
-                    <Conditions sendData={this.getDataFromConditions}></Conditions>
+                    <Conditions onChange={this.handleChange} sendData={this.getDataFromConditions}></Conditions>
                 </div>
                 <h3>Traits</h3>
                 <Traits onChange={this.handleChange} state={this.state} sendData={this.getDataFromTraits}></Traits>

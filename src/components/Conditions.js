@@ -32,11 +32,15 @@ const Conditions = ({sendData}) => {
             {conditionList.map((value, index) => {
                 //buttons need to be toggleable!
                 return (
-                    <div className="form-group-btn" key={index}>
-                        <button type="button" className="btn btn-toggle btn-secondary" data-toggle={value + "button"} aria-pressed="false" name="" id={value + "Btn"} value={conditionVar[index]} onClick={(e) => conditionSet[index](!e.target.value)}>
-                            {value}
-                        </button>
+                    <div className="custom-control custom-switch" key={index}>
+                        <input type="checkbox" className="custom-control-input" id={value+"Btn"} onClick={(e) => conditionSet[index](e.target.checked)}  defaultChecked={conditionVar[index]}></input>
+                        <label className="custom-control-label" htmlFor={value+"Btn"}>{value}</label>
                     </div>
+                    // <div className="form-group-btn" key={index}>
+                    //     <button type="button" className="btn btn-toggle btn-secondary" data-toggle={conditionVar[index]} name="" id={value + "Btn"} value={conditionVar[index]} onClick={(e) => conditionSet[index](!e.target.value)}>
+                    //         {value}
+                    //     </button>
+                    // </div>
                 )
             }
             )}
