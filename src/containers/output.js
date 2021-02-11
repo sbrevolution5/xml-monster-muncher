@@ -3,9 +3,10 @@
 const toXML = (stateObject) => {
     const updateSkill = (skillName)=>{
         if(stateObject.skills[skillName]){
-            xmlDocumentString+= skillName + " " + <stateObject className="skills" skillname=""></stateObject>
+            xmlDocumentString+= skillName + " " + stateObject.skills[skillName] //plus possible comma?
         }
     }
+    const skillList = ["Acrobatics", "AnimalHandling", "Arcana", "Athletics", "Deception", "History", "Insight", "Intimidation", "Investigation", "Medicine", "Nature", "Perception", "Performance", "Persuasion", "Religion", "SlightOfHand", "Stealth", "Survival"]
     let xmlDocumentString = "";
     xmlDocumentString += "<monster>\n"
     if (stateObject.name) {
@@ -80,7 +81,7 @@ const toXML = (stateObject) => {
     if(Object.keys(stateObject.savingThrows).some(function(k) {return stateObject.savingThrows[k]}))
     {
         xmlDocumentString += "<skills>" 
-
+        skillList.map((value, index)=>{updateSkill(value)})
         xmlDocumentString += "</skills>\n"
     }
     //also res,immune, and vuln
