@@ -31,6 +31,7 @@ class Form extends Component {
             speed: '',
             challengeRating: '',
             senses: '',
+            passive: '',
             savingThrows: {
                 str: '',
                 dex: '',

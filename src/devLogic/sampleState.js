@@ -16,7 +16,7 @@ const sampleState = {
         alignment: 'chaotic good',
         speed: '40 ft., burrow 40 ft., fly 80 ft.',
         challengeRating: '20',
-        Senses: 'blindsight 60 ft., darkvision 120 ft.',
+        senses: 'blindsight 60 ft., darkvision 120 ft.',
         savingThrows: {
             str: '',
             dex: '+6',
