@@ -46,8 +46,27 @@ const toXML = (stateObject) => {
     }
 
     //saves is trickier than the rest
-    if (stateObject.saves) {
-        xmlDocumentString += "<saves>" + stateObject.saves + "</saves>\n"
+    if (stateObject.savingThrows.str || stateObject.savingThrows.dex || stateObject.savingThrows.con || stateObject.savingThrows.int|| stateObject.savingThrows.wis||stateObject.savingThrows.cha) {
+        xmlDocumentString += "<saves>" 
+        if(stateObject.savingThrows.str){
+            xmlDocumentString+= "Str "+ stateObject.savingThrows.str
+        }
+        if(stateObject.savingThrows.dex){
+            xmlDocumentString+= "Dex " + stateObject.savingThrows.dex
+        }
+        if(stateObject.savingThrows.con){
+            xmlDocumentString+= "Con " + stateObject.savingThrows.con
+        }
+        if(stateObject.savingThrows.int){
+            xmlDocumentString+= "Int " + stateObject.savingThrows.int
+        }
+        if(stateObject.savingThrows.wis){
+            xmlDocumentString+= "Wis " + stateObject.savingThrows.wis
+        }
+        if(stateObject.savingThrows.cha){
+            xmlDocumentString+= "Cha " + stateObject.savingThrows.cha
+        }
+        xmlDocumentString += "</saves>\n"
     }
     //same with skills
     if (stateObject.skills) {
