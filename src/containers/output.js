@@ -1,6 +1,11 @@
 //import problem for some reason it is not exported, currently putting in this file
 //import { toXML } from "../devLogic/export.js";
 const toXML = (stateObject) => {
+    const updateSkill = (skillName)=>{
+        if(stateObject.skills[skillName]){
+            xmlDocumentString+= skillName + " " + <stateObject className="skills" skillname=""></stateObject>
+        }
+    }
     let xmlDocumentString = "";
     xmlDocumentString += "<monster>\n"
     if (stateObject.name) {
@@ -45,9 +50,11 @@ const toXML = (stateObject) => {
         xmlDocumentString += "<cha>" + stateObject.stats.cha + "</cha>\n"
     }
 
-    //saves is trickier than the rest
-    if (stateObject.savingThrows.str || stateObject.savingThrows.dex || stateObject.savingThrows.con || stateObject.savingThrows.int|| stateObject.savingThrows.wis||stateObject.savingThrows.cha) {
+    //if there are any saves, open saves tag
+    if(Object.keys(stateObject.savingThrows).some(function(k) {return stateObject.savingThrows[k]})){
         xmlDocumentString += "<saves>" 
+        //for each saving throw, if its there, print the abbreviated stat, a space, and the modifier, 
+        //Todo I think they must be comma separated
         if(stateObject.savingThrows.str){
             xmlDocumentString+= "Str "+ stateObject.savingThrows.str
         }
@@ -66,11 +73,15 @@ const toXML = (stateObject) => {
         if(stateObject.savingThrows.cha){
             xmlDocumentString+= "Cha " + stateObject.savingThrows.cha
         }
+        //close saves tag
         xmlDocumentString += "</saves>\n"
     }
     //same with skills
-    if (stateObject.skills) {
-        xmlDocumentString += "<skills>" + stateObject.skills + "</skills>\n"
+    if(Object.keys(stateObject.savingThrows).some(function(k) {return stateObject.savingThrows[k]}))
+    {
+        xmlDocumentString += "<skills>" 
+
+        xmlDocumentString += "</skills>\n"
     }
     //also res,immune, and vuln
 

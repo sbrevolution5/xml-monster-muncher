@@ -12,7 +12,7 @@ const Saves = ({sendData}) => {
     sendData(value);
   }   
   useEffect(()=>{callBackMethod({str: strSave, dex:dexSave, con: conSave, int: intSave, wis: wisSave, cha: chaSave})},[strSave, dexSave, conSave, intSave, wisSave, chaSave])
-  const setSave = [setStrSave, setDexSave, setConSave, setDexSave, setIntSave, setWisSave, setChaSave];
+  const setSave = [setStrSave, setDexSave, setConSave, setIntSave, setWisSave, setChaSave];
   return (
     <div className="form-group row">
       {saveThrows.map((value, index) => {
