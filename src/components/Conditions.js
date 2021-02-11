@@ -1,4 +1,4 @@
-import { Component, useState} from "react";
+import { Component, useState, useEffect} from "react";
 
 // should be collapsable, with a number to show how many conditions are checked while it is collapsed. 
 const Conditions = ({sendData}) => {
@@ -18,10 +18,14 @@ const Conditions = ({sendData}) => {
     const [stunned, setStunned] = useState(false)
     const [unconscious, setUnconscious] = useState(false)
 
-
+    const callBackMethod=(value)=>{
+        sendData(value);
+    }   
     const conditionList = ["Blinded", "Charmed", "Deafened", "Exhaustion", "Frightened", "Grappled", "Incapacitated", "Invisible", "Paralyzed", "Petrified", "Poisoned", "Prone", "Restrained", "Stunned", "Unconscious",]
     const conditionSet = [setBlinded, setCharmed, setDeafened, setExhaustion, setFrightened, setGrappled, setIncapacitated, setInvisible, setParalyzed, setPetrified, setPoisoned, setProne, setRestrained, setStunned, setUnconscious]
     const conditionVar = [blinded, charmed, deafened, exhaustion, frightened, grappled, incapacitated, invisible, paralyzed, petrified, poisoned, prone, restrained, stunned, unconscious]
+    useEffect(() => {callBackMethod({blinded: blinded, charmed: charmed, deafened: deafened, exhaustion: exhaustion, frightened: frightened, grappled: grappled, incapacitated: incapacitated, invisible: invisible, paralyzed: paralyzed, poisoned: poisoned, petrified: petrified, prone: prone, restrained: restrained, stunned: stunned, unconscious: unconscious})
+    }, conditionVar)
 
     return (
         <div className="row">
