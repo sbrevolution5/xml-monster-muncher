@@ -124,6 +124,7 @@ class Form extends Component {
             },
             traits: [],
             actions: [],
+            legendaryActions: [],
             description: "",
             environment: ""
 
