@@ -63,6 +63,7 @@ class Form extends Component {
             },
             //what if we put all damage types in an object, and labeled them with a string "none", "resist", "immune", "vulnerable". 
             //this would better reflect how the damagetypes component works. 
+            //possibly use integers in the future to optimize
             DamageTypes: {
                 Slashing: "none",
                 Piercing: "none",
@@ -125,8 +126,7 @@ class Form extends Component {
         this.setState({skills: data})
     }
     getDataFromDamageTypes(data) {
-        //retrieves the array of objects from Damage types component, then sets each part of state to the correct object. 
-        this.setState({resistances: data[0], immunities: data[1], vulnerabilities: data[2]})
+        this.setState({DamageTypes: data})
     }
     getDataFromChallengeRating(data){
         this.setState({cr: data});
@@ -219,7 +219,7 @@ class Form extends Component {
                     <label>
                         <i className="fa fa-fist-raised" aria-hidden="true"></i>= normal, R= Resistance, I= immunity, V=Vulnerability
                     </label>
-                    <DamageTypes state={this.state}></DamageTypes>
+                    <DamageTypes state={this.state} sendData={this.getDataFromDamageTypes}></DamageTypes>
                 </div>
                 <div>
                     <label>
