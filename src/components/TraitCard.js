@@ -1,5 +1,5 @@
 import { Component, useState, useEffect } from "react";
-const TraitCard = ({sendTraitData}) => {
+const TraitCard = ({sendTraitData, eleIndex, remove}) => {
     const [title, setTitle] = useState("")
     const [text, setText] = useState("")
 
@@ -16,9 +16,9 @@ const TraitCard = ({sendTraitData}) => {
                 <div className="card-body">
                     <div className="form-group">
                         <label htmlFor="traitDescription"></label>
-                        <textarea className="form-control bg-dark text-light" name="description" id="traitDescription" placeholder="describe aciton here" rows="3"onChange={(e)=>{setText(e.target.value)}}></textarea>
+                        <textarea className="form-control bg-dark text-light" name="description" id="traitDescription" placeholder="describe aciton here" rows="3" onChange={(e)=>{setText(e.target.value)}}></textarea>
                     </div>
-                    <button type="button" className="btn btn-danger">Remove Trait</button>
+                    <button type="button" className="btn btn-danger" eleIndex={eleIndex} onClick={(e)=>{remove(e.target.eleIndex)}}>Remove Trait</button>
                 </div>
             </div>
         </div>

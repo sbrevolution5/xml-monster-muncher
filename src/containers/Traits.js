@@ -5,12 +5,17 @@ const Traits=({sendData})=> {
     const addNewTrait = (data)=>{
         setTraits([...traits, data])
     }
-    // problem: there are 2 ways to edit state, one that adds a "blank" Trait card, and another that updates the content of that state based on the changes in the card, or removes the card if the remove button was (clicked and confirmed?).  
+    // problem: there are 2 ways to edit state, one that adds a "blank" trait card, and another that updates the content of that state based on the changes in the card, or removes the card if the remove button was (clicked and confirmed?).  
     const modifyTrait = ()=>{
-        //find Trait in state using..... index? 
-        //copy array, removing Trait,
-        //set state to array with new Trait, probably in order
+        //find trait in state using..... index? 
+        //copy array, removing trait,
+        //set state to array with new trait, probably in order
         setTraits([...traits])//TODO
+    }
+    const cardDeleter=(index)=>{
+        let traitGroup = traits.splice(index,1);
+        setTraits(traitGroup)
+        
     }
     const callBackMethod=(value)=>{
         sendData(value);
@@ -24,7 +29,7 @@ const Traits=({sendData})=> {
                 
                 {traits.map((value, index)=>{
                     return (
-                        <TraitCard key={index} sendTraitData={modifyTrait} index={index} value={value}></TraitCard>
+                        <TraitCard key={index} sendTraitData={modifyTrait} eleIndex={index} value={value} remove={cardDeleter}></TraitCard>
                         )
                     })}
                 </div>
