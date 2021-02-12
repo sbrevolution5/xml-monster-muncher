@@ -20,9 +20,14 @@ const Actions=({sendData})=> {
     return(
         <div>
             <button type="button" className="btn btn-success" onClick={(e)=>{addNewAction({title: "", text: ""})}}>Add Action</button>
+             <div class="card-deck">
+                
                 {actions.map((value, index)=>{
-                    return <ActionCard key={index} sendActionData={modifyAction} index={index} value={value}></ActionCard>
-                })}
+                    return (
+                        <ActionCard key={index} sendActionData={modifyAction} index={index} value={value}></ActionCard>
+                        )
+                    })}
+                </div>
         </div>
     )
 }

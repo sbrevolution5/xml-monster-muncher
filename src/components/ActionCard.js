@@ -11,13 +11,9 @@ const ActionCard = ({sendActionData}) => {
         <div>
             {/* remove buton for each card  */}
             <div className="card text-white bg-dark mb-3 d-inline-block">
-                <div className="card-header">Action Card</div>
+                <div className="card-header"><input type="text" className="form-control bg-dark text-light" name="title" id="actionTitle" aria-describedby="helpId" placeholder="" onChange={(e)=>{setTitle(e.target.value)}}/></div>
+                <small id="helpId" className="form-text text-muted" >Name of action</small>
                 <div className="card-body">
-                    <div className="form-group">
-                        <label htmlFor="actionTitle"></label>
-                        <input type="text" className="form-control bg-dark text-light" name="title" id="actionTitle" aria-describedby="helpId" placeholder="" onChange={(e)=>{setTitle(e.target.value)}}/>
-                        <small id="helpId" className="form-text text-muted" >Name of action</small>
-                    </div>
                     <div className="form-group">
                         <label htmlFor="actionDescription"></label>
                         <textarea className="form-control bg-dark text-light" name="description" id="actionDescription" placeholder="describe aciton here" rows="3"onChange={(e)=>{setText(e.target.value)}}></textarea>
