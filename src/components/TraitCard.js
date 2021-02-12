@@ -3,10 +3,11 @@ const TraitCard = ({sendTraitData, eleindex, remove}) => {
     const [title, setTitle] = useState("")
     const [text, setText] = useState("")
 
-    const callBackMethod=(value)=>{
-        sendTraitData(value);
+    const callBackMethod=(value, index)=>{
+        console.log('sending value: ', value)
+        sendTraitData(value, index);
     }
-    useEffect(()=>{ callBackMethod({title: title, text: text})}, [title, text])
+    useEffect(()=>{ callBackMethod({title: title, text: text}, eleindex)}, [title, text])
     return (
         <div>
             {/* remove buton for each card  */}

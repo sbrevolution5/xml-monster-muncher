@@ -6,11 +6,10 @@ const Traits=({sendData})=> {
         setTraits([...traits, data])
     }
     // problem: there are 2 ways to edit state, one that adds a "blank" trait card, and another that updates the content of that state based on the changes in the card, or removes the card if the remove button was (clicked and confirmed?).  
-    const modifyTrait = ()=>{
-        //find trait in state using..... index? 
-        //copy array, removing trait,
-        //set state to array with new trait, probably in order
-        setTraits([...traits])//TODO
+    const modifyTrait = (data, index)=>{
+        let newTraits = [...traits]
+        newTraits[index] = data
+        setTraits([...newTraits])//TODO
     }
     const cardDeleter=(index)=>{
         let traitGroup = [...traits]

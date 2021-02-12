@@ -1,33 +1,33 @@
 import {Component, useState, useEffect} from 'react';
 import ActionCard from '../components/ActionCard'
-const Actions=({sendData})=> {
-    const [actions, setActions] = useState([{}])
-    const addNewAction = (data)=>{
-        setActions([...actions, data])
+const Legactions=({sendData})=> {
+    const [legactions, setLegactions] = useState([{}])
+    const addNewLegAction = (data)=>{
+        setLegactions([...legactions, data])
     }
     // problem: there are 2 ways to edit state, one that adds a "blank" action card, and another that updates the content of that state based on the changes in the card, or removes the card if the remove button was (clicked and confirmed?).  
-    const modifyAction = (data, index)=>{
-        let newActions = [...actions]
-        newActions[index] = data
-        setActions([...newActions])//TODO
+    const modifyLegAction = (data, index)=>{
+        let newLegactions = [...legactions]
+        newLegactions[index] = data
+        setLegactions([...newLegactions])//TODO
     }
     const cardDeleter=(index)=>{
-        let actionGroup = [...actions]
-        actionGroup.splice(index,1);
-        console.log(actionGroup);
-        setActions(actionGroup);
+        let legActionGroup = [...legactions]
+        legActionGroup.splice(index,1);
+        console.log(legActionGroup);
+        setLegactions(legActionGroup);
         }
     const callBackMethod=(value)=>{
         sendData(value);
     }
-    useEffect(()=>{callBackMethod(actions)}, [actions])
+    useEffect(()=>{callBackMethod(legactions)}, [legactions])
 
     return(
         <div>
             <button type="button" className="btn btn-success" onClick={(e)=>{addNewAction({title: "", text: ""})}}>Add Action</button>
              <div className="card-deck">
                 
-                {actions.map((value, index)=>{
+                {legactions.map((value, index)=>{
                     return (
                         <ActionCard key={index} sendActionData={modifyAction} eleindex={index} value={value} remove={cardDeleter}></ActionCard>
                         )
@@ -36,4 +36,4 @@ const Actions=({sendData})=> {
         </div>
     )
 }
-export default Actions;
+export default Legactions;
