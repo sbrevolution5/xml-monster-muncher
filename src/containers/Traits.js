@@ -22,7 +22,7 @@ const Traits=({sendData})=> {
             <button type="button" className="btn btn-success" onClick={(e)=>{addNewTrait({title: "", text: ""})}}>Add Trait</button>
              <div class="card-deck">
                 
-                {Traits.map((value, index)=>{
+                {traits.map((value, index)=>{
                     return (
                         <TraitCard key={index} sendTraitData={modifyTrait} index={index} value={value}></TraitCard>
                         )

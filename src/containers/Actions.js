@@ -12,6 +12,11 @@ const Actions=({sendData})=> {
         //set state to array with new action, probably in order
         setActions([...actions])//TODO
     }
+    const cardDeleter=(index)=>{
+        let actionGroup = actions.splice(index,1);
+        setActions(actionGroup)
+        
+    }
     const callBackMethod=(value)=>{
         sendData(value);
     }
@@ -24,7 +29,7 @@ const Actions=({sendData})=> {
                 
                 {actions.map((value, index)=>{
                     return (
-                        <ActionCard key={index} sendActionData={modifyAction} index={index} value={value}></ActionCard>
+                        <ActionCard key={index} sendActionData={modifyAction} eleIndex={index} value={value} remove={cardDeleter}></ActionCard>
                         )
                     })}
                 </div>

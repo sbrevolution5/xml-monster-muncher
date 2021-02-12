@@ -115,6 +115,7 @@ class Form extends Component {
         this.getDataFromChallengeRating = this.getDataFromChallengeRating.bind(this)
         this.getDataFromActions = this.getDataFromActions.bind(this)
         this.getDataFromConditions = this.getDataFromConditions.bind(this)
+        this.getDataFromTraits = this.getDataFromTraits.bind(this)
     }
     //gets data sent from stats via prop, assigns to state.stats
     getDataFromStats(data) {
