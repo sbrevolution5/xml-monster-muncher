@@ -5,6 +5,7 @@ const Actions=({sendData})=> {
     const addNewAction = (data)=>{
         setActions([...actions, data])
     }
+    // problem: there are 2 ways to edit state, one that adds a "blank" action card, and another that updates the content of that state based on the changes in the card, or removes the card if the remove button was (clicked and confirmed?).  
     const modifyAction = ()=>{
         //find action in state using..... index? 
         //copy array, removing action,
@@ -15,12 +16,12 @@ const Actions=({sendData})=> {
         sendData(value);
     }
     useEffect(()=>{callBackMethod(actions)}, [actions])
-    
+
     return(
         <div>
-            <button type="button" className="btn btn-success" onClick={addNewAction}>Add Action</button>
+            <button type="button" className="btn btn-success" onClick={(e)=>{addNewAction({title: "", text: ""})}}>Add Action</button>
                 {actions.map((value, index)=>{
-                    <ActionCard key={index} sendActionData={modifyAction}></ActionCard>
+                    return <ActionCard key={index} sendActionData={modifyAction} index={index} value={value}></ActionCard>
                 })}
         </div>
     )
