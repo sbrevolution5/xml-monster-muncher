@@ -1,5 +1,12 @@
-import { Component } from "react";
-const ActionCard = () => {
+import { Component, useState, useEffect } from "react";
+const ActionCard = ({sendActionData}) => {
+    const [title, settitle] = useState("")
+    const [text, setText] = useState("")
+    
+    const callBackMethod=(value)=>{
+        sendActionData(value);
+    }
+    useEffect(()=>{ callBackMethod({title: title, text: text})})
     return (
         <div>
             {/* remove buton for each card  */}

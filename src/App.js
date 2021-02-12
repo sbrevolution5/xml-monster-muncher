@@ -10,7 +10,7 @@ function App() {
       </header>
         <Form></Form>
       <div>
-        <p class="form-text text-muted">
+        <p className="form-text text-muted">
           Fill in what is needed for your monster, then copy paste into a txt file ending in .xml with a surrounding tag of compendium.  then import into your favorite combat tracker.  Currently optimized for game master 5.
         </p>
       </div>
