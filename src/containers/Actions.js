@@ -13,10 +13,11 @@ const Actions=({sendData})=> {
         setActions([...actions])//TODO
     }
     const cardDeleter=(index)=>{
-        let actionGroup = actions.splice(index,1);
-        setActions(actionGroup)
-        
-    }
+        let actionGroup = [...actions]
+        actionGroup.splice(index,1);
+        console.log(actionGroup);
+        setActions(actionGroup);
+        }
     const callBackMethod=(value)=>{
         sendData(value);
     }
@@ -25,11 +26,11 @@ const Actions=({sendData})=> {
     return(
         <div>
             <button type="button" className="btn btn-success" onClick={(e)=>{addNewAction({title: "", text: ""})}}>Add Action</button>
-             <div class="card-deck">
+             <div className="card-deck">
                 
                 {actions.map((value, index)=>{
                     return (
-                        <ActionCard key={index} sendActionData={modifyAction} eleIndex={index} value={value} remove={cardDeleter}></ActionCard>
+                        <ActionCard key={index} sendActionData={modifyAction} eleindex={index} value={value} remove={cardDeleter}></ActionCard>
                         )
                     })}
                 </div>

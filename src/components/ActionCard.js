@@ -1,5 +1,5 @@
 import { Component, useState, useEffect } from "react";
-const ActionCard = ({sendActionData, eleIndex, remove}) => {
+const ActionCard = ({sendActionData, eleindex, remove}) => {
     const [title, setTitle] = useState("")
     const [text, setText] = useState("")
 
@@ -18,7 +18,7 @@ const ActionCard = ({sendActionData, eleIndex, remove}) => {
                         <label htmlFor="actionDescription"></label>
                         <textarea className="form-control bg-dark text-light" name="description" id="actionDescription" placeholder="describe aciton here" rows="3" onChange={(e)=>{setText(e.target.value)}}></textarea>
                     </div>
-                    <button type="button" className="btn btn-danger" eleIndex={eleIndex} onClick={(e)=>{remove(e.target.eleIndex)}}>Remove Action</button>
+                    <button type="button" className="btn btn-danger" eleindex={eleindex} onClick={(e)=>{remove(e.target.eleindex)}}>Remove Action</button>
                 </div>
             </div>
         </div>

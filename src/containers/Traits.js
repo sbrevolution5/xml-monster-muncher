@@ -13,10 +13,11 @@ const Traits=({sendData})=> {
         setTraits([...traits])//TODO
     }
     const cardDeleter=(index)=>{
-        let traitGroup = traits.splice(index,1);
-        setTraits(traitGroup)
-        
-    }
+        let traitGroup = [...traits]
+        traitGroup.splice(index,1);
+        console.log(traitGroup);
+        setTraits(traitGroup);
+        }
     const callBackMethod=(value)=>{
         sendData(value);
     }
@@ -25,11 +26,11 @@ const Traits=({sendData})=> {
     return(
         <div>
             <button type="button" className="btn btn-success" onClick={(e)=>{addNewTrait({title: "", text: ""})}}>Add Trait</button>
-             <div class="card-deck">
+             <div className="card-deck">
                 
                 {traits.map((value, index)=>{
                     return (
-                        <TraitCard key={index} sendTraitData={modifyTrait} eleIndex={index} value={value} remove={cardDeleter}></TraitCard>
+                        <TraitCard key={index} sendTraitData={modifyTrait} eleindex={index} value={value} remove={cardDeleter}></TraitCard>
                         )
                     })}
                 </div>
