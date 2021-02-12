@@ -14,7 +14,7 @@ const Actions=({sendData})=> {
         <div>
             <button type="button" className="btn btn-success" onClick={addNewAction}>Add Action</button>
                 {actions.map((value, index)=>{
-                    <ActionCard></ActionCard>
+                    <ActionCard key={index}></ActionCard>
                 })}
         </div>
     )
