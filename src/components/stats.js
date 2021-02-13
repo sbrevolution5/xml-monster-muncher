@@ -4,7 +4,7 @@ import {useState, useEffect, Component} from 'react';
 const Stats =({onChange, state, sendData})=>{
     //should be able to send the object to parent needs to trigger when state is changed, so that the parent recieves value
     const callBackMethod=(value)=>{
-        sendData(value);
+        sendData("stats",value);
     }   
 
     const [str, setStr] = useState(10);

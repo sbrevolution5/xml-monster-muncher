@@ -18,7 +18,7 @@ const Traits=({sendData})=> {
         setTraits(traitGroup);
         }
     const callBackMethod=(value)=>{
-        sendData(value);
+        sendData("traits", value);
     }
     useEffect(()=>{callBackMethod(traits)}, [traits])
 

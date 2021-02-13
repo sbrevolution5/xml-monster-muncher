@@ -18,7 +18,7 @@ const Legactions=({sendData})=> {
         setLegactions(legActionGroup);
         }
     const callBackMethod=(value)=>{
-        sendData(value);
+        sendData("legActions", value);
     }
     useEffect(()=>{callBackMethod(legactions)}, [legactions])
 

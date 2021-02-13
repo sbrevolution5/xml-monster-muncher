@@ -23,7 +23,7 @@ const DamageTypes = ({ sendData }) => {
     const typeList = ["Slashing", "Piercing", "Bludgeoning", "Poison", "Acid", "Fire", "Cold", "Radiant", "Necrotic", "Lightning", "Thunder", "Force", "Psychic", "Nonmagical"];
     const setDamage = [setSlashing, setPiercing, setBludgeoning, setPoison, setAcid, setFire, setCold, setRadiant, setNecrotic, setLightning, setThunder, setForce, setPsychic, setNonmagical];
     const callBackMethod = (value) => {
-        sendData(value);
+        sendData("DamageTypes", value);
     }
     useEffect(() => {
         callBackMethod({

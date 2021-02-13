@@ -9,7 +9,7 @@ const Saves = ({sendData}) => {
   const [wisSave, setWisSave] = useState("")
   const [chaSave, setChaSave] = useState("")
   const callBackMethod=(value)=>{
-    sendData(value);
+    sendData("savingThrows", value);
   }   
   useEffect(()=>{callBackMethod({str: strSave, dex:dexSave, con: conSave, int: intSave, wis: wisSave, cha: chaSave})},[strSave, dexSave, conSave, intSave, wisSave, chaSave])
   const setSave = [setStrSave, setDexSave, setConSave, setIntSave, setWisSave, setChaSave];

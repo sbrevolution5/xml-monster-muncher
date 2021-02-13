@@ -23,7 +23,7 @@ const Skills =({sendData})=>{
     const skillList = ["Acrobatics", "AnimalHandling", "Arcana", "Athletics", "Deception", "History", "Insight", "Intimidation", "Investigation", "Medicine", "Nature", "Perception", "Performance", "Persuasion", "Religion", "SlightOfHand", "Stealth", "Survival"]
     const skillSet = [setAcrobatics, setAnimalHandling, setArcana, setAthletics, setDeception, setHistory, setInsight, setIntimidation, setInvestigation, setMedicine, setNature, setPerception, setPerformance, setPersuasion, setReligion, setSlightOfHand, setStealth, setSurvival]
     const callBackMethod=(value)=>{
-        sendData(value);
+        sendData("skills", value);
     }   
     useEffect(()=>{callBackMethod({Acrobatics: acrobatics, AnimalHandling: animalHandling, Arcana: arcana, Athletics: athletics, Deception: deception, History: history, Insight: insight, Intimidation: intimidation, Investigation: investigation, Medicine: medicine, Nature: nature, Perception: perception, Performance: performance, Persuasion: persuasion, Religion: religion, SlightOfHand: sleightOfHand, Stealth: stealth, Survival: survival})},[acrobatics, animalHandling, arcana, athletics, deception, history, insight, intimidation, investigation, medicine, nature, perception, performance, persuasion, religion, sleightOfHand, stealth, survival])
     return(

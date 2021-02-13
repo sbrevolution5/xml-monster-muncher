@@ -19,7 +19,7 @@ const Conditions = ({sendData}) => {
     const [unconscious, setUnconscious] = useState(false)
 
     const callBackMethod=(value)=>{
-        sendData(value);
+        sendData("conditionImmunities", value);
     }   
     const conditionList = ["Blinded", "Charmed", "Deafened", "Exhaustion", "Frightened", "Grappled", "Incapacitated", "Invisible", "Paralyzed", "Petrified", "Poisoned", "Prone", "Restrained", "Stunned", "Unconscious",]
     const conditionSet = [setBlinded, setCharmed, setDeafened, setExhaustion, setFrightened, setGrappled, setIncapacitated, setInvisible, setParalyzed, setPetrified, setPoisoned, setProne, setRestrained, setStunned, setUnconscious]

@@ -18,7 +18,7 @@ const Actions=({sendData})=> {
         setActions(actionGroup);
         }
     const callBackMethod=(value)=>{
-        sendData(value);
+        sendData("actions", value);
     }
     useEffect(()=>{callBackMethod(actions)}, [actions])
 
