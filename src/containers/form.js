@@ -164,7 +164,7 @@ class Form extends Component {
                         <input type="text" id="senseInput" placeholder="Darkvision 60 ft." name="senses" value={this.state.senses} onChange={this.handleChange} className="form-control bg-dark text-light"></input>
                     </div>
                 </div>
-                <ChallengeRating value={this.state.stats} sendData={this.getDataFromChallengeRating}></ChallengeRating>
+                <ChallengeRating value={this.state.stats} sendData={this.getDataFrom}></ChallengeRating>
                 <hr></hr>
                 <Stats  value={this.state.stats} sendData={this.getDataFrom}></Stats>
                 <div>
@@ -185,18 +185,18 @@ class Form extends Component {
                     <label>
                         <i className="fa fa-fist-raised" aria-hidden="true"></i>= normal, R= Resistance, I= immunity, V=Vulnerability
                     </label>
-                    <DamageTypes  sendData={this.getDataFromDamageTypes}></DamageTypes>
+                    <DamageTypes  sendData={this.getDataFrom}></DamageTypes>
                 </div>
                 <div>
                     <h3>
                         Condition Immunities
                     </h3>
-                    <Conditions onChange={this.handleChange} sendData={this.getDataFromConditions}></Conditions>
+                    <Conditions onChange={this.handleChange} sendData={this.getDataFrom}></Conditions>
                 </div>
                 <h3>Traits</h3>
-                <Traits onChange={this.handleChange}  sendData={this.getDataFromTraits}></Traits>
+                <Traits onChange={this.handleChange}  sendData={this.getDataFrom}></Traits>
                 <h3>Actions</h3>
-                <Actions onChange={this.handleChange}  sendData={this.getDataFromActions}></Actions>
+                <Actions onChange={this.handleChange}  sendData={this.getDataFrom}></Actions>
                 {/* <div>
                     <div className="form-group">
                         <label htmlFor="description"></label>
