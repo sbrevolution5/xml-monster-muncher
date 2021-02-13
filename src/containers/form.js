@@ -61,9 +61,6 @@ class Form extends Component {
                 Performance: '',
                 Persuasion: '',
             },
-            //what if we put all damage types in an object, and labeled them with a string "none", "resist", "immune", "vulnerable". 
-            //this would better reflect how the damagetypes component works. 
-            //possibly use integers in the future to optimize
             DamageTypes: {
                 Slashing: "none",
                 Piercing: "none",
@@ -108,41 +105,11 @@ class Form extends Component {
         }
         this.handleChange = this.handleChange.bind(this);
         this.render = this.render.bind(this);
-        this.getDataFromStats = this.getDataFromStats.bind(this);
-        this.getDataFromSaves = this.getDataFromSaves.bind(this);
-        this.getDataFromSkills = this.getDataFromSkills.bind(this);
-        this.getDataFromDamageTypes = this.getDataFromDamageTypes.bind(this)
-        this.getDataFromChallengeRating = this.getDataFromChallengeRating.bind(this)
-        this.getDataFromActions = this.getDataFromActions.bind(this)
-        this.getDataFromConditions = this.getDataFromConditions.bind(this)
-        this.getDataFromTraits = this.getDataFromTraits.bind(this)
+        this.getDataFrom = this.getDataFrom.bind(this);
     }
     //gets data sent from stats via prop, assigns to state.stats
-    getDataFromStats(data) {
-        this.setState({stats: data})
-    }
-    getDataFromSaves(data) {
-        this.setState({savingThrows: data})
-    }
-    getDataFromSkills(data) {
-        this.setState({skills: data})
-    }
-    getDataFromDamageTypes(data) {
-        this.setState({DamageTypes: data})
-    }
-    getDataFromChallengeRating(data){
-        this.setState({cr: data});
-    }
-    getDataFromActions(data){
-        //TODO
-        this.setState({actions: data});
-    }
-    getDataFromTraits(data){
-        //TODO
-        this.setState({traits: data});
-    }
-    getDataFromConditions(data){
-        this.setState({conditionImmunities: data})
+    getDataFrom(what, data){
+        this.setState({[what]: data})
     }
     //processes elements directly on this component/container
     handleChange(event) {
@@ -197,42 +164,39 @@ class Form extends Component {
                         <input type="text" id="senseInput" placeholder="Darkvision 60 ft." name="senses" value={this.state.senses} onChange={this.handleChange} className="form-control bg-dark text-light"></input>
                     </div>
                 </div>
-                <ChallengeRating state={this.state} value={this.state.stats} sendData={this.getDataFromChallengeRating}></ChallengeRating>
+                <ChallengeRating value={this.state.stats} sendData={this.getDataFromChallengeRating}></ChallengeRating>
                 <hr></hr>
-                {/* This.handlechange will be executed from within stats each method within needs to use it.  It will be passed the state to update the displayed value.  alternatively, what if Stats had a value prop, which equals state.stats
-                
-                sendData should be child object
-                */}
-                <Stats state={this.state} value={this.state.stats} sendData={this.getDataFromStats}></Stats>
+                <Stats  value={this.state.stats} sendData={this.getDataFrom}></Stats>
                 <div>
-                    <label>
+                    <h3>
                         Saving Throws
-                    </label>
-                    <Saves onChange={this.handleChange} state={this.state} sendData={this.getDataFromSaves}></Saves>
+                    </h3>
+                    <Saves onChange={this.handleChange}  sendData={this.getDataFrom}></Saves>
                 </div>
                 <div>
-                    <label>
+                    <h3>
                         Skills
-                    </label>
-                    <Skills sendData={this.getDataFromSkills}></Skills>
+                    </h3>
+                    <Skills sendData={this.getDataFrom}></Skills>
                 </div>
-                passive Perception calculated by 10+perception(Wis)
                 <div>
+                    <hr></hr>
+                    <h3>Damage types</h3>
                     <label>
                         <i className="fa fa-fist-raised" aria-hidden="true"></i>= normal, R= Resistance, I= immunity, V=Vulnerability
                     </label>
-                    <DamageTypes state={this.state} sendData={this.getDataFromDamageTypes}></DamageTypes>
+                    <DamageTypes  sendData={this.getDataFromDamageTypes}></DamageTypes>
                 </div>
                 <div>
-                    <label>
+                    <h3>
                         Condition Immunities
-                    </label>
+                    </h3>
                     <Conditions onChange={this.handleChange} sendData={this.getDataFromConditions}></Conditions>
                 </div>
                 <h3>Traits</h3>
-                <Traits onChange={this.handleChange} state={this.state} sendData={this.getDataFromTraits}></Traits>
+                <Traits onChange={this.handleChange}  sendData={this.getDataFromTraits}></Traits>
                 <h3>Actions</h3>
-                <Actions onChange={this.handleChange} state={this.state} sendData={this.getDataFromActions}></Actions>
+                <Actions onChange={this.handleChange}  sendData={this.getDataFromActions}></Actions>
                 {/* <div>
                     <div className="form-group">
                         <label htmlFor="description"></label>
