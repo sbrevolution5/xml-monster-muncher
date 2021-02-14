@@ -1,5 +1,6 @@
 //import problem for some reason it is not exported, currently putting in this file
 //import { toXML } from "../devLogic/export.js";
+import './output.css'
 const toXML = (stateObject) => {
     const updateSkill = (skillName) => {
         if (stateObject.skills[skillName]) {
@@ -12,50 +13,50 @@ const toXML = (stateObject) => {
     let xmlDocumentString = "";
     xmlDocumentString += "<monster>\n"
     if (stateObject.name) {
-        xmlDocumentString += "<name>" + stateObject.name + "</name>\n"
+        xmlDocumentString += "\t<name>" + stateObject.name + "\t</name>\n"
     } /*else {
         console.error("no name given");
     }*/
     if (stateObject.size) {
-        xmlDocumentString += "<size>" + stateObject.size + "</size>\n"
+        xmlDocumentString += "\t<size>" + stateObject.size + "</size>\n"
     }
     if (stateObject.type) {
-        xmlDocumentString += "<type>" + stateObject.type + "</type>\n"
+        xmlDocumentString += "\t<type>" + stateObject.type + "</type>\n"
     }
     if (stateObject.alignment) {
-        xmlDocumentString += "<alignment>" + stateObject.alignment + "</alignment>\n"
+        xmlDocumentString += "\t<alignment>" + stateObject.alignment + "</alignment>\n"
     }
     if (stateObject.ac) {
-        xmlDocumentString += "<ac>" + stateObject.ac + "</ac>\n"
+        xmlDocumentString += "\t<ac>" + stateObject.ac + "</ac>\n"
     }
     if (stateObject.hp) {
-        xmlDocumentString += "<hp>" + stateObject.hp + "</hp>\n"
+        xmlDocumentString += "\t<hp>" + stateObject.hp + "</hp>\n"
     }
     if (stateObject.speed) {
-        xmlDocumentString += "<speed>" + stateObject.speed + "</speed>\n"
+        xmlDocumentString += "\t<speed>" + stateObject.speed + "</speed>\n"
     }
     if (stateObject.stats.str) {
-        xmlDocumentString += "<str>" + stateObject.stats.str + "</str>\n"
+        xmlDocumentString += "\t<str>" + stateObject.stats.str + "</str>\n"
     }
     if (stateObject.stats.dex) {
-        xmlDocumentString += "<dex>" + stateObject.stats.dex + "</dex>\n"
+        xmlDocumentString += "\t<dex>" + stateObject.stats.dex + "</dex>\n"
     }
     if (stateObject.stats.con) {
-        xmlDocumentString += "<con>" + stateObject.stats.con + "</con>\n"
+        xmlDocumentString += "\t<con>" + stateObject.stats.con + "</con>\n"
     }
     if (stateObject.stats.int) {
-        xmlDocumentString += "<int>" + stateObject.stats.int + "</int>\n"
+        xmlDocumentString += "\t<int>" + stateObject.stats.int + "</int>\n"
     }
     if (stateObject.stats.wis) {
-        xmlDocumentString += "<wis>" + stateObject.stats.wis + "</wis>\n"
+        xmlDocumentString += "\t<wis>" + stateObject.stats.wis + "</wis>\n"
     }
     if (stateObject.stats.cha) {
-        xmlDocumentString += "<cha>" + stateObject.stats.cha + "</cha>\n"
+        xmlDocumentString += "\t<cha>" + stateObject.stats.cha + "</cha>\n"
     }
 
     //if there are any saves, open saves tag
     if (Object.keys(stateObject.savingThrows).some(function (k) { return stateObject.savingThrows[k] })) {
-        xmlDocumentString += "<saves>"
+        xmlDocumentString += "\t<saves>"
         //for each saving throw, if its there, print the abbreviated stat, a space, and the modifier, 
         //Todo I think they must be comma separated
         if (stateObject.savingThrows.str) {
@@ -81,14 +82,14 @@ const toXML = (stateObject) => {
     }
     //same with skills
     if (Object.keys(stateObject.skills).some(function (k) { return stateObject.skills[k] })) {
-        xmlDocumentString += "<skills>"
+        xmlDocumentString += "\t<skills>"
         skillList.map((value, index) => {
             return updateSkill(value)
         })
         xmlDocumentString += "</skills>\n"
     }
     if (Object.keys(stateObject.DamageTypes).some(function (k) { return stateObject.DamageTypes[k] == "resist" })) {
-        xmlDocumentString += "<resist>"
+        xmlDocumentString += "\t<resist>"
         damageList.map((damageName) => {
             if (stateObject.DamageTypes[damageName]=="resist") {
                 xmlDocumentString += damageName + " "
@@ -97,7 +98,7 @@ const toXML = (stateObject) => {
         xmlDocumentString += "</resist>\n"
     }
     if (Object.keys(stateObject.DamageTypes).some(function (k) { return stateObject.DamageTypes[k] == "immune" })) {
-        xmlDocumentString += "<immune>"
+        xmlDocumentString += "\t<immune>"
         damageList.map((damageName) => {
             console.log(damageName, " checked for immune")
             if (stateObject.DamageTypes[damageName]=="immune") {
@@ -107,7 +108,7 @@ const toXML = (stateObject) => {
         xmlDocumentString += "</immune>\n"
     }
     if (Object.keys(stateObject.DamageTypes).some(function (k) { return stateObject.DamageTypes[k] == "vulnerable" })) {
-        xmlDocumentString += "<vulnerable>";
+        xmlDocumentString += "\t<vulnerable>";
         let damageList = Object.keys(stateObject.DamageTypes)
         damageList.map((damageName) => {
             if (stateObject.DamageTypes[damageName]=="vulnerable") {
@@ -116,32 +117,31 @@ const toXML = (stateObject) => {
         })
         xmlDocumentString += "</vulnerable>\n"
     }
-    //also res,immune, and vuln
 
     if (stateObject.senses) {
-        xmlDocumentString += "<senses>" + stateObject.senses + "</senses>\n"
+        xmlDocumentString += "\t<senses>" + stateObject.senses + "</senses>\n"
     }
     if (stateObject.passive) {
-        xmlDocumentString += "<passive>" + stateObject.passive + "</passive>\n"
+        xmlDocumentString += "\t<passive>" + stateObject.passive + "</passive>\n"
     }
     if (stateObject.languages) {
-        xmlDocumentString += "<languages>" + stateObject.languages + "</languages>\n"
+        xmlDocumentString += "\t<languages>" + stateObject.languages + "</languages>\n"
     }
     if (stateObject.cr) {
-        xmlDocumentString += "<cr>" + stateObject.cr + "</cr>\n"
+        xmlDocumentString += "\t<cr>" + stateObject.cr + "</cr>\n"
     }
     //traits actions and legendary?
     if (stateObject.traits.length > 0){
         for (let i = 0; i < stateObject.traits.length; i++) {
             const element = stateObject.traits[i];
-            xmlDocumentString+= "<trait>\n<name>" + element.title + "</name>\n<text>" + element.text +"</text>\n</trait>\n"
+            xmlDocumentString+= "\t<trait>\n\t\t<name>" + element.title + "</name>\n\t\t<text>" + element.text +"</text>\n\t</trait>\n"
             
         }
     }
     if (stateObject.actions.length > 0){
         for (let i = 0; i < stateObject.actions.length; i++) {
             const element = stateObject.actions[i];
-            xmlDocumentString+= "<action>\n<name>" + element.title + "</name>\n<text>" + element.text +"</text>\n</action>\n"
+            xmlDocumentString+= "\t<action>\n\t\t<name>" + element.title + "</name>\n\t\t<text>" + element.text +"</text>\n\t</action>\n"
             
         }
     }
@@ -157,7 +157,7 @@ const Output = ({ state }) => {
     return (
         <div className="jumbotron bg-dark text-light">
             <h1 className="display-3">Output:</h1>
-            <p style={{ whiteSpace: "pre-wrap" }}>{outputString}</p>
+            <p className="output-text" style={{ whiteSpace: "pre-wrap" }}>{outputString}</p>
         </div>
 
     )

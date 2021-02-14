@@ -7,6 +7,7 @@ import Traits from './Traits';
 import Actions from './Actions';
 import ChallengeRating from '../components/ChallengeRating';
 import Output from './output';
+import './form.css'
 const { render } = require("@testing-library/react")
 const { Component } = require("react")
 
@@ -122,7 +123,7 @@ class Form extends Component {
     render() {
         return (
             <form>
-                <div className="form-group row">
+                <div className="form-group row text-box-spaced">
                     <div className="col-sm-4">
                         <label htmlFor="nameInput">Name</label>
                         <input type="text" id="nameInput" placeholder="creature name" name="name" value={this.state.name} onChange={this.handleChange} className="form-control bg-dark  text-light" />
@@ -136,7 +137,7 @@ class Form extends Component {
                         <input type="text" id="sizeInput" placeholder="Small, Medium, Large, Huge" name="size" value={this.state.size} onChange={this.handleChange} className="form-control bg-dark text-light"></input>
                     </div>
                 </div>
-                <div className="form-group row">
+                <div className="form-group row text-box-spaced">
                     <div className="col-sm-4">
                         <label htmlFor="alignmentInput">Alignment</label>
                         <input type="text" id="alignmentInput" placeholder="Lawful good, neutral evil, ect." name="alignment" value={this.state.alignment} onChange={this.handleChange} className="form-control bg-dark text-light"></input>
@@ -150,7 +151,7 @@ class Form extends Component {
                         <input type="text" id="armorInput" placeholder="12, light armor" name="ac" value={this.state.ac} onChange={this.handleChange} className="form-control bg-dark text-light"></input>
                     </div>
                 </div>
-                <div className="form-group row">
+                <div className="form-group row text-box-spaced">
                     <div className="col-sm-4">
                         <label htmlFor="speedInput">Speed</label>
                         <input type="text" id="speedInput" placeholder=" walk 30 ft., fly 50 ft. " name="speed" value={this.state.speed} onChange={this.handleChange} className="form-control bg-dark text-light"></input>

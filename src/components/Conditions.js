@@ -1,5 +1,5 @@
 import { Component, useState, useEffect} from "react";
-
+import './conditions.css'
 // should be collapsable, with a number to show how many conditions are checked while it is collapsed. 
 const Conditions = ({sendData}) => {
     const [blinded, setBlinded] = useState(false)
@@ -28,7 +28,7 @@ const Conditions = ({sendData}) => {
     }, conditionVar)
 
     return (
-        <div className="row">
+        <div className="row button-box">
             {conditionList.map((value, index) => {
                 //buttons need to be toggleable!
                 return (
