@@ -7,9 +7,9 @@ const ChallengeRating = ({sendData})=>{
     }   
     useEffect(()=>{callBackMethod(cr)}, [cr])
     return(
-        <div className="form-group">
+        <div className="form-group text-box-spaced">
           <label htmlFor="crForm">Challenge Rating</label>
-          <select className="form-control bg-dark text-light" name="" id="crForm" onChange={e=>{setCr(e.target.value)}}>
+          <select className="form-control bg-dark text-light text-box-spaced" name="" id="crForm" onChange={e=>{setCr(e.target.value)}}>
             {crs.map((value, index)=>{
                 return <option key={index} value={value}>{value}</option>;
             })}

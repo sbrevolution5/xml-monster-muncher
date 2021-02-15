@@ -14,11 +14,11 @@ const Saves = ({sendData}) => {
   useEffect(()=>{callBackMethod({str: strSave, dex:dexSave, con: conSave, int: intSave, wis: wisSave, cha: chaSave})},[strSave, dexSave, conSave, intSave, wisSave, chaSave])
   const setSave = [setStrSave, setDexSave, setConSave, setIntSave, setWisSave, setChaSave];
   return (
-    <div className="form-group row">
+    <div className="form-group row text-box-spaced">
       {saveThrows.map((value, index) => {
         //no check boxes, empty box means no change from base stats
         return (
-          <div className="form-check" key={index}>
+          <div className="form-check col-sm-4" key={index}>
             <label className="form-check-label" htmlFor={value + "Box"}>
               {value}
             </label>
