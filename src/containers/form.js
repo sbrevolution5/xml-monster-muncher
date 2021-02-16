@@ -8,6 +8,7 @@ import Actions from './Actions';
 import ChallengeRating from '../components/ChallengeRating';
 import Output from './output';
 import './form.css'
+import ls from 'local-storage'
 const { render } = require("@testing-library/react")
 const { Component } = require("react")
 
@@ -107,10 +108,12 @@ class Form extends Component {
         this.handleChange = this.handleChange.bind(this);
         this.render = this.render.bind(this);
         this.getDataFrom = this.getDataFrom.bind(this);
+        this.componentWillUnmount = this.componentWillUnmount.bind(this);
+        this.browserSave = this.browserSave.bind(this)
     }
     //gets data sent from stats via prop, assigns to state.stats
-    getDataFrom(what, data){
-        this.setState({[what]: data})
+    getDataFrom(what, data) {
+        this.setState({ [what]: data })
     }
     //processes elements directly on this component/container
     handleChange(event) {
@@ -119,10 +122,33 @@ class Form extends Component {
         const name = target.name;
         this.setState({ [name]: value });
     }
+    //called when button is pressed
+    browserSave(){
+        console.log('saved to browser')
+        ls.set('state', this.state)
+    }
+    
+    //when component is about to mount, load state from user's localstorage (if there is one )
+    componentDidMount() {
+        
+        if (ls.get('state') == false) {
+            ls.set('state', JSON.stringify(this.state));
+        }
+        else {
+            console.log("localStorage");
+            this.setState(ls.get('state'));
+        }
+    }
+    // as component unmounts, set local storage
+    componentWillUnmount(){
 
+        localStorage.setItem('state', JSON.stringify(this.state));
+    }
+    
     render() {
         return (
             <form>
+                <button type="button" name="" id="" onClick={this.browserSave} class="btn btn-primary btn-lg btn-block">Save to LocalStorage</button>
                 <div className="form-group row text-box-spaced">
                     <div className="col-sm-4">
                         <label htmlFor="nameInput">Name</label>
@@ -167,12 +193,12 @@ class Form extends Component {
                 </div>
                 <ChallengeRating value={this.state.stats} sendData={this.getDataFrom}></ChallengeRating>
                 <hr></hr>
-                <Stats  value={this.state.stats} sendData={this.getDataFrom}></Stats>
+                <Stats value={this.state.stats} sendData={this.getDataFrom}></Stats>
                 <div>
                     <h3>
                         Saving Throws
                     </h3>
-                    <Saves onChange={this.handleChange}  sendData={this.getDataFrom}></Saves>
+                    <Saves onChange={this.handleChange} sendData={this.getDataFrom}></Saves>
                 </div>
                 <div>
                     <h3>
@@ -186,7 +212,7 @@ class Form extends Component {
                     <label>
                         <i className="fa fa-fist-raised" aria-hidden="true"></i>= normal, R= Resistance, I= immunity, V=Vulnerability
                     </label>
-                    <DamageTypes  sendData={this.getDataFrom}></DamageTypes>
+                    <DamageTypes sendData={this.getDataFrom}></DamageTypes>
                 </div>
                 <div>
                     <h3>
@@ -195,9 +221,9 @@ class Form extends Component {
                     <Conditions onChange={this.handleChange} sendData={this.getDataFrom}></Conditions>
                 </div>
                 <h3>Traits</h3>
-                <Traits onChange={this.handleChange}  sendData={this.getDataFrom}></Traits>
+                <Traits onChange={this.handleChange} sendData={this.getDataFrom}></Traits>
                 <h3>Actions</h3>
-                <Actions onChange={this.handleChange}  sendData={this.getDataFrom}></Actions>
+                <Actions onChange={this.handleChange} sendData={this.getDataFrom}></Actions>
                 {/* <div>
                     <div className="form-group">
                         <label htmlFor="description"></label>
@@ -205,7 +231,7 @@ class Form extends Component {
                         {onChange={this.handleChange} value={this.state.description}}
                     </div>
                 </div> */}
-                <div className="">
+                <div className="form-group text-box-spaced">
                     <label htmlFor="environmentInput"> Environment </label>
                     <input type="text" id="senseInput" placeholder="Mountain, hills, etc." name="environment" value={this.state.environment} onChange={this.handleChange} className="form-control bg-dark text-light"></input>
                 </div>
