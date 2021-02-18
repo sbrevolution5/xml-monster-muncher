@@ -1,5 +1,5 @@
 import {Component, useState, useEffect} from 'react';
-import ActionCard from '../components/ActionCard'
+import LegActionCard from '../components/LegActionCard'
 const LegActions=({sendData})=> {
     const [actions, setActions] = useState([{}])
     const addNewAction = (data)=>{

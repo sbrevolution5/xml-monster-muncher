@@ -8,7 +8,8 @@ import Actions from './Actions';
 import ChallengeRating from '../components/ChallengeRating';
 import Output from './output';
 import './form.css'
-import ls from 'local-storage'
+import ls from 'local-storage';
+import LegActions from './LegActions';
 const { render } = require("@testing-library/react")
 const { Component } = require("react")
 
