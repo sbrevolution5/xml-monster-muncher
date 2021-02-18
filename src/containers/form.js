@@ -224,6 +224,8 @@ class Form extends Component {
                 <Traits onChange={this.handleChange} sendData={this.getDataFrom}></Traits>
                 <h3>Actions</h3>
                 <Actions onChange={this.handleChange} sendData={this.getDataFrom}></Actions>
+                <h3>Legendary Actions</h3>
+                <LegActions onChange={this.handleChange} sendData={this.getDataFrom}></LegActions>
                 {/* <div>
                     <div className="form-group">
                         <label htmlFor="description"></label>
