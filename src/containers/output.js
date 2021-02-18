@@ -145,6 +145,12 @@ const toXML = (stateObject) => {
             
         }
     }
+    if (stateObject.legendaryActions.length > 0){
+        for (let i = 0; i < stateObject.legendaryActions.length; i++) {
+            const element = stateObject.legendaryActions[i];
+            xmlDocumentString+= "\t<legendary>\n\t\t<name>" + element.title + "</name>\n\t\t<text>" + element.text +"</text>\n\t</legendary>\n"
+        }
+    }
     //finish xml by closing monster tag
     xmlDocumentString += "</monster>"
     console.log(xmlDocumentString)

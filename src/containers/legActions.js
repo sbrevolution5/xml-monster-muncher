@@ -18,7 +18,7 @@ const LegActions=({sendData})=> {
         setActions(actionGroup);
         }
     const callBackMethod=(value)=>{
-        sendData("actions", value);
+        sendData("legendaryActions", value);
     }
     useEffect(()=>{callBackMethod(actions)}, [actions])
 
