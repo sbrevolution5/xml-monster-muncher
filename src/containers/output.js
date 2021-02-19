@@ -4,9 +4,9 @@ import './output.css'
 const toXML = (stateObject) => {
     //BUG printing commas for every skill or every save, not just the ones entered
     // need a length of which keys have values.  
-    const commaAdd = (index, length)=>{
-        if (index < length - 1){
-            xmlDocumentString +=',';
+    const commaAdd = (index, length) => {
+        if (index < length - 1) {
+            xmlDocumentString += ', ';
         }
     }
     const updateSkill = (skillName, index, length) => {
@@ -21,11 +21,16 @@ const toXML = (stateObject) => {
         }
         commaAdd(index, length)
     }
-    const saveList = Object.keys(stateObject.savingThrows)
-    console.log(saveList)
-    const skillList = Object.keys(stateObject.skills)
+    //filters out any keys without a truthy value 
+    const saveList = Object.entries(stateObject.savingThrows)
+        .filter(([, val]) => val)
+        .map(([key]) => key);
+    const skillList = Object.entries(stateObject.skills)
+        .filter(([, val]) => val)
+        .map(([key]) => key);
+
     const damageList = Object.keys(stateObject.DamageTypes)
-    console.log(skillList)
+
     let xmlDocumentString = "";
     xmlDocumentString += "<monster>\n"
     if (stateObject.name) {
@@ -77,7 +82,7 @@ const toXML = (stateObject) => {
         //Todo I think they must be comma separated
         //abstract into updateSave function
         //THIS ONLY PRINTS 5 COMMAS?!
-        saveList.map((value, index) =>{
+        saveList.map((value, index) => {
             return updateSave(value, index, saveList.length)
         })
         // if (stateObject.savingThrows.str) {
