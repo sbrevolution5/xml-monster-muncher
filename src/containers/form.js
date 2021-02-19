@@ -124,14 +124,14 @@ class Form extends Component {
         this.setState({ [name]: value });
     }
     //called when button is pressed
-    browserSave() {
+    browserSave(){
         console.log('saved to browser')
         ls.set('state', this.state)
     }
-
+    
     //when component is about to mount, load state from user's localstorage (if there is one )
     componentDidMount() {
-
+        
         if (ls.get('state') == false) {
             ls.set('state', JSON.stringify(this.state));
         }
@@ -141,63 +141,58 @@ class Form extends Component {
         }
     }
     // as component unmounts, set local storage
-    componentWillUnmount() {
+    componentWillUnmount(){
 
         localStorage.setItem('state', JSON.stringify(this.state));
     }
-
+    
     render() {
         return (
             <form>
-                <button type="button" name="" id="" onClick={this.browserSave} class="btn btn-primary btn-lg btn-block">Save to LocalStorage</button>
-                <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#basicInfo" aria-expanded="false" aria-controls="collapseExample">
-                    Basic Info
-                    </button>
-                <div id="basicInfo">
-                    <div className="form-group row text-box-spaced">
-                        <div className="col-sm-4">
-                            <label htmlFor="nameInput">Name</label>
-                            <input type="text" id="nameInput" placeholder="creature name" name="name" value={this.state.name} onChange={this.handleChange} className="form-control bg-dark  text-light" />
-                        </div>
-                        <div className="col-sm-4">
-                            <label htmlFor="typeInput">Type</label>
-                            <input type="text" id="typeInput" placeholder="Humanoid, monstrosity, etc" name="type" value={this.state.type} onChange={this.handleChange} className="form-control bg-dark text-light"></input>
-                        </div>
-                        <div className="col-sm-4">
-                            <label htmlFor="sizeInput">Size</label>
-                            <input type="text" id="sizeInput" placeholder="Small, Medium, Large, Huge" name="size" value={this.state.size} onChange={this.handleChange} className="form-control bg-dark text-light"></input>
-                        </div>
+                <button type="button" name="" id="" onClick={this.browserSave} className="btn btn-primary btn-lg btn-block">Save to LocalStorage</button>
+                <div className="form-group row text-box-spaced">
+                    <div className="col-sm-4">
+                        <label htmlFor="nameInput">Name</label>
+                        <input type="text" id="nameInput" placeholder="creature name" name="name" value={this.state.name} onChange={this.handleChange} className="form-control bg-dark  text-light" />
                     </div>
-                    <div className="form-group row text-box-spaced">
-                        <div className="col-sm-4">
-                            <label htmlFor="alignmentInput">Alignment</label>
-                            <input type="text" id="alignmentInput" placeholder="Lawful good, neutral evil, ect." name="alignment" value={this.state.alignment} onChange={this.handleChange} className="form-control bg-dark text-light"></input>
-                        </div>
-                        <div className="col-sm-4">
-                            <label htmlFor="hpInput">hp</label>
-                            <input type="text" id="hpInput" placeholder="optional: can be done automatically from stats" name="hp" value={this.state.hp} onChange={this.handleChange} className="form-control bg-dark text-light"></input>
-                        </div>
-                        <div className="col-sm-4">
-                            <label htmlFor="armorInput">AC</label>
-                            <input type="text" id="armorInput" placeholder="12, light armor" name="ac" value={this.state.ac} onChange={this.handleChange} className="form-control bg-dark text-light"></input>
-                        </div>
+                    <div className="col-sm-4">
+                        <label htmlFor="typeInput">Type</label>
+                        <input type="text" id="typeInput" placeholder="Humanoid, monstrosity, etc" name="type" value={this.state.type} onChange={this.handleChange} className="form-control bg-dark text-light"></input>
                     </div>
-                    <div className="form-group row text-box-spaced">
-                        <div className="col-sm-4">
-                            <label htmlFor="speedInput">Speed</label>
-                            <input type="text" id="speedInput" placeholder=" walk 30 ft., fly 50 ft. " name="speed" value={this.state.speed} onChange={this.handleChange} className="form-control bg-dark text-light"></input>
-                        </div>
-                        <div className="col-sm-4">
-                            <label htmlFor="nameInput">Languages</label>
-                            <input type="text" id="nameInput" placeholder="Common, Elvish, Abyssal." name="languages" value={this.state.languages} onChange={this.handleChange} className="form-control bg-dark text-light"></input>
-                        </div>
-                        <div className="col-sm-4">
-                            <label htmlFor="senseInput"> Senses </label>
-                            <input type="text" id="senseInput" placeholder="Darkvision 60 ft." name="senses" value={this.state.senses} onChange={this.handleChange} className="form-control bg-dark text-light"></input>
-                        </div>
+                    <div className="col-sm-4">
+                        <label htmlFor="sizeInput">Size</label>
+                        <input type="text" id="sizeInput" placeholder="Small, Medium, Large, Huge" name="size" value={this.state.size} onChange={this.handleChange} className="form-control bg-dark text-light"></input>
                     </div>
-                    <ChallengeRating value={this.state.stats} sendData={this.getDataFrom}></ChallengeRating>
                 </div>
+                <div className="form-group row text-box-spaced">
+                    <div className="col-sm-4">
+                        <label htmlFor="alignmentInput">Alignment</label>
+                        <input type="text" id="alignmentInput" placeholder="Lawful good, neutral evil, ect." name="alignment" value={this.state.alignment} onChange={this.handleChange} className="form-control bg-dark text-light"></input>
+                    </div>
+                    <div className="col-sm-4">
+                        <label htmlFor="hpInput">hp</label>
+                        <input type="text" id="hpInput" placeholder="optional: can be done automatically from stats" name="hp" value={this.state.hp} onChange={this.handleChange} className="form-control bg-dark text-light"></input>
+                    </div>
+                    <div className="col-sm-4">
+                        <label htmlFor="armorInput">AC</label>
+                        <input type="text" id="armorInput" placeholder="12, light armor" name="ac" value={this.state.ac} onChange={this.handleChange} className="form-control bg-dark text-light"></input>
+                    </div>
+                </div>
+                <div className="form-group row text-box-spaced">
+                    <div className="col-sm-4">
+                        <label htmlFor="speedInput">Speed</label>
+                        <input type="text" id="speedInput" placeholder=" walk 30 ft., fly 50 ft. " name="speed" value={this.state.speed} onChange={this.handleChange} className="form-control bg-dark text-light"></input>
+                    </div>
+                    <div className="col-sm-4">
+                        <label htmlFor="nameInput">Languages</label>
+                        <input type="text" id="nameInput" placeholder="Common, Elvish, Abyssal." name="languages" value={this.state.languages} onChange={this.handleChange} className="form-control bg-dark text-light"></input>
+                    </div>
+                    <div className="col-sm-4">
+                        <label htmlFor="senseInput"> Senses </label>
+                        <input type="text" id="senseInput" placeholder="Darkvision 60 ft." name="senses" value={this.state.senses} onChange={this.handleChange} className="form-control bg-dark text-light"></input>
+                    </div>
+                </div>
+                <ChallengeRating value={this.state.stats} sendData={this.getDataFrom}></ChallengeRating>
                 <hr></hr>
                 <Stats value={this.state.stats} sendData={this.getDataFrom}></Stats>
                 <div>
