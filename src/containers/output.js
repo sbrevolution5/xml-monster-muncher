@@ -2,6 +2,8 @@
 //import { toXML } from "../devLogic/export.js";
 import './output.css'
 const toXML = (stateObject) => {
+    //BUG printing commas for every skill or every save, not just the ones entered
+    // need a length of which keys have values.  
     const commaAdd = (index, length)=>{
         if (index < length - 1){
             xmlDocumentString +=',';
@@ -14,12 +16,13 @@ const toXML = (stateObject) => {
         commaAdd(index, length)
     }
     const updateSave = (saveName, index, length) => {
-        if (stateObject.skills[saveName]) {
+        if (stateObject.savingThrows[saveName]) {
             xmlDocumentString += saveName + " " + stateObject.savingThrows[saveName]
         }
         commaAdd(index, length)
     }
     const saveList = Object.keys(stateObject.savingThrows)
+    console.log(saveList)
     const skillList = Object.keys(stateObject.skills)
     const damageList = Object.keys(stateObject.DamageTypes)
     console.log(skillList)
@@ -73,6 +76,7 @@ const toXML = (stateObject) => {
         //for each saving throw, if its there, print the abbreviated stat, a space, and the modifier, 
         //Todo I think they must be comma separated
         //abstract into updateSave function
+        //THIS ONLY PRINTS 5 COMMAS?!
         saveList.map((value, index) =>{
             return updateSave(value, index, saveList.length)
         })
