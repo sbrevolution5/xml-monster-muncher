@@ -1,6 +1,7 @@
 //import problem for some reason it is not exported, currently putting in this file
 //import { toXML } from "../devLogic/export.js";
 import './output.css'
+import {useState} from 'react';
 const toXML = (stateObject) => {
     //BUG printing commas for every skill or every save, not just the ones entered
     // need a length of which keys have values.  
@@ -187,10 +188,26 @@ const toXML = (stateObject) => {
 
 const Output = ({ state }) => {
     const outputString = toXML(state);
+    const [compendium, setCompendium] = useState([]);
+    const addMonster = (xmlString)=>{
+        //Adds current string to compendium
+        setCompendium([...compendium, xmlString]);
+        //reset form somehow.  
+    }
+    const makeCompendium = (source)=>{
+        let comp = "";
+        source.forEach(element => {
+            return comp += element
+        });
+        return comp;//needs to put the compendium in an xml file, that is either downloaded, or linked to the user.
+    }
     return (
         <div className="jumbotron bg-dark text-light">
             <h1 className="display-3">Output:</h1>
             <p className="output-text" style={{ whiteSpace: "pre-wrap" }}>{outputString}</p>
+            <button type="button" name="" id="" className="btn btn-primary btn-lg btn-block" onClick={e=>addMonster(outputString)}>Save Monster to Compendium for export</button>
+            {/* <button type="button" name="" id="" className="btn btn-primary btn-lg btn-block" onClick={e=>makeCompendium(compendium)}>Create Compendium File</button> */}
+            
         </div>
 
     )

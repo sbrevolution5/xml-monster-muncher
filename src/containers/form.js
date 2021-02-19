@@ -102,15 +102,18 @@ class Form extends Component {
             actions: [],
             legendaryActions: [],
             description: "",
-            environment: ""
-
+            environment: "",
+            monsterCodex: [],
 
         }
+        //used for resetting the form
+        this.baseState = this.state
         this.handleChange = this.handleChange.bind(this);
         this.render = this.render.bind(this);
         this.getDataFrom = this.getDataFrom.bind(this);
         this.componentWillUnmount = this.componentWillUnmount.bind(this);
-        this.browserSave = this.browserSave.bind(this)
+        this.browserSave = this.browserSave.bind(this);
+        this.reset = this.reset.bind(this);
     }
     //gets data sent from stats via prop, assigns to state.stats
     getDataFrom(what, data) {
@@ -140,16 +143,20 @@ class Form extends Component {
             this.setState(ls.get('state'));
         }
     }
-    // as component unmounts, set local storage
+    // as component unmounts, set local storage, currently not working
     componentWillUnmount(){
 
         localStorage.setItem('state', JSON.stringify(this.state));
+    }
+    reset(){
+        this.setState(this.baseState);
     }
     
     render() {
         return (
             <form>
                 <button type="button" name="" id="" onClick={this.browserSave} className="btn btn-primary btn-lg btn-block">Save to LocalStorage</button>
+                <button type="button" name="" id="" onClick={this.reset} className="btn btn-danger btn-lg btn-block">Reset</button>
                 <div className="form-group row text-box-spaced">
                     <div className="col-sm-4">
                         <label htmlFor="nameInput">Name</label>
