@@ -2,11 +2,24 @@
 //import { toXML } from "../devLogic/export.js";
 import './output.css'
 const toXML = (stateObject) => {
-    const updateSkill = (skillName) => {
-        if (stateObject.skills[skillName]) {
-            xmlDocumentString += skillName + " " + stateObject.skills[skillName] //plus possible comma?
+    const commaAdd = (index, length)=>{
+        if (index < length - 1){
+            xmlDocumentString +=',';
         }
     }
+    const updateSkill = (skillName, index, length) => {
+        if (stateObject.skills[skillName]) {
+            xmlDocumentString += skillName + " " + stateObject.skills[skillName]
+        } //plus possible comma? if its not the last element.
+        commaAdd(index, length)
+    }
+    const updateSave = (saveName, index, length) => {
+        if (stateObject.skills[saveName]) {
+            xmlDocumentString += saveName + " " + stateObject.savingThrows[saveName]
+        }
+        commaAdd(index, length)
+    }
+    const saveList = Object.keys(stateObject.savingThrows)
     const skillList = Object.keys(stateObject.skills)
     const damageList = Object.keys(stateObject.DamageTypes)
     console.log(skillList)
@@ -59,24 +72,29 @@ const toXML = (stateObject) => {
         xmlDocumentString += "\t<saves>"
         //for each saving throw, if its there, print the abbreviated stat, a space, and the modifier, 
         //Todo I think they must be comma separated
-        if (stateObject.savingThrows.str) {
-            xmlDocumentString += "Str " + stateObject.savingThrows.str
-        }
-        if (stateObject.savingThrows.dex) {
-            xmlDocumentString += "Dex " + stateObject.savingThrows.dex
-        }
-        if (stateObject.savingThrows.con) {
-            xmlDocumentString += "Con " + stateObject.savingThrows.con
-        }
-        if (stateObject.savingThrows.int) {
-            xmlDocumentString += "Int " + stateObject.savingThrows.int
-        }
-        if (stateObject.savingThrows.wis) {
-            xmlDocumentString += "Wis " + stateObject.savingThrows.wis
-        }
-        if (stateObject.savingThrows.cha) {
-            xmlDocumentString += "Cha " + stateObject.savingThrows.cha
-        }
+        //abstract into updateSave function
+        saveList.map((value, index) =>{
+            return updateSave(value, index, saveList.length)
+        })
+        // if (stateObject.savingThrows.str) {
+        //     xmlDocumentString += "Str " + stateObject.savingThrows.str + " "
+        // }
+        // commaAdd()
+        // if (stateObject.savingThrows.dex) {
+        //     xmlDocumentString += "Dex " + stateObject.savingThrows.dex + " "
+        // }
+        // if (stateObject.savingThrows.con) {
+        //     xmlDocumentString += "Con " + stateObject.savingThrows.con + " "
+        // }
+        // if (stateObject.savingThrows.int) {
+        //     xmlDocumentString += "Int " + stateObject.savingThrows.int + " "
+        // }
+        // if (stateObject.savingThrows.wis) {
+        //     xmlDocumentString += "Wis " + stateObject.savingThrows.wis + " "
+        // }
+        // if (stateObject.savingThrows.cha) {
+        //     xmlDocumentString += "Cha " + stateObject.savingThrows.cha + " "
+        // }
         //close saves tag
         xmlDocumentString += "</saves>\n"
     }
@@ -84,14 +102,14 @@ const toXML = (stateObject) => {
     if (Object.keys(stateObject.skills).some(function (k) { return stateObject.skills[k] })) {
         xmlDocumentString += "\t<skills>"
         skillList.map((value, index) => {
-            return updateSkill(value)
+            return updateSkill(value, index, skillList.length)
         })
         xmlDocumentString += "</skills>\n"
     }
     if (Object.keys(stateObject.DamageTypes).some(function (k) { return stateObject.DamageTypes[k] == "resist" })) {
         xmlDocumentString += "\t<resist>"
         damageList.map((damageName) => {
-            if (stateObject.DamageTypes[damageName]=="resist") {
+            if (stateObject.DamageTypes[damageName] == "resist") {
                 xmlDocumentString += damageName + " "
             }
         })
@@ -101,7 +119,7 @@ const toXML = (stateObject) => {
         xmlDocumentString += "\t<immune>"
         damageList.map((damageName) => {
             console.log(damageName, " checked for immune")
-            if (stateObject.DamageTypes[damageName]=="immune") {
+            if (stateObject.DamageTypes[damageName] == "immune") {
                 xmlDocumentString += damageName + " "
             }
         })
@@ -111,7 +129,7 @@ const toXML = (stateObject) => {
         xmlDocumentString += "\t<vulnerable>";
         let damageList = Object.keys(stateObject.DamageTypes)
         damageList.map((damageName) => {
-            if (stateObject.DamageTypes[damageName]=="vulnerable") {
+            if (stateObject.DamageTypes[damageName] == "vulnerable") {
                 xmlDocumentString += damageName + " "
             }
         })
@@ -131,24 +149,24 @@ const toXML = (stateObject) => {
         xmlDocumentString += "\t<cr>" + stateObject.cr + "</cr>\n"
     }
     //traits actions and legendary?
-    if (stateObject.traits.length > 0){
+    if (stateObject.traits.length > 0) {
         for (let i = 0; i < stateObject.traits.length; i++) {
             const element = stateObject.traits[i];
-            xmlDocumentString+= "\t<trait>\n\t\t<name>" + element.title + "</name>\n\t\t<text>" + element.text +"</text>\n\t</trait>\n"
-            
+            xmlDocumentString += "\t<trait>\n\t\t<name>" + element.title + "</name>\n\t\t<text>" + element.text + "</text>\n\t</trait>\n"
+
         }
     }
-    if (stateObject.actions.length > 0){
+    if (stateObject.actions.length > 0) {
         for (let i = 0; i < stateObject.actions.length; i++) {
             const element = stateObject.actions[i];
-            xmlDocumentString+= "\t<action>\n\t\t<name>" + element.title + "</name>\n\t\t<text>" + element.text +"</text>\n\t</action>\n"
-            
+            xmlDocumentString += "\t<action>\n\t\t<name>" + element.title + "</name>\n\t\t<text>" + element.text + "</text>\n\t</action>\n"
+
         }
     }
-    if (stateObject.legendaryActions.length > 0){
+    if (stateObject.legendaryActions.length > 0) {
         for (let i = 0; i < stateObject.legendaryActions.length; i++) {
             const element = stateObject.legendaryActions[i];
-            xmlDocumentString+= "\t<legendary>\n\t\t<name>" + element.title + "</name>\n\t\t<text>" + element.text +"</text>\n\t</legendary>\n"
+            xmlDocumentString += "\t<legendary>\n\t\t<name>" + element.title + "</name>\n\t\t<text>" + element.text + "</text>\n\t</legendary>\n"
         }
     }
     //finish xml by closing monster tag
