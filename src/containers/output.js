@@ -1,7 +1,7 @@
 //import problem for some reason it is not exported, currently putting in this file
 //import { toXML } from "../devLogic/export.js";
 import './output.css'
-import {useState} from 'react';
+import {useState, useEffect} from 'react';
 const toXML = (stateObject) => {
     //BUG printing commas for every skill or every save, not just the ones entered
     // need a length of which keys have values.  
@@ -186,7 +186,7 @@ const toXML = (stateObject) => {
     //do stuff with it now!
 }
 
-const Output = ({ state }) => {
+const Output = ({ state, sendData}) => {
     const outputString = toXML(state);
     const [compendium, setCompendium] = useState([]);
     const addMonster = (xmlString)=>{
@@ -194,13 +194,20 @@ const Output = ({ state }) => {
         setCompendium([...compendium, xmlString]);
         //reset form somehow.  
     }
-    const makeCompendium = (source)=>{
-        let comp = "";
-        source.forEach(element => {
-            return comp += element
-        });
-        return comp;//needs to put the compendium in an xml file, that is either downloaded, or linked to the user.
+    const callBackMethod = (value) => {
+        sendData("monsterCodex", value);
     }
+    useEffect(() => {
+        callBackMethod(compendium)
+    }, [compendium])
+
+    // const makeCompendium = (source)=>{
+    //     let comp = "";
+    //     source.forEach(element => {
+    //         return comp += element
+    //     });
+    //     return comp;//needs to put the compendium in an xml file, that is either downloaded, or linked to the user.
+    // }
     return (
         <div className="jumbotron bg-dark text-light">
             <h1 className="display-3">Output:</h1>

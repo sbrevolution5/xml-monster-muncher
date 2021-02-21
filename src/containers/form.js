@@ -245,7 +245,7 @@ class Form extends Component {
                     <label htmlFor="environmentInput"> Environment </label>
                     <input type="text" id="senseInput" placeholder="Mountain, hills, etc." name="environment" value={this.state.environment} onChange={this.handleChange} className="form-control bg-dark text-light"></input>
                 </div>
-                <Output state={this.state}></Output>
+                <Output state={this.state} sendData={this.getDataFrom}></Output>
             </form>
         )
     }
