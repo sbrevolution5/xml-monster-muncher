@@ -114,13 +114,17 @@ class Form extends Component {
         this.componentWillUnmount = this.componentWillUnmount.bind(this);
         this.browserSave = this.browserSave.bind(this);
         this.reset = this.reset.bind(this);
+        this.exportCompendium = this.exportCompendium.bind(this);
     }
     //gets data sent from stats via prop, assigns to state.stats
     getDataFrom(what, data) {
         this.setState({ [what]: data })
         //resets form when the monster is saved to codex, keeps form the same otherwise
+        //first extracts codex to memory, resets, and then puts codex back in place.  
         if(what == "monsterCodex"){
+            let temp = this.monsterCodex;
             this.reset()
+            this.setState({monsterCodex: temp})
         }
     }
     //processes elements directly on this component/container
@@ -154,6 +158,9 @@ class Form extends Component {
     }
     reset(){
         this.setState(this.baseState);
+    }
+    exportCompendium(){
+        console.log("User tried to export their whole compendium, but it failed due to not being implemented yet.  It would have exported ", this.state.monsterCodex);
     }
     
     render() {
@@ -250,6 +257,7 @@ class Form extends Component {
                     <input type="text" id="senseInput" placeholder="Mountain, hills, etc." name="environment" value={this.state.environment} onChange={this.handleChange} className="form-control bg-dark text-light"></input>
                 </div>
                 <Output state={this.state} sendData={this.getDataFrom}></Output>
+                <button type="button" className="btn btn-warning" onClick={(e)=>this.exportCompendium()}>Export All saved monsters</button>
             </form>
         )
     }
