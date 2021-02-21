@@ -118,6 +118,10 @@ class Form extends Component {
     //gets data sent from stats via prop, assigns to state.stats
     getDataFrom(what, data) {
         this.setState({ [what]: data })
+        //resets form when the monster is saved to codex, keeps form the same otherwise
+        if(what == "monsterCodex"){
+            this.reset()
+        }
     }
     //processes elements directly on this component/container
     handleChange(event) {

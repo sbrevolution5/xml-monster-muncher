@@ -201,6 +201,8 @@ const Output = ({ state, sendData}) => {
         callBackMethod(compendium)
     }, [compendium])
 
+
+    //function to make compendium needs to go in overall form, but later
     // const makeCompendium = (source)=>{
     //     let comp = "";
     //     source.forEach(element => {
