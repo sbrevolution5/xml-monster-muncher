@@ -1,3 +1,4 @@
+//COPIED FROM TRAITCARD
 import { Component, useState, useEffect } from "react";
 const TraitCard = ({sendTraitData, eleindex, remove}) => {
     const [title, setTitle] = useState("")
