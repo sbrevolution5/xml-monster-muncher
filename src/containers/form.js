@@ -121,6 +121,7 @@ class Form extends Component {
         this.setState({ [what]: data })
         //resets form when the monster is saved to codex, keeps form the same otherwise
         //first extracts codex to memory, resets, and then puts codex back in place.  
+        //has to return a function to use after setstate.  
         return ()=>{if(what == "monsterCodex"){
             let temp = this.state.monsterCodex;
             console.log(temp)

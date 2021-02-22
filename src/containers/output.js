@@ -202,14 +202,6 @@ const Output = ({ state, sendData}) => {
     }, [compendium])
 
 
-    //function to make compendium needs to go in overall form, but later
-    // const makeCompendium = (source)=>{
-    //     let comp = "";
-    //     source.forEach(element => {
-    //         return comp += element
-    //     });
-    //     return comp;//needs to put the compendium in an xml file, that is either downloaded, or linked to the user.
-    // }
     return (
         <div className="jumbotron bg-dark text-light">
             <h1 className="display-3">Output:</h1>
