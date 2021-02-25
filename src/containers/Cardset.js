@@ -1,6 +1,6 @@
 //THIS IS CURRENTLY COPIED FROM CARD, NEEDS TO BE GENERIC
 import {Component, useState, useEffect} from 'react';
-import CardCard from '../components/CardCard'
+import OneCard from '../components/OneCard'
 const CardSet=({sendData, type})=> {
     const [cards, setCards] = useState([{}])
     const addNewCard = (data)=>{
@@ -19,22 +19,22 @@ const CardSet=({sendData, type})=> {
         setCards(cardGroup);
         }
     const callBackMethod=(value)=>{
-        sendData("cards", value);
+        sendData(type, value);
     }
     useEffect(()=>{callBackMethod(cards)}, [cards])
 
     return(
         <div>
-            <button type="button" className="btn btn-success" onClick={(e)=>{addNewCard({title: "", text: ""})}}>Add Card</button>
+            <button type="button" className="btn btn-success" onClick={(e)=>{addNewCard({title: "", text: ""})}}>Add {type}</button>
              <div className="card-deck">
                 
                 {cards.map((value, index)=>{
                     return (
-                        <CardCard key={index} sendCardData={modifyCard} eleindex={index} value={value} remove={cardDeleter}></CardCard>
+                        <OneCard type={type} key={index} sendCardData={modifyCard} eleindex={index} value={value} remove={cardDeleter}></OneCard>
                         )
                     })}
                 </div>
         </div>
     )
 }
-export default Cards;
+export default CardSet;

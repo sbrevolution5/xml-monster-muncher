@@ -11,6 +11,7 @@ import './form.css'
 import ls from 'local-storage';
 import LegActions from './LegActions';
 import XMLOut from './XMLOut'
+import CardSet from './Cardset'
 const { render } = require("@testing-library/react")
 const { Component } = require("react")
 
@@ -243,6 +244,7 @@ class Form extends Component {
                     </h3>
                     <Conditions onChange={this.handleChange} sendData={this.getDataFrom}></Conditions>
                 </div>
+                <CardSet type="TEST" sendData={this.getDataFrom}></CardSet>
                 <h3>Traits</h3>
                 <Traits onChange={this.handleChange} sendData={this.getDataFrom}></Traits>
                 <h3>Actions</h3>
