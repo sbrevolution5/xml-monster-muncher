@@ -2,7 +2,7 @@
 I ran into a problem using the game master 5 app for 5th edition dnd, importing monsters from a third party source like Kobold press was tedious and difficult, when done manually.  The aim of this app is to make sure that you can insert the data into a form and get back the XML for the app.  
 This is also my first ever Open source project, which I intend to use as a portfolio  example.
 
-Currently the app works, but only handles 1 monster at a time.
+You can add multiple monsters to a compendium, but currently it will not allow you to export the compendium
 
 
 ## Example output
