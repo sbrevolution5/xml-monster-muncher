@@ -35,7 +35,7 @@ const toXML = (stateObject) => {
     let xmlDocumentString = "";
     xmlDocumentString += "<monster>\n"
     if (stateObject.name) {
-        xmlDocumentString += "\t<name>" + stateObject.name + "\t</name>\n"
+        xmlDocumentString += "\t<name>" + stateObject.name + "</name>\n"
     } /*else {
         console.error("no name given");
     }*/
