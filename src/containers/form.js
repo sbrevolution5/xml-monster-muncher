@@ -170,7 +170,8 @@ class Form extends Component {
         return (
             <form>
                 <button type="button" name="" id="" onClick={this.browserSave} className="btn btn-primary btn-lg btn-block">Save to LocalStorage</button>
-                <button type="button" name="" id="" onClick={this.reset} className="btn btn-danger btn-lg btn-block">Reset</button>
+                <button type="button" name="" id="" onClick={this.reset} className="btn btn-danger btn-lg btn-block">Reset entire form</button>
+                
                 <div className="form-group row text-box-spaced">
                     <div className="col-sm-4">
                         <label htmlFor="nameInput">Name</label>
@@ -260,7 +261,6 @@ class Form extends Component {
                     <input type="text" id="senseInput" placeholder="Mountain, hills, etc." name="environment" value={this.state.environment} onChange={this.handleChange} className="form-control bg-dark text-light"></input>
                 </div>
                 <Output state={this.state} sendData={this.getDataFrom}></Output>
-                <button type="button" className="btn btn-warning" onClick={(e)=>this.exportCompendium()}>Export All saved monsters</button>
                 <XMLOut codex={this.state.monsterCodex}></XMLOut>
             </form>
         )
