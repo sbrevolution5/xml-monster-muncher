@@ -1,40 +1,40 @@
-//THIS IS CURRENTLY COPIED FROM TRAIT, NEEDS TO BE GENERIC
+//THIS IS CURRENTLY COPIED FROM CARD, NEEDS TO BE GENERIC
 import {Component, useState, useEffect} from 'react';
-import TraitCard from '../components/TraitCard'
-const Traits=({sendData})=> {
-    const [traits, setTraits] = useState([{}])
-    const addNewTrait = (data)=>{
-        setTraits([...traits, data])
+import CardCard from '../components/CardCard'
+const CardSet=({sendData, type})=> {
+    const [cards, setCards] = useState([{}])
+    const addNewCard = (data)=>{
+        setCards([...cards, data])
     }
-    // problem: there are 2 ways to edit state, one that adds a "blank" trait card, and another that updates the content of that state based on the changes in the card, or removes the card if the remove button was (clicked and confirmed?).  
-    const modifyTrait = (data, index)=>{
-        let newTraits = [...traits]
-        newTraits[index] = data
-        setTraits([...newTraits])//TODO
+    // problem: there are 2 ways to edit state, one that adds a "blank" card card, and another that updates the content of that state based on the changes in the card, or removes the card if the remove button was (clicked and confirmed?).  
+    const modifyCard = (data, index)=>{
+        let newCards = [...cards]
+        newCards[index] = data
+        setCards([...newCards])//TODO
     }
     const cardDeleter=(index)=>{
-        let traitGroup = [...traits]
-        traitGroup.splice(index,1);
-        console.log(traitGroup);
-        setTraits(traitGroup);
+        let cardGroup = [...cards]
+        cardGroup.splice(index,1);
+        console.log(cardGroup);
+        setCards(cardGroup);
         }
     const callBackMethod=(value)=>{
-        sendData("traits", value);
+        sendData("cards", value);
     }
-    useEffect(()=>{callBackMethod(traits)}, [traits])
+    useEffect(()=>{callBackMethod(cards)}, [cards])
 
     return(
         <div>
-            <button type="button" className="btn btn-success" onClick={(e)=>{addNewTrait({title: "", text: ""})}}>Add Trait</button>
+            <button type="button" className="btn btn-success" onClick={(e)=>{addNewCard({title: "", text: ""})}}>Add Card</button>
              <div className="card-deck">
                 
-                {traits.map((value, index)=>{
+                {cards.map((value, index)=>{
                     return (
-                        <TraitCard key={index} sendTraitData={modifyTrait} eleindex={index} value={value} remove={cardDeleter}></TraitCard>
+                        <CardCard key={index} sendCardData={modifyCard} eleindex={index} value={value} remove={cardDeleter}></CardCard>
                         )
                     })}
                 </div>
         </div>
     )
 }
-export default Traits;
+export default Cards;
