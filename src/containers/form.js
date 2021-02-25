@@ -10,6 +10,7 @@ import Output from './output';
 import './form.css'
 import ls from 'local-storage';
 import LegActions from './LegActions';
+import XMLOut from './XMLOut'
 const { render } = require("@testing-library/react")
 const { Component } = require("react")
 
@@ -260,6 +261,7 @@ class Form extends Component {
                 </div>
                 <Output state={this.state} sendData={this.getDataFrom}></Output>
                 <button type="button" className="btn btn-warning" onClick={(e)=>this.exportCompendium()}>Export All saved monsters</button>
+                <XMLOut codex={this.state.monsterCodex}></XMLOut>
             </form>
         )
     }
