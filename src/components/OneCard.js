@@ -18,7 +18,7 @@ const CardCard = ({sendCardData, eleindex, remove, type}) => {
                 <div className="card-body">
                     <div className="form-group">
                         <label htmlFor="cardDescription"></label>
-                        <textarea className="form-control bg-dark text-light" name="description" id="cardDescription" placeholder="describe card here" rows="3" onChange={(e)=>{setText(e.target.value)}}></textarea>
+                        <textarea className="form-control bg-dark text-light" name="description" id="cardDescription" placeholder="describe {type} here" rows="3" onChange={(e)=>{setText(e.target.value)}}></textarea>
                     </div>
                     <button type="button" className="btn btn-danger" eleindex={eleindex} onClick={(e)=>{remove(e.target.eleindex)}}>Remove {type}</button>
                 </div>
