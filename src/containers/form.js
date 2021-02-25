@@ -244,13 +244,17 @@ class Form extends Component {
                     </h3>
                     <Conditions onChange={this.handleChange} sendData={this.getDataFrom}></Conditions>
                 </div>
-                <CardSet type="TEST" sendData={this.getDataFrom}></CardSet>
                 <h3>Traits</h3>
-                <Traits onChange={this.handleChange} sendData={this.getDataFrom}></Traits>
+                <CardSet type="trait" statevar="traits" sendData={this.getDataFrom}></CardSet>
+                {/* <Traits onChange={this.handleChange} sendData={this.getDataFrom}></Traits> */}
                 <h3>Actions</h3>
-                <Actions onChange={this.handleChange} sendData={this.getDataFrom}></Actions>
+                <CardSet type="action" statevar="actions" sendData={this.getDataFrom}></CardSet>
+               
+                {/* <Actions onChange={this.handleChange} sendData={this.getDataFrom}></Actions> */}
                 <h3>Legendary Actions</h3>
-                <LegActions onChange={this.handleChange} sendData={this.getDataFrom}></LegActions>
+                <CardSet type="legendary action" statevar="legendaryActions" sendData={this.getDataFrom}></CardSet>
+
+                {/* <LegActions onChange={this.handleChange} sendData={this.getDataFrom}></LegActions> */}
                 {/* <div>
                     <div className="form-group">
                         <label htmlFor="description"></label>

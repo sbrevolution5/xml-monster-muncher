@@ -1,7 +1,7 @@
 //THIS IS CURRENTLY COPIED FROM CARD, NEEDS TO BE GENERIC
 import {Component, useState, useEffect} from 'react';
 import OneCard from '../components/OneCard'
-const CardSet=({sendData, type})=> {
+const CardSet=({sendData, type,statevar})=> {
     const [cards, setCards] = useState([{}])
     const addNewCard = (data)=>{
         setCards([...cards, data])
@@ -19,7 +19,7 @@ const CardSet=({sendData, type})=> {
         setCards(cardGroup);
         }
     const callBackMethod=(value)=>{
-        sendData(type, value);
+        sendData(statevar, value);
     }
     useEffect(()=>{callBackMethod(cards)}, [cards])
 
