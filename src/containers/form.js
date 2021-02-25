@@ -117,16 +117,20 @@ class Form extends Component {
     }
     //gets data sent from stats via prop, assigns to state.stats
     getDataFrom(what, data) {
-        this.setState({ [what]: data })
-        //resets form when the monster is saved to codex, keeps form the same otherwise
-        //first extracts codex to memory, resets, and then puts codex back in place.  
-        //has to return a function to use after setstate.  
-        return ()=>{if(what == "monsterCodex"){
+        if (what == "monsterCodex") {
+            console.log("EXPORTED TO CODEX")
             let temp = this.state.monsterCodex;
             console.log(temp)
             this.reset()
-            this.setState({monsterCodex: temp})
-        }}
+            this.setState({ monsterCodex: temp })
+        }else{
+            this.setState({[what]: data})
+        }
+        //has to check if its updating codex
+        //resets form when the monster is saved to codex, keeps form the same otherwise
+        //first extracts codex to memory, resets, and then puts codex back in place.  
+        //has to return a function to use after setstate.  
+        
     }
     //processes elements directly on this component/container
     handleChange(event) {
@@ -136,14 +140,14 @@ class Form extends Component {
         this.setState({ [name]: value });
     }
     //called when button is pressed
-    browserSave(){
+    browserSave() {
         console.log('saved to browser')
         ls.set('state', this.state)
     }
-    
+
     //when component is about to mount, load state from user's localstorage (if there is one )
     componentDidMount() {
-        
+
         if (ls.get('state') == false) {
             ls.set('state', JSON.stringify(this.state));
         }
@@ -153,23 +157,23 @@ class Form extends Component {
         }
     }
     // as component unmounts, set local storage, currently not working
-    componentWillUnmount(){
+    componentWillUnmount() {
 
         localStorage.setItem('state', JSON.stringify(this.state));
     }
-    reset(){
+    reset() {
         this.setState(this.baseState);
     }
-    exportCompendium(){
+    exportCompendium() {
         console.log("User tried to export their whole compendium, but it failed due to not being implemented yet.  It would have exported ", this.state.monsterCodex);
     }
-    
+
     render() {
         return (
             <form>
                 <button type="button" name="" id="" onClick={this.browserSave} className="btn btn-primary btn-lg btn-block">Save to LocalStorage</button>
                 <button type="button" name="" id="" onClick={this.reset} className="btn btn-danger btn-lg btn-block">Reset entire form</button>
-                
+
                 <div className="form-group row text-box-spaced">
                     <div className="col-sm-4">
                         <label htmlFor="nameInput">Name</label>
@@ -242,14 +246,14 @@ class Form extends Component {
                     <Conditions onChange={this.handleChange} sendData={this.getDataFrom}></Conditions>
                 </div>
                 <h3>Traits</h3>
-                <CardSet type="trait" statevar="traits" sendData={this.getDataFrom}></CardSet>
+                <CardSet key="trait" type="trait" statevar="traits" sendData={this.getDataFrom}></CardSet>
                 {/* <Traits onChange={this.handleChange} sendData={this.getDataFrom}></Traits> */}
                 <h3>Actions</h3>
-                <CardSet type="action" statevar="actions" sendData={this.getDataFrom}></CardSet>
-               
+                <CardSet key="action" type="action" statevar="actions" sendData={this.getDataFrom}></CardSet>
+
                 {/* <Actions onChange={this.handleChange} sendData={this.getDataFrom}></Actions> */}
                 <h3>Legendary Actions</h3>
-                <CardSet type="legendary action" statevar="legendaryActions" sendData={this.getDataFrom}></CardSet>
+                <CardSet key="LegAction" type="legendary action" statevar="legendaryActions" sendData={this.getDataFrom}></CardSet>
 
                 {/* <LegActions onChange={this.handleChange} sendData={this.getDataFrom}></LegActions> */}
                 {/* <div>
