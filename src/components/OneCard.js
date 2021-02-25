@@ -1,4 +1,4 @@
-//COPIED FROM CARDCARD
+
 import { Component, useState, useEffect } from "react";
 const CardCard = ({sendCardData, eleindex, remove, type}) => {
     const [title, setTitle] = useState("")

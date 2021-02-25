@@ -3,13 +3,10 @@ import DamageTypes from '../components/DamageTypes';
 import Saves from '../components/Saves';
 import Skills from '../components/Skills';
 import Stats from '../components/stats';
-import Traits from './Traits';
-import Actions from './Actions';
 import ChallengeRating from '../components/ChallengeRating';
 import Output from './output';
 import './form.css'
 import ls from 'local-storage';
-import LegActions from './LegActions';
 import XMLOut from './XMLOut'
 import CardSet from './Cardset'
 const { render } = require("@testing-library/react")
