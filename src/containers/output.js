@@ -3,8 +3,7 @@
 import './output.css'
 import {useState, useEffect} from 'react';
 const toXML = (stateObject) => {
-    //BUG printing commas for every skill or every save, not just the ones entered
-    // need a length of which keys have values.  
+    // used to add commas to all but final element.  
     const commaAdd = (index, length) => {
         if (index < length - 1) {
             xmlDocumentString += ', ';

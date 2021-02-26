@@ -7,6 +7,8 @@ const XMLOut = (codex) => {
         console.log(xmlString)
         let parser = new DOMParser();
         var xmlDoc = parser.parseFromString(xmlString, "text/xml")
+        var serializer = new XMLSerializer();
+        var xmlString = serializer.serializeToString(xmlDoc);
     }
     return (
         <div>
