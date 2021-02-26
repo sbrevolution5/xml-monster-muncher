@@ -11,7 +11,7 @@ function App() {
         <Form></Form>
       <div>
         <p className="form-text text-muted">
-          Fill in what is needed for your monster, then copy paste into a txt file ending in .xml with a surrounding tag of compendium.  then import into your favorite combat tracker.  Currently optimized for game master 5.
+          Fill in what is needed for your monster, then copy paste into a txt file ending in .xml with a surrounding tag of compendium.  Currently, you can save to your browser's localstorage with the button on the top.  At the bottom there is a button to add the monster to your "Compendium" (also saved to local storage).  Then import into your favorite combat tracker.  Currently optimized for game master 5.
         </p>
       </div>
       <footer>
