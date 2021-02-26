@@ -10,7 +10,7 @@ const XMLOut = (codex) => {
     }
     return (
         <div>
-        <button type="button" name="" id="" class="btn btn-primary btn-lg btn-block" onClick={(e)=>{CreateXML()}}>Export as XML</button>
+        <button type="button" name="" id="" className="btn btn-primary btn-lg btn-block" onClick={(e)=>{CreateXML()}}>Export as XML</button>
         </div>
     )
 }
