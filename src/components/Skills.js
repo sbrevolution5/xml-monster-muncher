@@ -20,7 +20,7 @@ const Skills =({sendData})=>{
     const [stealth, setStealth] = useState("");
     const [survival, setSurvival] = useState("");
 
-    const skillList = ["Acrobatics", "AnimalHandling", "Arcana", "Athletics", "Deception", "History", "Insight", "Intimidation", "Investigation", "Medicine", "Nature", "Perception", "Performance", "Persuasion", "Religion", "SlightOfHand", "Stealth", "Survival"]
+    const skillList = ["Acrobatics", "Animal Handling", "Arcana", "Athletics", "Deception", "History", "Insight", "Intimidation", "Investigation", "Medicine", "Nature", "Perception", "Performance", "Persuasion", "Religion", "Slight Of Hand", "Stealth", "Survival"]
     const skillSet = [setAcrobatics, setAnimalHandling, setArcana, setAthletics, setDeception, setHistory, setInsight, setIntimidation, setInvestigation, setMedicine, setNature, setPerception, setPerformance, setPersuasion, setReligion, setSlightOfHand, setStealth, setSurvival]
     const callBackMethod=(value)=>{
         sendData("skills", value);
