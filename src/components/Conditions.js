@@ -30,7 +30,7 @@ const Conditions = ({sendData}) => {
     return (
         <div className="row button-box">
             {conditionList.map((value, index) => {
-                //buttons need to be toggleable!
+                //creates radio buttons for each condition
                 return (
                     <div className="custom-control custom-switch" key={index}>
                         <input type="checkbox" className="custom-control-input" id={value+"Btn"} onClick={(e) => conditionSet[index](e.target.checked)}  defaultChecked={conditionVar[index]}></input>
