@@ -15,7 +15,6 @@ const CardSet=({sendData, type,statevar})=> {
     const cardDeleter=(index)=>{
         let cardGroup = [...cards]
         cardGroup.splice(index,1);
-        console.log(cardGroup);
         setCards(cardGroup);
         }
     const callBackMethod=(value)=>{

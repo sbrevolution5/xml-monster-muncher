@@ -180,7 +180,6 @@ const toXML = (stateObject) => {
     }
     //finish xml by closing monster tag
     xmlDocumentString += "</monster>"
-    console.log(xmlDocumentString)
     return xmlDocumentString;
     //do stuff with it now!
 }

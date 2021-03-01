@@ -5,7 +5,7 @@ import {useState} from 'react';
 function App() {
   const [compendium, setCompendium] = useState([])
   const recieveCompendium=(myCompendium)=>{
-    setCompendium({compendium: myCompendium})
+    setCompendium({compendium: [...compendium, myCompendium]})
   }
   return (
     <div className="App">

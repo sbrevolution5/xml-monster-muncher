@@ -234,7 +234,7 @@ const toXML=(stateObject)=>{
     //traits actions and legendary?
     //finish xml
     xmlDocumentString+="</monster>"
-    console.log(xmlDocumentString)
+    // console.log(xmlDocumentString)
     return xmlDocumentString;
     //do stuff with it now!
 }

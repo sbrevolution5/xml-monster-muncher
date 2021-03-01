@@ -257,7 +257,7 @@ class Form extends Component {
                     <input type="text" id="senseInput" placeholder="Mountain, hills, etc." name="environment" value={this.state.environment} onChange={this.handleChange} className="form-control bg-dark text-light"></input>
                 </div>
                 <Output state={this.state} sendData={this.getDataFrom}></Output>
-                <button type="button" name="" id="" className="btn btn-primary btn-lg btn-block" onClick={(e)=>{this.exportCompendium()}}>Export as XML</button>
+                <button type="button" name="" id="" className="btn btn-primary btn-lg btn-block" onClick={(e)=>{this.props.exportFunction(this.state.monsterCodex)}}>Export as XML</button>
             </form>
         )
     }
