@@ -117,20 +117,8 @@ class Form extends Component {
     }
     //gets data sent from stats via prop, assigns to state.stats
     getDataFrom(what, data) {
-        if (what == "monsterCodex") {
-            console.log("EXPORTED TO CODEX")
-            let temp = this.state.monsterCodex;
-            console.log(temp)
-            this.reset()
-            this.setState({ monsterCodex: temp })
-        }else{
-            this.setState({[what]: data})
-        }
-        //has to check if its updating codex
-        //resets form when the monster is saved to codex, keeps form the same otherwise
-        //first extracts codex to memory, resets, and then puts codex back in place.  
-        //has to return a function to use after setstate.  
         
+        this.setState({[what]: data})
     }
     //processes elements directly on this component/container
     handleChange(event) {
@@ -152,7 +140,6 @@ class Form extends Component {
             ls.set('state', JSON.stringify(this.state));
         }
         else {
-            console.log("localStorage");
             this.setState(ls.get('state'));
         }
     }
@@ -165,8 +152,9 @@ class Form extends Component {
         this.setState(this.baseState);
     }
     exportCompendium() {
+        console.log("EXPORT ATTEMPT")
         console.log("User tried to export their whole compendium, but it failed due to not being implemented yet.  It would have exported ", this.state.monsterCodex);
-        this.props.exportFunction(this.state.monsterCodex)
+        return this.props.exportFunction(this.state.monsterCodex)
     }
 
     render() {
@@ -269,7 +257,7 @@ class Form extends Component {
                     <input type="text" id="senseInput" placeholder="Mountain, hills, etc." name="environment" value={this.state.environment} onChange={this.handleChange} className="form-control bg-dark text-light"></input>
                 </div>
                 <Output state={this.state} sendData={this.getDataFrom}></Output>
-                <XMLOut codex={this.state.monsterCodex}></XMLOut>
+                <button type="button" name="" id="" className="btn btn-primary btn-lg btn-block" onClick={(e)=>{this.exportCompendium()}}>Export as XML</button>
             </form>
         )
     }
