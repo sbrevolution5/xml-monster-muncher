@@ -110,7 +110,6 @@ class Form extends Component {
         this.handleChange = this.handleChange.bind(this);
         this.render = this.render.bind(this);
         this.getDataFrom = this.getDataFrom.bind(this);
-        this.componentWillUnmount = this.componentWillUnmount.bind(this);
         this.browserSave = this.browserSave.bind(this);
         this.reset = this.reset.bind(this);
     }
@@ -143,10 +142,6 @@ class Form extends Component {
         }
     }
     // as component unmounts, set local storage, currently not working
-    componentWillUnmount() {
-
-        localStorage.setItem('state', JSON.stringify(this.state));
-    }
     reset() {
         this.setState(this.baseState);
     }

@@ -11,12 +11,12 @@ function App() {
   }
   const browserSaveComp = () => {
     console.log('saved to browser')
-    ls.set('compendium', JSON.stringify(compendium))
+    ls.set('compendium', compendium)
   }
   useEffect(() => {
     return(()=>{
       if (ls.get('compendium') == false) {
-        ls.set('compendium', JSON.stringify(compendium))
+        ls.set('compendium', compendium)
       }else{
         setCompendium(ls.get('compendium'));
       }
