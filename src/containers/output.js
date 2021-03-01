@@ -186,14 +186,14 @@ const toXML = (stateObject) => {
 
 const Output = ({ state, sendData}) => {
     const outputString = toXML(state);
-    const [mstring, setMstring] = useState([]);
-    const addMonster = (xmlString)=>{
-        //Adds current string to compendium
-        setMstring( xmlString);
-        //reset form somehow.  
-    }
+    const [mstring, setMstring] = useState(toXML(state));
+    // const addMonster = (xmlString)=>{
+    //     //Adds current string to compendium
+    //     setMstring( xmlString);
+    //     //reset form somehow.  
+    // }
     const callBackMethod = (value) => {
-        sendData("monsterCodex", value);
+        sendData("monsterString", value);
     }
     useEffect(() => {
         callBackMethod(mstring)
@@ -204,7 +204,7 @@ const Output = ({ state, sendData}) => {
         <div className="jumbotron bg-dark text-light">
             <h1 className="display-3">Output:</h1>
             <p className="output-text" style={{ whiteSpace: "pre-wrap" }}>{outputString}</p>
-            <button type="button" name="" id="" className="btn btn-primary btn-lg btn-block" onClick={e=>addMonster(outputString)}>Save Monster to Compendium for export</button>
+            {/* <button type="button" name="" id="" className="btn btn-primary btn-lg btn-block" onClick={e=>addMonster(outputString)}>Save Monster to Compendium for export</button> */}
             {/* <button type="button" name="" id="" className="btn btn-primary btn-lg btn-block" onClick={e=>makeCompendium(compendium)}>Create Compendium File</button> */}
             
         </div>
