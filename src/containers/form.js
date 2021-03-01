@@ -252,7 +252,7 @@ class Form extends Component {
                     <input type="text" id="senseInput" placeholder="Mountain, hills, etc." name="environment" value={this.state.environment} onChange={this.handleChange} className="form-control bg-dark text-light"></input>
                 </div>
                 <Output state={this.state} sendData={this.getDataFrom}></Output>
-                <button type="button" name="" id="" className="btn btn-primary btn-lg btn-block" onClick={(e)=>{this.props.exportFunction(this.state.monsterString)}}>Save to compendium</button>
+                <button type="button" name="" id="" className="btn btn-primary btn-lg btn-block" onClick={(e)=>{this.props.exportFunction({name: this.state.name, xml:this.state.monsterString})}}>Save to compendium</button>
             </form>
         )
     }

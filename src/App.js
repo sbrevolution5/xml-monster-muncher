@@ -1,12 +1,26 @@
 import Form from './containers/form'
 import './App.css';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
+import ls from 'local-storage';
+
 
 function App() {
   const [compendium, setCompendium] = useState([])
   const recieveCompendium = (myCompendium) => {
     setCompendium([...compendium, myCompendium])
   }
+  const browserSaveComp = () => {
+    console.log('saved to browser')
+    ls.set('compendium', JSON.stringify(compendium))
+  }
+  useEffect(() => {
+    return(()=>{
+      if (ls.get('compendium') == false) {
+        ls.set('compendium', JSON.stringify(compendium))
+      }else{
+        setCompendium(ls.get('compendium'));
+      }
+    })}, [])
   return (
     <div className="App">
       <header className="App-header">
@@ -18,12 +32,13 @@ function App() {
           <h3>Saved monsters:</h3>
           {compendium.map((monster) => {
             return (
-              <li>{monster.substring(
-                monster.lastIndexOf("<name>") + 6,//6 is to compensate for the other characters in <name>
-                monster.lastIndexOf("</name>")
-              )}</li>)
+              <li>{monster.name}</li>)
           })}
         </ul>
+      </div>
+      <div className="Row">
+        <button type="button" className="btn btn-primary" onClick={browserSaveComp}>Save compendium to localstorage</button>
+        <a name="" id="" className="btn btn-primary" href="#" role="button">Create XML compendium</a>
       </div>
       <div>
         <p className="form-text text-muted">
