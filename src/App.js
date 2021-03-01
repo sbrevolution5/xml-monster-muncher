@@ -1,18 +1,30 @@
 import Form from './containers/form'
 import './App.css';
-import {useState} from 'react';
+import { useState } from 'react';
 
 function App() {
   const [compendium, setCompendium] = useState([])
-  const recieveCompendium=(myCompendium)=>{
-    setCompendium({compendium: [...compendium, myCompendium]})
+  const recieveCompendium = (myCompendium) => {
+    setCompendium([...compendium, myCompendium])
   }
   return (
     <div className="App">
       <header className="App-header">
         <h1>XML Monster Muncher</h1>
       </header>
-        <Form exportFunction={recieveCompendium}></Form>
+      <Form exportFunction={recieveCompendium}></Form>
+      <div className="row" id="monsterlist">
+        <ul>
+          <h3>Saved monsters:</h3>
+          {compendium.map((monster) => {
+            return (
+              <li>{monster.substring(
+                monster.lastIndexOf("<name>") + 6,//6 is to compensate for the other characters in <name>
+                monster.lastIndexOf("</name>")
+              )}</li>)
+          })}
+        </ul>
+      </div>
       <div>
         <p className="form-text text-muted">
           Fill in what is needed for your monster, then copy paste into a txt file ending in .xml with a surrounding tag of compendium.  Currently, you can save to your browser's localstorage with the button on the top.  At the bottom there is a button to add the monster to your "Compendium" (also saved to local storage).  Then import into your favorite combat tracker.  Currently optimized for game master 5.
