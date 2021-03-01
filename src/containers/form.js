@@ -166,6 +166,7 @@ class Form extends Component {
     }
     exportCompendium() {
         console.log("User tried to export their whole compendium, but it failed due to not being implemented yet.  It would have exported ", this.state.monsterCodex);
+        this.props.exportFunction(this.state.monsterCodex)
     }
 
     render() {
