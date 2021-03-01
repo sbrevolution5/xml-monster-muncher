@@ -186,18 +186,18 @@ const toXML = (stateObject) => {
 
 const Output = ({ state, sendData}) => {
     const outputString = toXML(state);
-    const [compendium, setCompendium] = useState([]);
+    const [mstring, setMstring] = useState([]);
     const addMonster = (xmlString)=>{
         //Adds current string to compendium
-        setCompendium([...compendium, xmlString]);
+        setMstring( xmlString);
         //reset form somehow.  
     }
     const callBackMethod = (value) => {
         sendData("monsterCodex", value);
     }
     useEffect(() => {
-        callBackMethod(compendium)
-    }, [compendium])
+        callBackMethod(mstring)
+    }, [mstring])
 
 
     return (

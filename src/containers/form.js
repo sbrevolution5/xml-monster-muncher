@@ -102,7 +102,7 @@ class Form extends Component {
             legendaryActions: [],
             description: "",
             environment: "",
-            monsterCodex: [],
+            monsterString: "",
 
         }
         //used for resetting the form
@@ -113,7 +113,6 @@ class Form extends Component {
         this.componentWillUnmount = this.componentWillUnmount.bind(this);
         this.browserSave = this.browserSave.bind(this);
         this.reset = this.reset.bind(this);
-        this.exportCompendium = this.exportCompendium.bind(this);
     }
     //gets data sent from stats via prop, assigns to state.stats
     getDataFrom(what, data) {
@@ -151,11 +150,7 @@ class Form extends Component {
     reset() {
         this.setState(this.baseState);
     }
-    exportCompendium() {
-        console.log("EXPORT ATTEMPT")
-        console.log("User tried to export their whole compendium, but it failed due to not being implemented yet.  It would have exported ", this.state.monsterCodex);
-        return this.props.exportFunction(this.state.monsterCodex)
-    }
+    
 
     render() {
         return (
@@ -257,7 +252,7 @@ class Form extends Component {
                     <input type="text" id="senseInput" placeholder="Mountain, hills, etc." name="environment" value={this.state.environment} onChange={this.handleChange} className="form-control bg-dark text-light"></input>
                 </div>
                 <Output state={this.state} sendData={this.getDataFrom}></Output>
-                <button type="button" name="" id="" className="btn btn-primary btn-lg btn-block" onClick={(e)=>{this.props.exportFunction(this.state.monsterCodex)}}>Export as XML</button>
+                <button type="button" name="" id="" className="btn btn-primary btn-lg btn-block" onClick={(e)=>{this.props.exportFunction(this.state.monsterString)}}>Export as XML</button>
             </form>
         )
     }
