@@ -14,13 +14,15 @@ function App() {
     ls.set('compendium', compendium)
   }
   useEffect(() => {
-    return(()=>{
-      if (ls.get('compendium') == false) {
+    if (ls.get('compendium') == false) {
+        console.log("cant find file!")
         ls.set('compendium', compendium)
+
       }else{
+        console.log("We found a compendium file, attempting to load")
         setCompendium(ls.get('compendium'));
       }
-    })}, [])
+    }, [])
   return (
     <div className="App">
       <header className="App-header">
@@ -30,9 +32,9 @@ function App() {
       <div className="row" id="monsterlist">
         <ul>
           <h3>Saved monsters:</h3>
-          {compendium.map((monster) => {
+          {compendium.map((monster,index) => {
             return (
-              <li>{monster.name}</li>)
+              <li key={index}>{monster.name}</li>)
           })}
         </ul>
       </div>
