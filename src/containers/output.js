@@ -199,7 +199,7 @@ const Output = ({ state, sendData}) => {
         sendData("monsterString", value);
     }
     useEffect(() => {
-        callBackMethod(outputString.replace(/[\t\n\r]/gm,''))
+        callBackMethod(outputString/*.replace(/[\t\n\r]/gm,'')*/)
     }, [outputString])
 
 
