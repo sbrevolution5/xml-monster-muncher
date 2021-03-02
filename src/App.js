@@ -23,10 +23,11 @@ function App() {
         setCompendium(ls.get('compendium'));
       }
     }, [])
-  const makeXML=(source=compendium)=>{
+  const makeXML=(source)=>{
     let xmlString = "<compendium>"
+    console.log(source[0])
     for (let i = 0; i < source.length; i++) {
-      xmlString += source[i];
+      xmlString += source[i].xml;
       
     }
     xmlString += "</compendium>"
@@ -52,7 +53,7 @@ function App() {
       </div>
       <div className="Row">
         <button type="button" className="btn btn-primary" onClick={browserSaveComp}>Save compendium to localstorage</button>
-        <button type="button" className="btn btn-primary" onClick={makeXML}>Create XML file</button>
+        <button type="button" className="btn btn-primary" onClick={()=>{makeXML(compendium)}}>Create XML file</button>
         {/* <a name="" id="" className="btn btn-primary" href="#" role="button">Create XML compendium</a> */}
       </div>
       <div>
