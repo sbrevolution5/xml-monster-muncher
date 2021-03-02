@@ -23,6 +23,18 @@ function App() {
         setCompendium(ls.get('compendium'));
       }
     }, [])
+  const makeXML=(compendium)=>{
+    let xmlString = "<compendium>"
+    for (let i = 0; i < compendium.length; i++) {
+      xmlString += compendium[i];
+      
+    }
+    xmlString += "</compendium>"
+    var parser = new DOMParser();
+    var XMLDoc = parser.parseFromString(xmlString);
+    console.log(XMLDoc)
+
+  }
   return (
     <div className="App">
       <header className="App-header">
