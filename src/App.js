@@ -23,15 +23,15 @@ function App() {
         setCompendium(ls.get('compendium'));
       }
     }, [])
-  const makeXML=(compendium)=>{
+  const makeXML=(source=compendium)=>{
     let xmlString = "<compendium>"
-    for (let i = 0; i < compendium.length; i++) {
-      xmlString += compendium[i];
+    for (let i = 0; i < source.length; i++) {
+      xmlString += source[i];
       
     }
     xmlString += "</compendium>"
     var parser = new DOMParser();
-    var XMLDoc = parser.parseFromString(xmlString);
+    var XMLDoc = parser.parseFromString(xmlString, "text/xml");
     console.log(XMLDoc)
 
   }
@@ -52,7 +52,8 @@ function App() {
       </div>
       <div className="Row">
         <button type="button" className="btn btn-primary" onClick={browserSaveComp}>Save compendium to localstorage</button>
-        <a name="" id="" className="btn btn-primary" href="#" role="button">Create XML compendium</a>
+        <button type="button" className="btn btn-primary" onClick={makeXML}>Create XML file</button>
+        {/* <a name="" id="" className="btn btn-primary" href="#" role="button">Create XML compendium</a> */}
       </div>
       <div>
         <p className="form-text text-muted">
