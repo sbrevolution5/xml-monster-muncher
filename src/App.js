@@ -52,9 +52,13 @@ function App() {
           })}
         </ul>
       </div>
-      <div className="Row">
         <button type="button" className="btn btn-primary" onClick={browserSaveComp}>Save compendium to localstorage</button>
+        <p className="text-muted">Saves your compendium to browser's localstorage, allowing you to add to it later</p>
         <button type="button" className="btn btn-primary" onClick={() => { makeXML(compendium) }}>Create XML file</button>
+        <p className="text-muted">Creates an XML file, and allows the user to download the entire compendium with all monsters listed above</p>
+      <div className="Row">
+
+
         {/* <a name="" id="" className="btn btn-primary" href="#" role="button">Create XML compendium</a> */}
       </div>
       <div>

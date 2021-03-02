@@ -150,8 +150,10 @@ class Form extends Component {
     render() {
         return (
             <form>
-                <button type="button" name="" id="" onClick={this.browserSave} className="btn btn-primary btn-lg btn-block">Save to LocalStorage</button>
+                <button type="button" name="" id="" onClick={this.browserSave} className="btn btn-primary btn-lg btn-block">Save Current Monster to LocalStorage</button>
+                <p className="text-muted">Use this button to save the current form and come back later.  This does not save the monster to the compendium as a whole, please see the bottom of the page for that.</p>
                 <button type="button" name="" id="" onClick={this.reset} className="btn btn-danger btn-lg btn-block">Reset entire form</button>
+                <p className="text-muted">Resets the inputs on the form, will not affect compendium or saved storage.</p>
 
                 <div className="form-group row text-box-spaced">
                     <div className="col-sm-4">
@@ -248,6 +250,8 @@ class Form extends Component {
                 </div>
                 <Output state={this.state} sendData={this.getDataFrom}></Output>
                 <button type="button" name="" id="" className="btn btn-primary btn-lg btn-block" onClick={(e)=>{this.props.exportFunction({name: this.state.name, xml:this.state.monsterString})}}>Save to compendium</button>
+                <p className="text-muted">Puts current monster in compendium for later export.  (Don't forget to save your compendium!)</p>
+
             </form>
         )
     }
