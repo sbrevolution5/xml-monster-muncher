@@ -15,26 +15,27 @@ function App() {
   }
   useEffect(() => {
     if (ls.get('compendium') == false) {
-        console.log("cant find file!")
-        ls.set('compendium', compendium)
+      console.log("cant find file!")
+      ls.set('compendium', compendium)
 
-      }else{
-        console.log("We found a compendium file, attempting to load")
-        setCompendium(ls.get('compendium'));
-      }
-    }, [])
-  const makeXML=(source)=>{
+    } else {
+      console.log("We found a compendium file, attempting to load")
+      setCompendium(ls.get('compendium'));
+    }
+  }, [])
+  const makeXML = (source) => {
     let xmlString = "<compendium>"
-    console.log(source[0])
     for (let i = 0; i < source.length; i++) {
       xmlString += source[i].xml;
-      
+
     }
     xmlString += "</compendium>"
-    var parser = new DOMParser();
-    var XMLDoc = parser.parseFromString(xmlString, "text/xml");
-    console.log(XMLDoc)
-
+    const element = document.createElement("a");
+    const file = new Blob([xmlString], { type: 'text/xml' });
+    element.href = URL.createObjectURL(file);
+    element.download = "myCompendium.xml";
+    document.body.appendChild(element); // Required for this to work in FireFox
+    element.click();
   }
   return (
     <div className="App">
@@ -45,7 +46,7 @@ function App() {
       <div className="row" id="monsterlist">
         <ul>
           <h3>Saved monsters:</h3>
-          {compendium.map((monster,index) => {
+          {compendium.map((monster, index) => {
             return (
               <li key={index}>{monster.name}</li>)
           })}
@@ -53,7 +54,7 @@ function App() {
       </div>
       <div className="Row">
         <button type="button" className="btn btn-primary" onClick={browserSaveComp}>Save compendium to localstorage</button>
-        <button type="button" className="btn btn-primary" onClick={()=>{makeXML(compendium)}}>Create XML file</button>
+        <button type="button" className="btn btn-primary" onClick={() => { makeXML(compendium) }}>Create XML file</button>
         {/* <a name="" id="" className="btn btn-primary" href="#" role="button">Create XML compendium</a> */}
       </div>
       <div>
