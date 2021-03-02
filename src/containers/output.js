@@ -35,84 +35,62 @@ const Output = ({ state, sendData}) => {
         const damageList = Object.keys(stateObject.DamageTypes)
     
         let xmlDocumentString = "";
-        xmlDocumentString += "<monster>\n"
+        xmlDocumentString += "\t<monster>\n"
         if (stateObject.name) {
-            xmlDocumentString += "\t<name>" + stateObject.name + "</name>\n"
+            xmlDocumentString += "\t\t<name>" + stateObject.name + "</name>\n"
         } /*else {
             console.error("no name given");
         }*/
         if (stateObject.size) {
-            xmlDocumentString += "\t<size>" + stateObject.size + "</size>\n"
+            xmlDocumentString += "\t\t<size>" + stateObject.size + "</size>\n"
         }
         if (stateObject.type) {
-            xmlDocumentString += "\t<type>" + stateObject.type + "</type>\n"
+            xmlDocumentString += "\t\t<type>" + stateObject.type + "</type>\n"
         }
         if (stateObject.alignment) {
-            xmlDocumentString += "\t<alignment>" + stateObject.alignment + "</alignment>\n"
+            xmlDocumentString += "\t\t<alignment>" + stateObject.alignment + "</alignment>\n"
         }
         if (stateObject.ac) {
-            xmlDocumentString += "\t<ac>" + stateObject.ac + "</ac>\n"
+            xmlDocumentString += "\t\t<ac>" + stateObject.ac + "</ac>\n"
         }
         if (stateObject.hp) {
-            xmlDocumentString += "\t<hp>" + stateObject.hp + "</hp>\n"
+            xmlDocumentString += "\t\t<hp>" + stateObject.hp + "</hp>\n"
         }
         if (stateObject.speed) {
-            xmlDocumentString += "\t<speed>" + stateObject.speed + "</speed>\n"
+            xmlDocumentString += "\t\t<speed>" + stateObject.speed + "</speed>\n"
         }
         if (stateObject.stats.str) {
-            xmlDocumentString += "\t<str>" + stateObject.stats.str + "</str>\n"
+            xmlDocumentString += "\t\t<str>" + stateObject.stats.str + "</str>\n"
         }
         if (stateObject.stats.dex) {
-            xmlDocumentString += "\t<dex>" + stateObject.stats.dex + "</dex>\n"
+            xmlDocumentString += "\t\t<dex>" + stateObject.stats.dex + "</dex>\n"
         }
         if (stateObject.stats.con) {
-            xmlDocumentString += "\t<con>" + stateObject.stats.con + "</con>\n"
+            xmlDocumentString += "\t\t<con>" + stateObject.stats.con + "</con>\n"
         }
         if (stateObject.stats.int) {
-            xmlDocumentString += "\t<int>" + stateObject.stats.int + "</int>\n"
+            xmlDocumentString += "\t\t<int>" + stateObject.stats.int + "</int>\n"
         }
         if (stateObject.stats.wis) {
-            xmlDocumentString += "\t<wis>" + stateObject.stats.wis + "</wis>\n"
+            xmlDocumentString += "\t\t<wis>" + stateObject.stats.wis + "</wis>\n"
         }
         if (stateObject.stats.cha) {
-            xmlDocumentString += "\t<cha>" + stateObject.stats.cha + "</cha>\n"
+            xmlDocumentString += "\t\t<cha>" + stateObject.stats.cha + "</cha>\n"
         }
     
         //if there are any saves, open saves tag
         if (Object.keys(stateObject.savingThrows).some(function (k) { return stateObject.savingThrows[k] })) {
-            xmlDocumentString += "\t<saves>"
-            //for each saving throw, if its there, print the abbreviated stat, a space, and the modifier, 
-            //Todo I think they must be comma separated
-            //abstract into updateSave function
-            //THIS ONLY PRINTS 5 COMMAS?!
+            xmlDocumentString += "\t\t<saves>"
+            //for each saving throw, if its there, print the abbreviated stat, a space (comma if neccesary), and the modifier, 
             saveList.map((value, index) => {
                 return updateSave(value, index, saveList.length)
             })
-            // if (stateObject.savingThrows.str) {
-            //     xmlDocumentString += "Str " + stateObject.savingThrows.str + " "
-            // }
-            // commaAdd()
-            // if (stateObject.savingThrows.dex) {
-            //     xmlDocumentString += "Dex " + stateObject.savingThrows.dex + " "
-            // }
-            // if (stateObject.savingThrows.con) {
-            //     xmlDocumentString += "Con " + stateObject.savingThrows.con + " "
-            // }
-            // if (stateObject.savingThrows.int) {
-            //     xmlDocumentString += "Int " + stateObject.savingThrows.int + " "
-            // }
-            // if (stateObject.savingThrows.wis) {
-            //     xmlDocumentString += "Wis " + stateObject.savingThrows.wis + " "
-            // }
-            // if (stateObject.savingThrows.cha) {
-            //     xmlDocumentString += "Cha " + stateObject.savingThrows.cha + " "
-            // }
             //close saves tag
             xmlDocumentString += "</saves>\n"
         }
         //same with skills
         if (Object.keys(stateObject.skills).some(function (k) { return stateObject.skills[k] })) {
-            xmlDocumentString += "\t<skills>"
+            xmlDocumentString += "\t\t<skills>"
             skillList.map((value, index) => {
                 return updateSkill(value, index, skillList.length)
             })
@@ -128,7 +106,7 @@ const Output = ({ state, sendData}) => {
             xmlDocumentString += "</resist>\n"
         }
         if (Object.keys(stateObject.DamageTypes).some(function (k) { return stateObject.DamageTypes[k] == "immune" })) {
-            xmlDocumentString += "\t<immune>"
+            xmlDocumentString += "\t\t<immune>"
             damageList.map((damageName) => {
                 console.log(damageName, " checked for immune")
                 if (stateObject.DamageTypes[damageName] == "immune") {
@@ -138,7 +116,7 @@ const Output = ({ state, sendData}) => {
             xmlDocumentString += "</immune>\n"
         }
         if (Object.keys(stateObject.DamageTypes).some(function (k) { return stateObject.DamageTypes[k] == "vulnerable" })) {
-            xmlDocumentString += "\t<vulnerable>";
+            xmlDocumentString += "\t\t<vulnerable>";
             let damageList = Object.keys(stateObject.DamageTypes)
             damageList.map((damageName) => {
                 if (stateObject.DamageTypes[damageName] == "vulnerable") {
@@ -149,44 +127,43 @@ const Output = ({ state, sendData}) => {
         }
     
         if (stateObject.senses) {
-            xmlDocumentString += "\t<senses>" + stateObject.senses + "</senses>\n"
+            xmlDocumentString += "\t\t<senses>" + stateObject.senses + "</senses>\n"
         }
         if (stateObject.passive) {
-            xmlDocumentString += "\t<passive>" + stateObject.passive + "</passive>\n"
+            xmlDocumentString += "\t\t<passive>" + stateObject.passive + "</passive>\n"
         }
         if (stateObject.languages) {
-            xmlDocumentString += "\t<languages>" + stateObject.languages + "</languages>\n"
+            xmlDocumentString += "\t\t<languages>" + stateObject.languages + "</languages>\n"
         }
         if (stateObject.cr) {
-            xmlDocumentString += "\t<cr>" + stateObject.cr + "</cr>\n"
+            xmlDocumentString += "\t\t<cr>" + stateObject.cr + "</cr>\n"
         }
         //traits actions and legendary?
         if (stateObject.traits.length > 0) {
             for (let i = 0; i < stateObject.traits.length; i++) {
                 const element = stateObject.traits[i];
-                xmlDocumentString += "\t<trait>\n\t\t<name>" + element.title + "</name>\n\t\t<text>" + element.text + "</text>\n\t</trait>\n"
+                xmlDocumentString += "\t\t<trait>\n\t\t\t<name>" + element.title + "</name>\n\t\t\t<text>" + element.text + "</text>\n\t\t</trait>\n"
     
             }
         }
         if (stateObject.actions.length > 0) {
             for (let i = 0; i < stateObject.actions.length; i++) {
                 const element = stateObject.actions[i];
-                xmlDocumentString += "\t<action>\n\t\t<name>" + element.title + "</name>\n\t\t<text>" + element.text + "</text>\n\t</action>\n"
+                xmlDocumentString += "\t\t<action>\n\t\t\t<name>" + element.title + "</name>\n\t\t\t<text>" + element.text + "</text>\n\t\t</action>\n"
     
             }
         }
         if (stateObject.legendaryActions.length > 0) {
             for (let i = 0; i < stateObject.legendaryActions.length; i++) {
                 const element = stateObject.legendaryActions[i];
-                xmlDocumentString += "\t<legendary>\n\t\t<name>" + element.title + "</name>\n\t\t<text>" + element.text + "</text>\n\t</legendary>\n"
+                xmlDocumentString += "\t\t<legendary>\n\t\t\t<name>" + element.title + "</name>\n\t\t\t<text>" + element.text + "</text>\n\t\t</legendary>\n"
             }
         }
         //finish xml by closing monster tag
-        xmlDocumentString += "</monster>"
+        xmlDocumentString += "\t</monster>"
         return xmlDocumentString;
         //do stuff with it now!
     }
-    const [mstring, setMstring] = useState(toXML(state));
     const outputString = toXML(state);
 
     

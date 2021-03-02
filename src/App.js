@@ -24,12 +24,12 @@ function App() {
     }
   }, [])
   const makeXML = (source) => {
-    let xmlString = "<compendium>"
+    let xmlString = "<compendium>\n\t"
     for (let i = 0; i < source.length; i++) {
       xmlString += source[i].xml;
 
     }
-    xmlString += "</compendium>"
+    xmlString += "\n</compendium>"
     const element = document.createElement("a");
     const file = new Blob([xmlString], { type: 'text/xml' });
     element.href = URL.createObjectURL(file);
