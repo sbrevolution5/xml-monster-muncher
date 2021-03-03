@@ -37,6 +37,7 @@ function App() {
     document.body.appendChild(element); // Required for this to work in FireFox
     element.click();
   }
+  let compendiummap = compendium ? compendium : [];
   return (
     <div className="App">
       <header className="App-header">
@@ -46,7 +47,7 @@ function App() {
       <div className="row" id="monsterlist">
         <ul>
           <h3>Saved monsters:</h3>
-          {compendium.map((monster, index) => {
+          {compendiummap.map((monster, index) => {
             return (
               <li key={index}>{monster.name}</li>)
           })}
