@@ -7,7 +7,6 @@ import ChallengeRating from '../components/ChallengeRating';
 import Output from './output';
 import './form.css'
 import ls from 'local-storage';
-import XMLOut from './XMLOut'
 import CardSet from './Cardset'
 const { render } = require("@testing-library/react")
 const { Component } = require("react")
@@ -247,6 +246,11 @@ class Form extends Component {
                 <div className="form-group text-box-spaced">
                     <label htmlFor="environmentInput"> Environment </label>
                     <input type="text" id="senseInput" placeholder="Mountain, hills, etc." name="environment" value={this.state.environment} onChange={this.handleChange} className="form-control bg-dark text-light"></input>
+                </div>
+                <div className="form-group text-box-spaced">
+                    <label htmlFor="descriptionInput">Description</label>
+                    <textarea className="form-control bg-dark text-light" type="text" id="descriptionInput" name="description" onChange={this.handleChange} placeholder="Flavor text and/or description for your monster."></textarea>
+
                 </div>
                 <Output state={this.state} sendData={this.getDataFrom}></Output>
                 <button type="button" name="" id="" className="btn btn-primary btn-lg btn-block" onClick={(e)=>{this.props.exportFunction({name: this.state.name, xml:this.state.monsterString})}}>Save to compendium</button>

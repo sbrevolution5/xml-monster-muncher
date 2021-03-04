@@ -159,6 +159,9 @@ const Output = ({ state, sendData}) => {
                 xmlDocumentString += "\t\t<legendary>\n\t\t\t<name>" + element.title + "</name>\n\t\t\t<text>" + element.text + "</text>\n\t\t</legendary>\n"
             }
         }
+        if (stateObject.description){
+            xmlDocumentString += "\t\t<description>"+stateObject.description+"</description>\n"
+        }
         //finish xml by closing monster tag
         xmlDocumentString += "\t</monster>"
         return xmlDocumentString;
