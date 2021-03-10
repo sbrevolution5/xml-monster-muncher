@@ -7,7 +7,11 @@ import ls from 'local-storage';
 function App() {
   const [compendium, setCompendium] = useState([])
   const recieveCompendium = (myCompendium) => {
-    setCompendium([...compendium, myCompendium])
+    if (compendium === []) {
+      setCompendium(myCompendium)
+    } else {
+      setCompendium([...(compendium || []), myCompendium])
+    }
   }
   const browserSaveComp = () => {
     console.log('saved to browser')
@@ -24,10 +28,9 @@ function App() {
     }
   }, [])
   const makeXML = (source) => {
-    let xmlString = "<compendium>\n\t"
+    let xmlString = "<compendium>\n"
     for (let i = 0; i < source.length; i++) {
       xmlString += source[i].xml;
-
     }
     xmlString += "\n</compendium>"
     const element = document.createElement("a");
@@ -46,16 +49,16 @@ function App() {
       <div className="row" id="monsterlist">
         <ul>
           <h3>Saved monsters:</h3>
-          {(compendium? compendium : []).map((monster, index) => {
+          {(compendium ? compendium : []).map((monster, index) => {
             return (
               <li key={index}>{monster.name}</li>)
           })}
         </ul>
       </div>
-        <button type="button" className="btn btn-primary" onClick={browserSaveComp}>Save compendium to localstorage</button>
-        <p className="text-muted">Saves your compendium to browser's localstorage, allowing you to add to it later</p>
-        <button type="button" className="btn btn-primary" onClick={() => { makeXML(compendium) }}>Create XML file</button>
-        <p className="text-muted">Creates an XML file, and allows the user to download the entire compendium with all monsters listed above</p>
+      <button type="button" className="btn btn-primary" onClick={browserSaveComp}>Save compendium to localstorage</button>
+      <p className="text-muted">Saves your compendium to browser's localstorage, allowing you to add to it later</p>
+      <button type="button" className="btn btn-primary" onClick={() => { makeXML(compendium) }}>Create XML file</button>
+      <p className="text-muted">Creates an XML file, and allows the user to download the entire compendium with all monsters listed above</p>
       <div className="Row">
 
 
